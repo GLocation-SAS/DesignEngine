@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* ── Tailwind v4 Theme Tokens ── */
+@theme inline {
+  /* Primary palette */
+  --color-primary-50: #f0f4ff;
+  --color-primary-100: #dbe4ff;
+  --color-primary-200: #bac8ff;
+  --color-primary-300: #91a7ff;
+  --color-primary-400: #748ffc;
+  --color-primary-500: #5c7cfa;
+  --color-primary-600: #4c6ef5;
+  --color-primary-700: #4263eb;
+  --color-primary-800: #3b5bdb;
+  --color-primary-900: #364fc7;
+  --color-primary-950: #1e3a8a;
+
+  /* Accent palette */
+  --color-accent-50: #fff0f6;
+  --color-accent-100: #ffd6e7;
+  --color-accent-200: #faa2c1;
+  --color-accent-300: #f783ac;
+  --color-accent-400: #f06595;
+  --color-accent-500: #e64980;
+  --color-accent-600: #d6336c;
+  --color-accent-700: #c2255c;
+  --color-accent-800: #a61e4d;
+  --color-accent-900: #8c1941;
+  --color-accent-950: #6b0f31;
+
+  /* Surface palette */
+  --color-surface-50: #f8f9fc;
+  --color-surface-100: #f1f3f9;
+  --color-surface-200: #e2e6f0;
+  --color-surface-300: #cdd3e2;
+  --color-surface-400: #a3adc4;
+  --color-surface-500: #7b89a8;
+  --color-surface-600: #5c6b8a;
+  --color-surface-700: #455173;
+  --color-surface-800: #2d3652;
+  --color-surface-900: #1a2038;
+  --color-surface-950: #0d1117;
+
+  /* Status colors */
+  --color-success-400: #69db7c;
+  --color-success-500: #51cf66;
+  --color-success-600: #40c057;
+  --color-danger-400: #ff6b6b;
+  --color-danger-500: #fa5252;
+  --color-danger-600: #f03e3e;
+  --color-warning-400: #ffd43b;
+  --color-warning-500: #fcc419;
+  --color-warning-600: #fab005;
+
+  /* Fonts */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Shadows */
+  --shadow-glow: 0 0 20px rgba(92, 124, 250, 0.3);
+  --shadow-glow-accent: 0 0 20px rgba(230, 73, 128, 0.3);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-glass-lg: 0 16px 48px rgba(0, 0, 0, 0.16);
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.5s ease-out;
+  --animate-slide-up: slideUp 0.5s ease-out both;
+  --animate-slide-down: slideDown 0.3s ease-out;
+  --animate-scale-in: scaleIn 0.3s ease-out;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  /* Background */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
