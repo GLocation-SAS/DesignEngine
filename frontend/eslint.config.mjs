@@ -1,13 +1,66 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import tailwindcss from "eslint-plugin-tailwindcss";
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
+  {
+    plugins: {
+      tailwindcss,
+    },
+    settings: {
+      tailwindcss: {
+        callees: ["cn", "clsx", "classnames"],
+        config: "src/app/globals.css",
+      },
+    },
+    rules: {
+      ...tailwindcss.configs.recommended.rules,
+      
+      /* 🚫 No inline styles */
+      "react/forbid-dom-props": ["error", { "forbid": ["style"] }],
+
+      /* 🚫 No colores hardcodeados (#fff, rgb, rgba, hsl) */
+      "no-restricted-syntax": [
+        "error",
+        {
+          "selector": "Literal[value=/^#([0-9a-fA-F]{3,8})$/]",
+          "message": "❌ No usar colores hex directamente. Usa tokens del design system."
+        },
+        {
+          "selector": "Literal[value=/^rgb/i]",
+          "message": "❌ No usar rgb/rgba directamente. Usa tokens del design system."
+        },
+        {
+          "selector": "Literal[value=/^hsl/i]",
+          "message": "❌ No usar hsl directamente. Usa tokens del design system."
+        },
+        /* 🚫 Bloquear clases Tailwind fuera del sistema (ej: bg-red-500) en JSX */
+        {
+          "selector": "JSXAttribute[name.name='className'] > Literal[value=/-(50|100|200|300|400|500|600|700|800|900)$/]:not([value=/^(primary|secondary|neutral|warning|info|success|error|background|text|border|icon)-/])",
+          "message": "❌ No usar clases de colores por defecto de Tailwind (ej: bg-red-500). Usa los tokens del sistema (primary, secondary, semantic, etc.)."
+        }
+      ],
+
+      /* 🚫 Bloquear uso directo de variables CSS en JSX */
+      "tailwindcss/no-arbitrary-value": [
+        "error",
+        { "message": "❌ No usar valores arbitrarios como bg-[--color-primary]. Usa clases del sistema." }
+      ],
+
+      /* ⚠️ Recomendado: orden de clases consistente */
+      "tailwindcss/classnames-order": "warn",
+
+      /* ⚠️ Evitar clases duplicadas */
+      "tailwindcss/no-contradicting-classname": "error",
+
+      /* 🧠 TypeScript estricto */
+      "@typescript-eslint/no-explicit-any": "error",
+    }
+  },
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",
@@ -16,3 +69,4 @@ const eslintConfig = defineConfig([
 ]);
 
 export default eslintConfig;
+
