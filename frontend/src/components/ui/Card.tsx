@@ -1,66 +1,45 @@
-"use client";
-
-import { HTMLAttributes, forwardRef } from "react";
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-type CardVariant = "default" | "glass" | "outlined" | "elevated";
-
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: CardVariant;
-  hoverable?: boolean;
-  padding?: "none" | "sm" | "md" | "lg";
-}
-
-const variantClasses: Record<CardVariant, string> = {
-  default:
-    "bg-white border border-surface-200 dark:bg-surface-900 dark:border-surface-800",
-  glass:
-    "glass",
-  outlined:
-    "border-2 border-surface-200 dark:border-surface-700 bg-transparent",
-  elevated:
-    "bg-white shadow-glass dark:bg-surface-900 border border-surface-100 dark:border-surface-800",
-};
-
-const paddingClasses = {
-  none: "",
-  sm: "p-4",
-  md: "p-6",
-  lg: "p-8",
-};
-
-const Card = forwardRef<HTMLDivElement, CardProps>(
-  (
-    {
-      className,
-      variant = "default",
-      hoverable = false,
-      padding = "md",
-      children,
-      ...props
+const cardVariants = cva(
+  "rounded-lg border bg-neutral-white shadow-sm transition-all",
+  {
+    variants: {
+      variant: {
+        default: "border-neutral-200",
+        glass: "glass bg-white/40 backdrop-blur-xl border-white/20 shadow-glow",
+        interactive: "border-neutral-200 hover:border-primary-500 hover:shadow-2 cursor-pointer active:scale-[0.98]",
+      },
+      padding: {
+        none: "p-0",
+        sm: "p-2",
+        md: "p-4",
+        lg: "p-6",
+      },
     },
-    ref
-  ) => {
-    return (
-      <div
-        ref={ref}
-        className={cn(
-          "rounded-2xl transition-all duration-200",
-          variantClasses[variant],
-          paddingClasses[padding],
-          hoverable &&
-            "hover:shadow-glass-lg hover:-translate-y-0.5 cursor-pointer",
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </div>
-    );
+    defaultVariants: {
+      variant: "default",
+      padding: "md",
+    },
   }
 );
 
+export interface CardProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof cardVariants> {}
+
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className, variant, padding, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(cardVariants({ variant, padding, className }))}
+        {...props}
+      />
+    );
+  }
+);
 Card.displayName = "Card";
 
 export { Card };
-export type { CardProps, CardVariant };

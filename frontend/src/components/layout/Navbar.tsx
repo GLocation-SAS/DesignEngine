@@ -58,6 +58,17 @@ export function Navbar() {
               >
                 Dashboard
               </Link>
+              <Link
+                href="/uikit"
+                className={cn(
+                  "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                  isActive("/uikit")
+                    ? "bg-primary-50 text-primary-700 dark:bg-primary-950/30 dark:text-primary-400"
+                    : "text-surface-600 hover:bg-surface-100 hover:text-surface-900 dark:text-surface-400 dark:hover:bg-surface-800 dark:hover:text-surface-200"
+                )}
+              >
+                UI Kit
+              </Link>
               <div className="ml-2 flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-primary-400 to-accent-400 text-xs font-bold text-white">
                   {user.name.charAt(0).toUpperCase()}
@@ -129,7 +140,7 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="sm"
-                fullWidth
+                fullWidth={true}
                 onClick={() => {
                   logout();
                   setMobileMenuOpen(false);
