@@ -28,7 +28,6 @@ export function ComponentsSection() {
   return (
     <section id="components" className="space-y-32">
       {/* Intro */}
-      {/* Intro */}
       <div className="px-8 max-w-6xl">
         <h2 className="text-3xl font-bold tracking-tight text-primary-500">Components Architecture</h2>
         <p className="text-neutral-500 mt-2">
@@ -46,10 +45,10 @@ export function ComponentsSection() {
         <InfoButtonMatrix />
         <NeutralButtonMatrix />
 
-        {/* Utility Variants - Unificado en el flujo */}
+        {/* Utility Variants */}
         <div className="px-8 mt-16 max-w-6xl">
           <div className="flex items-center gap-3 border-l-4 border-neutral-300 dark:border-neutral-700 pl-4 mb-8">
-             <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">Utility & Experimental</h4>
+             <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">Utility &amp; Experimental</h4>
           </div>
           <div className="bg-neutral-50 dark:bg-neutral-100/50 p-10 rounded-[48px] border border-neutral-100 dark:border-neutral-800">
             <div className="flex flex-wrap gap-8 items-center justify-center">
@@ -85,13 +84,34 @@ export function ComponentsSection() {
         <DropdownMatrix />
       </div>
 
+      {/* Badges — placeholder hasta implementar BadgeMatrix */}
+      <div id="badges" className="scroll-mt-24 px-8 max-w-6xl">
+        <h3 className="text-2xl font-bold text-primary-500">Badges</h3>
+        <p className="text-neutral-500 mt-2">Coming soon — Badge system documentation.</p>
+      </div>
+
+      {/* Modals */}
+      <div id="modals" className="scroll-mt-24">
+        <ModalMatrix />
+      </div>
+
+      {/* Notifications */}
+      <div id="notifications" className="scroll-mt-24">
+        <NotificationMatrix />
+      </div>
+
+      {/* Tags */}
+      <div id="tags" className="scroll-mt-24">
+        <TagMatrix />
+      </div>
+
       {/* Checkboxes */}
       <div id="checkboxes" className="scroll-mt-24">
         <CheckboxMatrix />
       </div>
 
-      {/* RadioButtons */}
-      <div id="radiobuttons" className="scroll-mt-24">
+      {/* Radio Buttons */}
+      <div id="radio" className="scroll-mt-24">
         <RadioButtonMatrix />
       </div>
 
@@ -100,43 +120,13 @@ export function ComponentsSection() {
         <ToggleMatrix />
       </div>
 
-      {/* Modals */}
-      <div id="modals" className="space-y-12 scroll-mt-24">
-        <ModalMatrix />
-      </div>
-
-      {/* Notifications */}
-      <div id="notifications" className="space-y-12 scroll-mt-24">
-        <NotificationMatrix />
-      </div>
-
-      {/* Tags */}
-      <div id="tags" className="space-y-12 scroll-mt-24">
-        <TagMatrix />
-      </div>
-
-      {/* Checkboxes */}
-      <div id="checkboxes" className="space-y-12 scroll-mt-24">
-        <CheckboxMatrix />
-      </div>
-
-      {/* Radio Buttons */}
-      <div id="radio" className="space-y-12 scroll-mt-24">
-        <RadioButtonMatrix />
-      </div>
-
-      {/* Toggles */}
-      <div id="toggles" className="space-y-12 scroll-mt-24">
-        <ToggleMatrix />
-      </div>
-
       {/* Breadcrumbs */}
-      <div id="breadcrumbs" className="space-y-12 scroll-mt-24">
+      <div id="breadcrumbs" className="scroll-mt-24">
         <BreadcrumbMatrix />
       </div>
 
       {/* Pagination */}
-      <div id="pagination" className="space-y-12 scroll-mt-24">
+      <div id="pagination" className="scroll-mt-24">
         <PaginationMatrix />
       </div>
     </section>
