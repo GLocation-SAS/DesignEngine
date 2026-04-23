@@ -19,21 +19,21 @@ export function SpacingSection() {
   return (
     <section id="spacing" className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold tracking-tight text-neutral-900">Spacing</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-primary-500">Spacing</h2>
         <p className="text-neutral-500 mt-2">
           Consistent spacing scale used for margins, paddings, and layout gaps.
         </p>
       </div>
 
-      <div className="space-y-4 border-t border-neutral-100 pt-8">
+      <div className="space-y-4 border-t border-neutral-100 dark:border-neutral-800 pt-8">
         <div className="grid gap-6">
           {spacingTokens.map((token) => (
             <div key={token.name} className="flex items-center gap-8">
-              <div className="w-12 text-sm font-mono text-neutral-400">sp-{token.name}</div>
-              <div className="flex-1 h-8 bg-primary-100 rounded-sm overflow-hidden flex items-center px-4">
+              <div className="w-12 text-sm font-mono text-neutral-400 dark:text-neutral-500">sp-{token.name}</div>
+              <div className="flex-1 h-8 bg-primary-100 dark:bg-primary-900/30 rounded-sm overflow-hidden flex items-center px-4">
                  <div className="h-full bg-primary-500" style={{ width: `var(--spacing-${token.name})` }} />
               </div>
-              <div className="w-20 text-sm font-medium text-neutral-900">{token.value}</div>
+              <div className="w-20 text-sm font-medium text-neutral-900 dark:text-neutral-100">{token.value}</div>
             </div>
           ))}
         </div>
@@ -41,3 +41,10 @@ export function SpacingSection() {
     </section>
   );
 }
+
+
+
+
+
+
+

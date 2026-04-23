@@ -11,73 +11,82 @@ const SIZES = [
   { key: "default", label: "Medium (44px)" },
   { key: "sm", label: "Small (40px)" },
   { key: "xs", label: "Extra Small (36px)" },
-];
+] as const;
 
 const STATES = [
   { key: "default", label: "Default", props: {} },
-  { 
-    key: "hover", 
-    label: "Hover", 
-    props: { 
-      className: "!bg-[#d97706] !text-white shadow-[inset_0px_0px_13.1px_0px_#fde68a]" 
-    } 
-  },
-  { 
-    key: "active", 
-    label: "Pressed", 
-    props: { 
-      className: "!bg-[#b45309] !text-white" 
-    } 
-  },
+  { key: "hover", label: "Hover", props: { state: "hover" } },
+  { key: "active", label: "Pressed", props: { state: "active" } },
   { key: "disabled", label: "Disabled", props: { disabled: true } },
-];
+] as const;
 
 export function WarningButtonMatrix() {
   return (
-    <div className="space-y-10 p-10 bg-white dark:bg-neutral-900 rounded-[40px] border border-neutral-200 dark:border-neutral-800 shadow-xl overflow-hidden">
-      <div className="flex items-center justify-between mb-8">
-        <div className="space-y-1">
-          <Badge variant="surface" className="bg-warning-50 text-warning-600">Warning Button</Badge>
-          <h3 className="text-2xl font-black tracking-tight text-neutral-900 dark:text-white">Component Instance: node-2130-11761</h3>
+    <div className="space-y-32 mt-16 pb-32 max-w-6xl">
+      {/* Header */}
+      <div className="px-8 space-y-4">
+        <div className="flex items-center gap-3">
+          <Badge variant="outline" className="bg-warning-600 text-white uppercase tracking-widest text-[10px]">Button System</Badge>
+          <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500 italic">Warning Variant</span>
         </div>
+        <h2 className="text-5xl font-black tracking-tighter text-primary-500 uppercase">Warning Action</h2>
+        <p className="text-neutral-500 max-w-2xl text-lg">
+          Variante para acciones que requieren precaución o indican una advertencia.
+        </p>
       </div>
 
-      <div className="overflow-x-auto pb-4">
-        <table className="w-full border-separate border-spacing-x-8 border-spacing-y-12">
-          <thead>
-            <tr>
-              <th className="text-left py-4 px-2"></th>
-              {SIZES.map((s) => (
-                <th key={s.key} className="text-center text-xs font-bold uppercase tracking-widest text-neutral-400 py-4 px-2">
-                  {s.label}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {STATES.map((state) => (
-              <tr key={state.key}>
-                <td className="text-left text-sm font-black text-neutral-500 pr-8">
-                  {state.label}
-                </td>
-                {SIZES.map((size) => (
-                  <td key={`${state.key}-${size.key}`} className="text-center py-2">
-                    <Button
-                      variant="warning"
-                      size={size.key as any}
-                      {...state.props}
-                    >
-                      <ChevronLeft className={cn(size.key === 'sm' || size.key === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
-                      Label
-                      <ShoppingBag className={cn(size.key === 'sm' || size.key === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
-                    </Button>
-                  </td>
+      <div className="space-y-24 px-8">
+        <div className="space-y-12">
+          {/* Section Header */}
+          <div className="flex items-center gap-3 border-l-4 border-warning-600 pl-4">
+            <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">Variantes y Estados</h4>
+          </div>
+
+          {/* Table Container */}
+          <div className="w-fit bg-white p-10 rounded-[48px] border border-neutral-100 shadow-sm">
+            <table className="w-full border-separate border-spacing-x-8 border-spacing-y-12">
+              <thead>
+                <tr>
+                  <th className="text-left py-4 px-2"></th>
+                  {SIZES.map((s) => (
+                    <th key={s.key} className="text-center text-[10px] font-bold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 py-4 px-2">
+                      {s.label}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {STATES.map((state) => (
+                  <tr key={state.key}>
+                    <td className="text-left text-xs font-black text-neutral-400 dark:text-neutral-500 uppercase tracking-widest pr-8 border-b border-neutral-200/50 dark:border-neutral-800 pb-2">
+                      {state.label}
+                    </td>
+                    {SIZES.map((size) => (
+                      <td key={`${state.key}-${size.key}`} className="text-center py-2">
+                        <Button
+                          variant="warning"
+                          size={size.key}
+                          {...state.props}
+                        >
+                          <ChevronLeft className={cn(size.key === 'sm' || size.key === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
+                          Label
+                          <ShoppingBag className={cn(size.key === 'sm' || size.key === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
+                        </Button>
+                      </td>
+                    ))}
+                  </tr>
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
+
+
+
+
+

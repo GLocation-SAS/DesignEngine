@@ -2,10 +2,8 @@
 
 import React from "react";
 import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
-import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import { ChevronRight, ChevronLeft, Box, ShoppingBag } from "lucide-react";
+import { ChevronLeft, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PrimaryButtonMatrix } from "./PrimaryButtonMatrix";
 import { SecondaryButtonMatrix } from "./SecondaryButtonMatrix";
@@ -14,92 +12,33 @@ import { SuccessButtonMatrix } from "./SuccessButtonMatrix";
 import { WarningButtonMatrix } from "./WarningButtonMatrix";
 import { InfoButtonMatrix } from "./InfoButtonMatrix";
 import { NeutralButtonMatrix } from "./NeutralButtonMatrix";
-
-interface ButtonShowcaseProps {
-  variant: any;
-  title: string;
-  badgeContent: string;
-  bgClass?: string;
-  hoverClass?: string;
-  activeClass?: string;
-}
-
-function ButtonShowcase({ variant, title, badgeContent, bgClass = "bg-white", hoverClass, activeClass }: ButtonShowcaseProps) {
-  return (
-    <div className={`space-y-8 p-8 rounded-3xl border border-neutral-200 dark:border-neutral-700 shadow-sm ${bgClass}`}>
-      <div className="flex items-center gap-2 mb-4">
-        <Badge variant="surface" className={variant === 'secondary' ? "bg-secondary-50 text-secondary-600" : ""}>{badgeContent}</Badge>
-        <h4 className="text-sm font-semibold text-neutral-400 uppercase tracking-widest">{title}</h4>
-      </div>
-
-      <div className="grid gap-12">
-        {[
-          { size: "lg", label: "Large (56px)" },
-          { size: "default", label: "Medium (44px)" },
-          { size: "sm", label: "Small (40px)" },
-          { size: "xs", label: "Extra Small (36px)" },
-        ].map((s) => (
-          <div key={s.size} className="space-y-4">
-            <p className="text-sm font-medium text-neutral-500">{s.label}</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="space-y-2">
-                <p className="text-[10px] uppercase tracking-tighter text-neutral-400 font-bold">Default</p>
-                <Button variant={variant} size={s.size as any}>
-                  <ChevronLeft className={cn(s.size === 'sm' || s.size === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
-                  Label
-                  <ShoppingBag className={cn(s.size === 'sm' || s.size === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
-                </Button>
-              </div>
-              <div className="space-y-2">
-                <p className="text-[10px] uppercase tracking-tighter text-neutral-400 font-bold">Hover</p>
-                <Button variant={variant} size={s.size as any} className={hoverClass}>
-                  <ChevronLeft className={cn(s.size === 'sm' || s.size === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
-                  Label
-                  <ShoppingBag className={cn(s.size === 'sm' || s.size === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
-                </Button>
-              </div>
-              <div className="space-y-2">
-                <p className="text-[10px] uppercase tracking-tighter text-neutral-400 font-bold">Pressed</p>
-                <Button variant={variant} size={s.size as any} className={activeClass}>
-                  <ChevronLeft className={cn(s.size === 'sm' || s.size === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
-                  Label
-                  <ShoppingBag className={cn(s.size === 'sm' || s.size === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
-                </Button>
-              </div>
-              <div className="space-y-2">
-                <p className="text-[10px] uppercase tracking-tighter text-neutral-400 font-bold">Disabled</p>
-                <Button variant={variant} size={s.size as any} disabled>
-                  <ChevronLeft className={cn(s.size === 'sm' || s.size === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
-                  Label
-                  <ShoppingBag className={cn(s.size === 'sm' || s.size === 'xs' ? "w-4 h-4" : "w-6 h-6")} />
-                </Button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+import { TextInputMatrix } from "./TextInputMatrix";
+import { SearchInputMatrix } from "./SearchInputMatrix";
+import { DropdownMatrix } from "./DropdownMatrix";
+import { ModalMatrix } from "./ModalMatrix";
+import { NotificationMatrix } from "./NotificationMatrix";
+import { TagMatrix } from "./TagMatrix";
+import { CheckboxMatrix } from "./CheckboxMatrix";
+import { RadioButtonMatrix } from "./RadioButtonMatrix";
+import { ToggleMatrix } from "./ToggleMatrix";
+import { BreadcrumbMatrix } from "./BreadcrumbMatrix";
+import { PaginationMatrix } from "./PaginationMatrix";
 
 export function ComponentsSection() {
   return (
-    <section id="components" className="space-y-12">
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight text-neutral-900">Components</h2>
+    <section id="components" className="space-y-32">
+      {/* Intro */}
+      {/* Intro */}
+      <div className="px-8 max-w-6xl">
+        <h2 className="text-3xl font-bold tracking-tight text-primary-500">Components Architecture</h2>
         <p className="text-neutral-500 mt-2">
-          Core UI components built with accessibility and flexibility in mind.
+          Core UI components built with high-fidelity design tokens and modular logic.
         </p>
       </div>
 
       {/* Buttons System */}
-      <div className="space-y-12">
-        <div className="space-y-2">
-          <h3 className="text-2xl font-bold tracking-tight">Buttons System</h3>
-          <p className="text-neutral-500">
-            Comprehensive collection of button types, sizes, and states.
-          </p>
-        </div>        <PrimaryButtonMatrix />
+      <div id="buttons" className="scroll-mt-24">
+        <PrimaryButtonMatrix />
         <SecondaryButtonMatrix />
         <ErrorButtonMatrix />
         <SuccessButtonMatrix />
@@ -107,70 +46,105 @@ export function ComponentsSection() {
         <InfoButtonMatrix />
         <NeutralButtonMatrix />
 
-        {/* Utility Variants */}
-        <div className="space-y-6">
-          <h3 className="text-xl font-semibold border-b pb-2">Utility & Experimental</h3>
-          <div className="flex flex-wrap gap-4">
-            <Button variant="outline">Outline</Button>
-            <Button variant="ghost">Ghost</Button>
-            <Button variant="glass">Glassmorphism</Button>
+        {/* Utility Variants - Unificado en el flujo */}
+        <div className="px-8 mt-16 max-w-6xl">
+          <div className="flex items-center gap-3 border-l-4 border-neutral-300 dark:border-neutral-700 pl-4 mb-8">
+             <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">Utility & Experimental</h4>
+          </div>
+          <div className="bg-neutral-50 dark:bg-neutral-100/50 p-10 rounded-[48px] border border-neutral-100 dark:border-neutral-800">
+            <div className="flex flex-wrap gap-8 items-center justify-center">
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase">Outline</span>
+                <Button variant="outline">Outline Action</Button>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase">Ghost</span>
+                <Button variant="ghost">Ghost Action</Button>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase">Glass</span>
+                <Button variant="glass">Glass Action</Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Inputs */}
-      <div className="space-y-6">
-        <h3 className="text-xl font-semibold border-b pb-2">Inputs</h3>
-        <div className="grid md:grid-cols-2 gap-8 max-w-2xl">
-          <div className="space-y-2">
-            <label className="text-sm font-medium">Default Input</label>
-            <Input placeholder="Enter your email..." />
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-medium">Error State</label>
-            <Input error placeholder="Invalid input" defaultValue="wrong value" />
-            <p className="text-xs text-error-500">This field is required.</p>
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-medium">Disabled</label>
-            <Input disabled placeholder="Disabled input" />
-          </div>
-        </div>
+      {/* Inputs System */}
+      <div id="inputs" className="scroll-mt-24">
+        <TextInputMatrix />
       </div>
 
-      {/* Badges */}
-      <div className="space-y-6">
-        <h3 className="text-xl font-semibold border-b pb-2">Badges</h3>
-        <div className="flex flex-wrap gap-4">
-          <Badge>Default</Badge>
-          <Badge variant="secondary">Secondary</Badge>
-          <Badge variant="success">Success</Badge>
-          <Badge variant="error">Error</Badge>
-          <Badge variant="warning">Warning</Badge>
-          <Badge variant="info">Info</Badge>
-          <Badge variant="outline">Outline</Badge>
-          <Badge variant="surface">Surface</Badge>
-        </div>
+      {/* Search Input */}
+      <div id="search" className="scroll-mt-24">
+        <SearchInputMatrix />
       </div>
 
-      {/* Cards */}
-      <div className="space-y-6">
-        <h3 className="text-xl font-semibold border-b pb-2">Cards</h3>
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card>
-            <h4 className="font-bold">Default Card</h4>
-            <p className="text-sm text-neutral-500 mt-2">Basic container with subtle shadow and border.</p>
-          </Card>
-          <Card variant="glass">
-            <h4 className="font-bold">Glass Card</h4>
-            <p className="text-sm text-neutral-500 mt-2">Translucent background with backdrop blur effect.</p>
-          </Card>
-          <Card variant="interactive">
-            <h4 className="font-bold text-primary-600">Interactive Card</h4>
-            <p className="text-sm text-neutral-500 mt-2">Hover to see transition and shadow changes.</p>
-          </Card>
-        </div>
+      {/* Dropdowns */}
+      <div id="dropdowns" className="scroll-mt-24">
+        <DropdownMatrix />
+      </div>
+
+      {/* Checkboxes */}
+      <div id="checkboxes" className="scroll-mt-24">
+        <CheckboxMatrix />
+      </div>
+
+      {/* RadioButtons */}
+      <div id="radiobuttons" className="scroll-mt-24">
+        <RadioButtonMatrix />
+      </div>
+
+      {/* Toggles */}
+      <div id="toggles" className="scroll-mt-24">
+        <ToggleMatrix />
+      </div>
+
+      {/* Modals */}
+      <div id="modals" className="space-y-12 scroll-mt-24">
+        <ModalMatrix />
+      </div>
+
+      {/* Notifications */}
+      <div id="notifications" className="space-y-12 scroll-mt-24">
+        <NotificationMatrix />
+      </div>
+
+      {/* Tags */}
+      <div id="tags" className="space-y-12 scroll-mt-24">
+        <TagMatrix />
+      </div>
+
+      {/* Checkboxes */}
+      <div id="checkboxes" className="space-y-12 scroll-mt-24">
+        <CheckboxMatrix />
+      </div>
+
+      {/* Radio Buttons */}
+      <div id="radio" className="space-y-12 scroll-mt-24">
+        <RadioButtonMatrix />
+      </div>
+
+      {/* Toggles */}
+      <div id="toggles" className="space-y-12 scroll-mt-24">
+        <ToggleMatrix />
+      </div>
+
+      {/* Breadcrumbs */}
+      <div id="breadcrumbs" className="space-y-12 scroll-mt-24">
+        <BreadcrumbMatrix />
+      </div>
+
+      {/* Pagination */}
+      <div id="pagination" className="space-y-12 scroll-mt-24">
+        <PaginationMatrix />
       </div>
     </section>
   );
 }
+
+
+
+
+
+

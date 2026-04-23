@@ -148,6 +148,51 @@
   --color-semantic-icon-primary-strong: var(--semantic-icon-primary-strong);
   --color-semantic-icon-secondary-default: var(--semantic-icon-secondary-default);
   --color-semantic-icon-secondary-light: var(--semantic-icon-secondary-light);
+
+  /* Typography Sizes */
+  --font-size-display-2xl: 72px;
+  --font-size-display-xl: 60px;
+  --font-size-display-lg: 48px;
+  --font-size-h1: 40px;
+  --font-size-h2: 32px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-h5: 18px;
+  --font-size-h6: 16px;
+  --font-size-title-lg: 18px;
+  --font-size-title-md: 16px;
+  --font-size-title-sm: 14px;
+  --font-size-body-xl: 20px;
+  --font-size-body-lg: 18px;
+  --font-size-body-md: 16px;
+  --font-size-body-sm: 14px;
+  --font-size-body-xs: 12px;
+  --font-size-label-lg: 14px;
+  --font-size-label-md: 12px;
+  --font-size-label-sm: 11px;
+
+  /* Typography Line Heights */
+  --line-height-display: 1.1;
+  --line-height-heading: 1.2;
+  --line-height-title: 1.5;
+  --line-height-body: 1.6;
+  --line-height-body-tight: 1.5;
+  --line-height-label: 1.6;
+  --line-height-label-tight: 1.5;
+
+  /* Typography Letter Spacing */
+  --letter-spacing-display-2xl: -2.16px;
+  --letter-spacing-display-xl: -1.8px;
+  --letter-spacing-display-lg: -1.44px;
+  --letter-spacing-h1: -0.8px;
+  --letter-spacing-h2: -0.64px;
+  --letter-spacing-h3: -0.48px;
+  --letter-spacing-h4: -0.4px;
+  --letter-spacing-h5: -0.36px;
+  --letter-spacing-h6: -0.32px;
+  --letter-spacing-title-lg: -0.36px;
+  --letter-spacing-title-md: -0.32px;
+  --letter-spacing-title-sm: -0.28px;
   --color-semantic-icon-secondary-strong: var(--semantic-icon-secondary-strong);
   --color-semantic-icon-neutral-primary: var(--semantic-icon-neutral-primary);
   --color-semantic-icon-neutral-secondary: var(--semantic-icon-neutral-secondary);
@@ -203,7 +248,7 @@
 @layer base {
   :root {
     /* Primitives Light - Colors */
-    --color-primary-50: #E8F2F7FF;
+    --color-primary-50: #EFE8F7FF;
     --color-primary-100: #E6DFF5FF;
     --color-primary-200: #CBB8E8FF;
     --color-primary-300: #B091DBFF;
@@ -212,7 +257,7 @@
     --color-primary-600: #5C3E91FF;
     --color-primary-700: #4A3174FF;
     --color-primary-800: #382558FF;
-    --color-primary-900: #BBBBBBFF;
+    --color-primary-900: #2F1559FF;
 
     --color-secondary-50: #EEF5F8FF;
     --color-secondary-100: #D7E7EFFF;
