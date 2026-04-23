@@ -5,12 +5,14 @@ import { ColorsSection } from "../components/ColorsSection";
 import { TypographySection } from "../components/TypographySection";
 import { SpacingSection } from "../components/SpacingSection";
 import { ComponentsSection } from "../components/ComponentsSection";
+
 import { EffectsSection } from "../components/EffectsSection";
 import { useTheme } from "@/context/ThemeContext";
 import { Button } from "@/components/ui/Button";
-import { Sun, Moon, Layout, Palette, Type, Box, Zap, ChevronRight } from "lucide-react";
+import { Sun, Moon, Layout, Palette, Type, Box, Zap, ChevronRight, ChevronLeft, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
+
 
 const sections = [
   { id: "colors", label: "Colors", icon: Palette },
@@ -100,6 +102,8 @@ export default function UIKitPage() {
             The definitive reference for all visual elements, components, and design patterns used in the DesignEngine ecosystem.
           </p>
         </header>
+
+
 
         <ColorsSection />
         <TypographySection />

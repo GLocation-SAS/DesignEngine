@@ -81,6 +81,97 @@
   --color-info-800: var(--color-info-800);
   --color-info-900: var(--color-info-900);
 
+  /* Semantic Colors */
+  --color-semantic-background-primary-default: var(--semantic-background-primary-default);
+  --color-semantic-background-primary-hover: var(--semantic-background-primary-hover);
+  --color-semantic-background-primary-pressed: var(--semantic-background-primary-pressed);
+  --color-semantic-background-primary-surface: var(--semantic-background-primary-surface);
+  --color-semantic-background-secondary-default: var(--semantic-background-secondary-default);
+  --color-semantic-background-secondary-hover: var(--semantic-background-secondary-hover);
+  --color-semantic-background-secondary-pressed: var(--semantic-background-secondary-pressed);
+  --color-semantic-background-secondary-surface: var(--semantic-background-secondary-surface);
+  --color-semantic-background-neutral-default: var(--semantic-background-neutral-default);
+  --color-semantic-background-neutral-hover: var(--semantic-background-neutral-hover);
+  --color-semantic-background-neutral-Pressed: var(--semantic-background-neutral-Pressed);
+  --color-semantic-background-neutral-surface: var(--semantic-background-neutral-surface);
+  --color-semantic-background-neutral-muted: var(--semantic-background-neutral-muted);
+  --color-semantic-background-disabled-default: var(--semantic-background-disabled-default);
+  --color-semantic-background-disabled-hover: var(--semantic-background-disabled-hover);
+  --color-semantic-background-disabled-pressed: var(--semantic-background-disabled-pressed);
+  --color-semantic-background-disabled-surface: var(--semantic-background-disabled-surface);
+  --color-semantic-background-success-default: var(--semantic-background-success-default);
+  --color-semantic-background-success-hover: var(--semantic-background-success-hover);
+  --color-semantic-background-success-pressed: var(--semantic-background-success-pressed);
+  --color-semantic-background-success-surface: var(--semantic-background-success-surface);
+  --color-semantic-background-warning-default: var(--semantic-background-warning-default);
+  --color-semantic-background-warning-hover: var(--semantic-background-warning-hover);
+  --color-semantic-background-warning-pressed: var(--semantic-background-warning-pressed);
+  --color-semantic-background-warning-surface: var(--semantic-background-warning-surface);
+  --color-semantic-background-error-default: var(--semantic-background-error-default);
+  --color-semantic-background-error-hover: var(--semantic-background-error-hover);
+  --color-semantic-background-error-pressed: var(--semantic-background-error-pressed);
+  --color-semantic-background-error-surface: var(--semantic-background-error-surface);
+  --color-semantic-background-info-default: var(--semantic-background-info-default);
+  --color-semantic-background-info-hover: var(--semantic-background-info-hover);
+  --color-semantic-background-info-pressed: var(--semantic-background-info-pressed);
+  --color-semantic-background-info-surface: var(--semantic-background-info-surface);
+
+  --color-semantic-text-primary-default: var(--semantic-text-primary-default);
+  --color-semantic-text-secondary-default: var(--semantic-text-secondary-default);
+  --color-semantic-text-neutral-primary: var(--semantic-text-neutral-primary);
+  --color-semantic-text-neutral-secondary: var(--semantic-text-neutral-secondary);
+  --color-semantic-text-neutral-brand: var(--semantic-text-neutral-brand);
+  --color-semantic-text-disabled-default: var(--semantic-text-disabled-default);
+  --color-semantic-text-disabled-secondary: var(--semantic-text-disabled-secondary);
+  --color-semantic-text-success-default: var(--semantic-text-success-default);
+  --color-semantic-text-warning-default: var(--semantic-text-warning-default);
+  --color-semantic-text-error-default: var(--semantic-text-error-default);
+  --color-semantic-text-info-default: var(--semantic-text-info-default);
+  --color-semantic-text-on-color: var(--semantic-text-on-color);
+  --color-semantic-text-on-light: var(--semantic-text-on-light);
+
+  --color-semantic-border-primary-default: var(--semantic-border-primary-default);
+  --color-semantic-border-secondary-default: var(--semantic-border-secondary-default);
+  --color-semantic-border-neutral-default: var(--semantic-border-neutral-default);
+  --color-semantic-border-neutral-subtle: var(--semantic-border-neutral-subtle);
+  --color-semantic-border-neutral-strong: var(--semantic-border-neutral-strong);
+  --color-semantic-border-disabled-default: var(--semantic-border-disabled-default);
+  --color-semantic-border-disabled-subtle: var(--semantic-border-disabled-subtle);
+  --color-semantic-border-disabled-strong: var(--semantic-border-disabled-strong);
+  --color-semantic-border-success-default: var(--semantic-border-success-default);
+  --color-semantic-border-warning-default: var(--semantic-border-warning-default);
+  --color-semantic-border-error-default: var(--semantic-border-error-default);
+  --color-semantic-border-info-default: var(--semantic-border-info-default);
+
+  --color-semantic-icon-primary-default: var(--semantic-icon-primary-default);
+  --color-semantic-icon-primary-light: var(--semantic-icon-primary-light);
+  --color-semantic-icon-primary-strong: var(--semantic-icon-primary-strong);
+  --color-semantic-icon-secondary-default: var(--semantic-icon-secondary-default);
+  --color-semantic-icon-secondary-light: var(--semantic-icon-secondary-light);
+  --color-semantic-icon-secondary-strong: var(--semantic-icon-secondary-strong);
+  --color-semantic-icon-neutral-primary: var(--semantic-icon-neutral-primary);
+  --color-semantic-icon-neutral-secondary: var(--semantic-icon-neutral-secondary);
+  --color-semantic-icon-neutral-light: var(--semantic-icon-neutral-light);
+  --color-semantic-icon-neutral-strong: var(--semantic-icon-neutral-strong);
+  --color-semantic-icon-disabled-default: var(--semantic-icon-disabled-default);
+  --color-semantic-icon-disabled-secondary: var(--semantic-icon-disabled-secondary);
+  --color-semantic-icon-disabled-light: var(--semantic-icon-disabled-light);
+  --color-semantic-icon-disabled-strong: var(--semantic-icon-disabled-strong);
+  --color-semantic-icon-success-default: var(--semantic-icon-success-default);
+  --color-semantic-icon-success-light: var(--semantic-icon-success-light);
+  --color-semantic-icon-success-strong: var(--semantic-icon-success-strong);
+  --color-semantic-icon-warning-default: var(--semantic-icon-warning-default);
+  --color-semantic-icon-warning-light: var(--semantic-icon-warning-light);
+  --color-semantic-icon-warning-strong: var(--semantic-icon-warning-strong);
+  --color-semantic-icon-error-default: var(--semantic-icon-error-default);
+  --color-semantic-icon-error-light: var(--semantic-icon-error-light);
+  --color-semantic-icon-error-strong: var(--semantic-icon-error-strong);
+  --color-semantic-icon-info-default: var(--semantic-icon-info-default);
+  --color-semantic-icon-info-light: var(--semantic-icon-info-light);
+  --color-semantic-icon-info-strong: var(--semantic-icon-info-strong);
+  --color-semantic-icon-on-color: var(--semantic-icon-on-color);
+  --color-semantic-icon-on-light: var(--semantic-icon-on-light);
+
   /* Spacing */
   --spacing-0: 0px;
   --spacing-1: 4px;
@@ -254,16 +345,16 @@
 
   .dark {
     /* Primitives Dark - Colors */
-    --color-primary-50: #382558FF;
-    --color-primary-100: #4A3174FF;
-    --color-primary-200: #5C3E91FF;
-    --color-primary-300: #5A3988FF;
-    --color-primary-400: #6F4BAEFF;
-    --color-primary-500: #B091DBFF;
-    --color-primary-600: #B091DBFF;
-    --color-primary-700: #CBB8E8FF;
-    --color-primary-800: #E6DFF5FF;
-    --color-primary-900: #F4F1FAFF;
+    --color-primary-50: #1A102CFF;
+    --color-primary-100: #2D1B4BFF;
+    --color-primary-200: #3E2666FF;
+    --color-primary-300: #4A3174FF;
+    --color-primary-400: #5C3E91FF;
+    --color-primary-500: #5A3988FF;
+    --color-primary-600: #6F4BAEFF;
+    --color-primary-700: #8B6CC7FF;
+    --color-primary-800: #B091DBFF;
+    --color-primary-900: #D9C8F0FF;
 
     --color-secondary-50: #0E1B26FF;
     --color-secondary-100: #152C3BFF;
