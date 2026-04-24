@@ -51,8 +51,10 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
     const [isOpen, setIsOpen] = React.useState(currentState.includes("Active"));
     const [selectedValue, setSelectedValue] = React.useState(value);
     const [isHovered, setIsHovered] = React.useState(false);
-    
+    const [searchTerm, setSearchTerm] = React.useState("");
+
     const containerRef = React.useRef<HTMLDivElement>(null);
+    const inputRef = React.useRef<HTMLInputElement>(null);
 
     React.useEffect(() => {
       setIsOpen(currentState.includes("Active"));
@@ -67,6 +69,7 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
         if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
           if (!currentState.includes("Active")) {
             setIsOpen(false);
+            setSearchTerm("");
           }
         }
       };
@@ -90,6 +93,12 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
       return isHovered ? "Hover" : "Default";
     }, [disabled, currentState, isError, isSuccess, isActive, isHovered, selectedValue]);
 
+    const filteredOptions = React.useMemo(() => {
+      return options.filter((opt) =>
+        opt.label.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }, [options, searchTerm]);
+
     const displayValue = React.useMemo(() => {
       const currentVal = selectedValue || value;
       if (currentVal) {
@@ -106,16 +115,16 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
     };
 
     const stateStyles = {
-      "Default": "bg-white border-[#E8E8E8] border-[2.5px] text-[#141414]",
-      "Hover": "bg-white border-primary-default border-[2.5px] text-[#141414]",
-      "Active": "bg-white border-[#5a3988] border-[2.5px] text-[#141414] shadow-[inset_0_0_13.1px_0_#CBB8E8]",
-      "Active Hover": "bg-white border-[#5a3988] border-[2.5px] text-[#141414] shadow-[inset_0_0_13.1px_0_#CBB8E8]",
-      "Active Selected": "bg-white border-[#5a3988] border-[2.5px] text-[#141414] shadow-[inset_0_0_13.1px_0_#CBB8E8]",
-      "Collapsed": "bg-white border-[#4a3174] border-[2.5px] text-[#141414]",
+      "Default": "bg-white border-neutral-100 border-[2.5px] text-neutral-600",
+      "Hover": "bg-white border-primary-default border-[2.5px] text-neutral-600",
+      "Active": "bg-white border-primary-500 border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
+      "Active Hover": "bg-white border-primary-500 border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
+      "Active Selected": "bg-white border-primary-500 border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
+      "Collapsed": "bg-white border-primary-700 border-[2.5px] text-neutral-600",
       "Disabled": "bg-neutral-100 border-transparent border-[2.5px] text-neutral-400 cursor-not-allowed opacity-100",
-      "Error Filled": "bg-white border-[#FA003F] border-2 text-[#141414] shadow-[inset_0_0_13.1px_1px_#FFA3BF]",
-      "Error Filled Hover": "bg-white border-[#FA003F] border-2 text-[#141414] shadow-[inset_0_0_13.1px_0_#FFA3BF]",
-      "Success": "bg-white border-success-500 border-[2.5px] text-[#141414] shadow-[inset_0_0_13.1px_1px_#9FD5CA]",
+      "Error Filled": "bg-white border-error-500 border-2 text-neutral-600 shadow-[inset_0_0_13.1px_1px_#FFA3BF]",
+      "Error Filled Hover": "bg-white border-error-500 border-2 text-neutral-600 shadow-[inset_0_0_13.1px_0_#FFA3BF]",
+      "Success": "bg-white border-success-500 border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_1px_#9FD5CA]",
     };
 
     const iconColorStyles = {
@@ -133,18 +142,26 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
 
     const handleToggle = () => {
       if (effectiveState === "Disabled") return;
-      setIsOpen(!isOpen);
+      if (!isOpen) {
+        setIsOpen(true);
+        setTimeout(() => inputRef.current?.focus(), 0);
+      } else {
+        setIsOpen(false);
+        setSearchTerm("");
+      }
     };
 
     const handleSelect = (val: string) => {
       setSelectedValue(val);
       setIsOpen(false);
+      setSearchTerm("");
       onChange?.(val);
     };
 
     const handleClear = (e: React.MouseEvent) => {
       e.stopPropagation();
       setSelectedValue(undefined);
+      setSearchTerm("");
       onChange?.("");
     };
 
@@ -162,7 +179,7 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
         {...props}
       >
         {label && (
-          <label className="text-sm font-bold text-neutral-900 dark:text-neutral-100 text-left px-1">
+          <label className="text-sm font-bold text-neutral-900 text-left px-1">
             {label}
           </label>
         )}
@@ -183,48 +200,60 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
             </div>
           )}
 
-          {isActive && !selectedValue && effectiveState !== "Active Selected" && (
-            <span className="animate-pulse absolute left-6 text-[#141414]">|</span>
-          )}
-
-          <span
-            className={cn(
-              "flex-1 text-left font-medium outline-none truncate select-none",
-              effectiveState === "Disabled" ? "text-neutral-400" : "text-[#141414] dark:text-neutral-100",
-              isActive && !selectedValue && effectiveState !== "Active Selected" && "opacity-0" 
+          <div className="flex-1 relative flex items-center h-full min-w-0">
+            {isActive ? (
+              <input
+                ref={inputRef}
+                type="text"
+                className={cn(
+                  "w-full bg-transparent border-none outline-none font-medium text-neutral-600 dark:text-neutral-100 placeholder-neutral-400 p-0",
+                  "focus:ring-0"
+                )}
+                placeholder={displayValue === placeholder ? placeholder : displayValue}
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onClick={(e) => e.stopPropagation()}
+              />
+            ) : (
+              <span
+                className={cn(
+                  "w-full text-left font-medium outline-none truncate select-none",
+                  effectiveState === "Disabled" ? "text-neutral-400" : "text-neutral-600 dark:text-neutral-100"
+                )}
+              >
+                {displayValue}
+              </span>
             )}
-          >
-            {displayValue}
-          </span>
+          </div>
 
           <div className={cn(
             "flex items-center gap-[5px] shrink-0 transition-colors",
             iconColorStyles[effectiveState as keyof typeof iconColorStyles] || iconColorStyles["Default"]
           )}>
-            
+
             {/* Clear Button (X) */}
             {(selectedValue || currentState === "Active Selected" || currentState?.includes("Collapsed")) && !isError && !isSuccess && (
-               <>
-                 <X 
-                   className="w-[18px] h-[18px] cursor-pointer hover:opacity-70 transition-opacity" 
-                   onClick={handleClear} 
-                 />
-                 <div className="w-[1.5px] h-[14px] bg-current rounded-full opacity-30" />
-               </>
+              <>
+                <X
+                  className="w-[18px] h-[18px] cursor-pointer hover:opacity-70 transition-opacity"
+                  onClick={handleClear}
+                />
+                <div className="w-[1.5px] h-[14px] bg-current rounded-full opacity-30" />
+              </>
             )}
 
             {isError && (
-               <>
-                 <AlertCircle className="w-5 h-5" />
-                 <div className="w-[2px] h-[14px] bg-current rounded-full mx-1" />
-               </>
+              <>
+                <AlertCircle className="w-5 h-5" />
+                <div className="w-[2px] h-[14px] bg-current rounded-full mx-1" />
+              </>
             )}
 
             {isSuccess && (
-               <>
-                 <CheckCircle2 className="w-5 h-5" />
-                 <div className="w-[2px] h-[14px] bg-current rounded-full mx-1" />
-               </>
+              <>
+                <CheckCircle2 className="w-5 h-5" />
+                <div className="w-[2px] h-[14px] bg-current rounded-full mx-1" />
+              </>
             )}
 
             {/* Chevron Icon */}
@@ -245,29 +274,35 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
         )}
 
         {isActive && (
-          <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white border-[2.5px] border-[#5a3988] rounded-[8px] z-[60] overflow-hidden p-0 shadow-2xl">
+          <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white border-[2.5px] border-primary-500 rounded-[8px] z-[60] overflow-hidden p-0 shadow-2xl">
             <div className="flex flex-col max-h-[240px] overflow-y-auto">
-              {options.map((opt) => {
-                const isForceHovered = effectiveState === "Active Hover" && opt.value === hoveredOptionValue;
-                const isSelected = selectedValue === opt.value;
-                
-                return (
-                  <div
-                    key={opt.value}
-                    className={cn(
-                      "w-full px-[16px] py-[12px] flex items-center justify-start cursor-pointer transition-colors duration-150",
-                      isSelected
-                        ? "bg-[#5a3988] text-white"
-                        : isForceHovered
-                        ? "bg-[#e6dff5] text-[#5a3988]"
-                        : "bg-transparent text-[#141414] hover:bg-[#e6dff5] hover:text-[#5a3988]"
-                    )}
-                    onClick={() => handleSelect(opt.value)}
-                  >
-                    <span className="font-medium text-[14px] leading-5">{opt.label}</span>
-                  </div>
-                );
-              })}
+              {filteredOptions.length > 0 ? (
+                filteredOptions.map((opt) => {
+                  const isForceHovered = effectiveState === "Active Hover" && opt.value === hoveredOptionValue;
+                  const isSelected = selectedValue === opt.value;
+
+                  return (
+                    <div
+                      key={opt.value}
+                      className={cn(
+                        "w-full px-[16px] py-[12px] flex items-center justify-start cursor-pointer transition-colors duration-150",
+                        isSelected
+                          ? "bg-primary text-white"
+                          : isForceHovered
+                            ? "bg-primary-100 text-primary-500 dark:bg-primary-500 dark:text-neutral-900"
+                            : "bg-transparent text-neutral-600 hover:bg-primary-100 hover:text-primary-500 dark:hover:bg-primary-900"
+                      )}
+                      onClick={() => handleSelect(opt.value)}
+                    >
+                      <span className="font-medium text-[14px] leading-5">{opt.label}</span>
+                    </div>
+                  );
+                })
+              ) : (
+                <div className="px-4 py-3 text-sm text-neutral-500 italic">
+                  No hay coincidencias
+                </div>
+              )}
             </div>
           </div>
         )}

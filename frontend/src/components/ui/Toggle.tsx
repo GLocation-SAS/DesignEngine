@@ -26,17 +26,17 @@ export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
     const currentSize = sizeConfigs[sizeVariant];
 
     const getTrackStyles = () => {
-      if (disabled) return isChecked ? "bg-[#a3a3a3] border-[#a3a3a3]" : "bg-white border-[#d1d1d1]";
-      if (error) return isChecked ? "bg-[#fa003f] border-[#fa003f]" : "bg-white border-[#fa003f]";
-      if (success) return isChecked ? "bg-[#1f7a6b] border-[#1f7a6b]" : "bg-white border-[#1f7a6b]";
-      return isChecked ? "bg-[#5a3988] border-[#5a3988]" : "bg-white border-[#5a3988]";
+      if (disabled) return isChecked ? "bg-neutral-400 border-neutral-400" : "bg-white border-neutral-200";
+      if (error) return isChecked ? "bg-error-500 border-error-500" : "bg-white border-error-500";
+      if (success) return isChecked ? "text-success-500 border-success-500" : "bg-white border-success-500";
+      return isChecked ? "bg-primary border-primary" : "bg-white border-primary";
     };
 
     const getThumbStyles = () => {
-      if (disabled) return isChecked ? "bg-white" : "bg-[#d1d1d1]";
-      if (error) return isChecked ? "bg-white" : "bg-[#fa003f]";
-      if (success) return isChecked ? "bg-white" : "bg-[#1f7a6b]";
-      return isChecked ? "bg-white" : "bg-[#5a3988]";
+      if (disabled) return isChecked ? "bg-white" : "bg-neutral-200";
+      if (error) return isChecked ? "bg-white" : "bg-error-500";
+      if (success) return isChecked ? "bg-white" : "text-success-500";
+      return isChecked ? "bg-white" : "bg-primary";
     };
 
     const handleToggle = () => {
@@ -48,7 +48,7 @@ export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
     };
 
     return (
-      <div 
+      <div
         className={cn(
           "flex items-start gap-4 transition-all group cursor-pointer",
           aligned === "right" ? "flex-row-reverse justify-end text-right" : "flex-row justify-start text-left",
@@ -91,7 +91,7 @@ export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
           <div className="flex flex-col gap-1 py-1">
             {label && (
               <span className={cn(
-                "font-['Montserrat'] font-medium leading-4 text-neutral-900 dark:text-neutral-100",
+                " font-medium leading-4 text-neutral-900 dark:text-neutral-100",
                 currentSize.text,
                 disabled && "text-neutral-400"
               )}>
@@ -100,7 +100,7 @@ export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
             )}
             {hint && (
               <span className={cn(
-                "font-['Montserrat'] font-normal leading-4 text-neutral-500",
+                " font-normal leading-4 text-neutral-500",
                 currentSize.text,
                 disabled && "text-neutral-300"
               )}>

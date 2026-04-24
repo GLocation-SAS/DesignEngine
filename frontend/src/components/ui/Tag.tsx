@@ -23,7 +23,7 @@ export function Tag({
   label,
   ...props
 }: TagProps) {
-  
+
   const sizeConfigs = {
     L: "py-3 px-6 text-[12px] gap-2",
     M: "py-2 px-6 text-[12px] gap-2",
@@ -31,30 +31,30 @@ export function Tag({
   };
 
   const variantConfigs = {
-    default: "bg-[#efe8f7] text-[#5c3e91] border-transparent",
-    hover: "bg-[#5a3988] text-white border-transparent",
-    success: "bg-[#cfeae3] text-[#1f7a6b] border-transparent",
-    pause: "bg-[#fef3c7] text-[#d97706] border-transparent",
-    error: "bg-[#ffd1df] text-[#fa003f] border-transparent",
-    informative: "bg-white text-[#5a3988] shadow-[0px_4px_6px_0px_rgba(0,0,0,0.05),0px_10px_15px_0px_rgba(0,0,0,0.1)] border-transparent",
-    button: "bg-white text-[#5a3988] shadow-[0px_4px_6px_0px_rgba(0,0,0,0.05),0px_10px_15px_0px_rgba(0,0,0,0.1)] border-transparent",
+    default: "bg-white text-primary-500 border-transparent",
+    hover: "bg-primary text-white border-transparent",
+    success: "bg-success-100 text-success-500 border-transparent",
+    pause: "bg-warning-100 text-warning-500 border-transparent",
+    error: "bg-error-100 text-error-500 border-transparent",
+    informative: "bg-white text-primary-500 shadow-[0px_4px_6px_0px_rgba(0,0,0,0.05),0px_10px_15px_0px_rgba(0,0,0,0.1)] border-transparent",
+    button: "bg-white text-primary-500 shadow-[0px_4px_6px_0px_rgba(0,0,0,0.05),0px_10px_15px_0px_rgba(0,0,0,0.1)] border-transparent",
   };
 
   // Icon Circle Background (Matches text color if not hover)
-  const iconCircleBg = variant === "hover" ? "bg-white text-[#5a3988]" : {
-    default: "bg-[#5c3e91] text-white",
-    hover: "bg-white text-[#5a3988]",
-    success: "bg-[#1f7a6b] text-white",
-    pause: "bg-[#d97706] text-white",
-    error: "bg-[#fa003f] text-white",
-    informative: "bg-[#5a3988] text-white",
-    button: "bg-[#5a3988] text-white",
+  const iconCircleBg = variant === "hover" ? "bg-white text-primary-500" : {
+    default: "bg-primary-600 text-white",
+    hover: "bg-white text-primary-600",
+    success: "bg-success-500 text-white",
+    pause: "bg-warning-500 text-white",
+    error: "bg-error-500 text-white",
+    informative: "bg-primary text-white",
+    button: "bg-primary text-white",
   }[variant];
 
   return (
     <div
       className={cn(
-        "inline-flex items-center rounded-full font-medium transition-all cursor-pointer whitespace-nowrap font-['Montserrat']",
+        "inline-flex items-center rounded-full font-medium transition-all cursor-pointer whitespace-nowrap ",
         size === "L" ? "py-3" : "py-2",
         onRemove || iconRight ? "pl-6 pr-1.5" : "px-6",
         "gap-3", // Aumentado a 12px para mejor legibilidad como en el screenshot
@@ -75,7 +75,7 @@ export function Tag({
 
       {/* Right Icon / Remove Button */}
       {onRemove || iconRight ? (
-        <div 
+        <div
           onClick={(e) => {
             if (onRemove) {
               e.stopPropagation();

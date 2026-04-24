@@ -27,10 +27,10 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     const currentSize = sizeConfigs[sizeVariant];
 
     const getBoxStyles = () => {
-      if (disabled) return "bg-[#d1d1d1] border-[#d1d1d1] cursor-not-allowed";
-      if (error) return isChecked ? "bg-[#fa003f] border-[#fa003f]" : "bg-white border-[#fa003f]";
+      if (disabled) return "bg-neutral-200 border-neutral-200 cursor-not-allowed";
+      if (error) return isChecked ? "bg-error-500 border-error-500" : "bg-white border-error-500";
       if (success) return isChecked ? "bg-success-500 border-success-500" : "bg-white border-success-500";
-      return isChecked ? "bg-[#5a3988] border-[#5a3988]" : "bg-white border-[#5a3988]";
+      return isChecked ? "bg-primary border-primary" : "bg-white border-primary";
     };
 
     const handleToggle = () => {
@@ -42,7 +42,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     };
 
     return (
-      <div 
+      <div
         className={cn(
           "flex items-start gap-4 transition-all group",
           aligned === "right" ? "flex-row-reverse justify-end text-right" : "flex-row justify-start text-left",
@@ -70,9 +70,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           )}
         >
           {isChecked && (
-            <Check 
-              size={currentSize.check} 
-              className="text-white animate-in zoom-in-50 duration-200" 
+            <Check
+              size={currentSize.check}
+              className="text-white animate-in zoom-in-50 duration-200"
               strokeWidth={3}
             />
           )}
@@ -83,7 +83,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           <div className="flex flex-col gap-1 py-0.5">
             {label && (
               <span className={cn(
-                "font-['Montserrat'] font-medium leading-4 text-neutral-900 dark:text-neutral-100",
+                " font-medium leading-4 text-neutral-900 dark:text-neutral-100",
                 currentSize.text,
                 disabled && "text-neutral-400"
               )}>
@@ -92,7 +92,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             )}
             {hint && (
               <span className={cn(
-                "font-['Montserrat'] font-normal leading-4 text-neutral-500",
+                " font-normal leading-4 text-neutral-500",
                 currentSize.text,
                 disabled && "text-neutral-300"
               )}>

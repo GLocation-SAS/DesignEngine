@@ -36,11 +36,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     const currentState = controlledState || (
       disabled ? "Disabled" :
-      error ? "Error" :
-      success ? "Success" :
-      isFocused ? "Focused" :
-      isHovered ? "Hover" :
-      "Default"
+        error ? "Error" :
+          success ? "Success" :
+            isFocused ? "Focused" :
+              isHovered ? "Hover" :
+                "Default"
     );
 
     const sizeConfigs = {
@@ -75,12 +75,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className={cn("flex flex-col gap-2 w-fit", className)}>
         {label && (
-          <label className="text-sm font-bold text-neutral-900 dark:text-neutral-100 text-left px-1">
+          <label className="text-sm font-bold text-neutral-600 text-left px-1">
             {label}
           </label>
         )}
-        
-        <div 
+
+        <div
           className={cn(
             "relative flex items-center transition-all duration-200 rounded-full overflow-hidden px-6 gap-4",
             sizeConfigs[sizeVariant],
@@ -95,12 +95,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               {iconLeft}
             </div>
           )}
-          
+
           <input
             type={type}
             className={cn(
-              "flex-1 bg-transparent outline-none h-full w-full py-2 placeholder:text-neutral-400 text-neutral-900 font-medium",
-              currentState === "Disabled" && "placeholder:text-neutral-400 text-neutral-400"
+              "flex-1 bg-transparent outline-none h-full w-full py-2 placeholder:text-neutral-600 text-neutral-600 font-medium",
+              currentState === "Disabled" && "placeholder:text-neutral-600 text-neutral-600"
             )}
             ref={ref}
             disabled={disabled}
@@ -129,7 +129,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {(notes || (typeof error === "string")) && (
           <p className={cn(
             "text-xs px-1 text-left",
-            error ? "text-semantic-text-error-default" : "text-semantic-text-neutral-secondary"
+            error ? "text-semantic-text-error-default" : "text-neutral-600"
           )}>
             {typeof error === "string" ? error : notes}
           </p>

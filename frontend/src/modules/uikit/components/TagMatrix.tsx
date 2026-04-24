@@ -23,14 +23,13 @@ const VARIANTS = [
 
 export function TagMatrix() {
   return (
-    <div className="space-y-32 mt-16 pb-32 max-w-6xl">
+    <div className="space-y-24 mt-16 pb-16">
       {/* Header */}
       <div className="px-8 space-y-4">
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-black text-white dark:bg-white dark:text-black uppercase tracking-widest text-[10px]">Pill System</Badge>
-          <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500 italic">node-2130-12645</span>
         </div>
-        <h2 className="text-5xl font-black tracking-tighter text-neutral-900 uppercase">Tags & Badges</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Tags & Badges</h2>
         <p className="text-neutral-500 max-w-2xl text-lg">
           Sistema de etiquetas interactivas con estados semánticos, soporte para iconos y gestión de eliminación.
         </p>
@@ -69,10 +68,10 @@ export function TagMatrix() {
                         <Tag label="Label" variant={variant.key as any} size={size.key} iconLeft={<Hash size={14} />} />
                       </td>
                       <td className="text-center">
-                        <Tag label="Label" variant={variant.key as any} size={size.key} onRemove={() => {}} />
+                        <Tag label="Label" variant={variant.key as any} size={size.key} onRemove={() => { }} />
                       </td>
                       <td className="text-center">
-                        <Tag label="Label" variant={variant.key as any} size={size.key} iconLeft={<Plus size={14} />} onRemove={() => {}} />
+                        <Tag label="Label" variant={variant.key as any} size={size.key} iconLeft={<Plus size={14} />} onRemove={() => { }} />
                       </td>
                     </tr>
                   ))}

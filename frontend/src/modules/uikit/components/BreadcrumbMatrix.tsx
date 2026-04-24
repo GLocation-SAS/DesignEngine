@@ -14,15 +14,14 @@ import { ChevronRight, Slash } from "lucide-react";
 
 export function BreadcrumbMatrix() {
   return (
-    <div className="space-y-32 mt-16 pb-32 max-w-6xl">
+    <div className="space-y-24 mt-16 pb-16 max-w-6xl">
       {/* Header */}
       <div className="px-8 space-y-4">
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-amber-600 text-white uppercase tracking-widest text-[10px]">Navigation Atoms</Badge>
-          <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500 italic">node-2130-13226</span>
         </div>
-        <h2 className="text-5xl font-black tracking-tighter text-neutral-900 uppercase">Breadcrumb System</h2>
-        <p className="text-neutral-500 max-w-2xl text-lg">
+        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Breadcrumb</h2>
+        <p className="text-neutral-900 max-w-2xl text-lg">
           Sistema de navegación jerárquica con soporte para iconos, divisores personalizables y estados de página actual.
         </p>
       </div>
@@ -34,7 +33,7 @@ export function BreadcrumbMatrix() {
             <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">Variantes de Progresión</h4>
           </div>
 
-          <div className="space-y-8 bg-neutral-50 dark:bg-neutral-100/50 p-12 rounded-[48px] border border-neutral-100 dark:border-neutral-800">
+          <div className="space-y-8 max-w-7xl p-12 rounded-[48px] border border-neutral-100 dark:border-neutral-800">
             {/* Level 1 */}
             <div className="space-y-2">
               <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest pb-2 block">1 Nivel (Inicio)</span>
@@ -120,7 +119,7 @@ export function BreadcrumbMatrix() {
           </div>
 
           <div className="grid grid-cols-2 gap-8">
-            <div className="bg-neutral-50 dark:bg-neutral-100/50 p-8 rounded-[32px] border border-neutral-100 dark:border-neutral-800 space-y-4">
+            <div className="max-w-7xl p-8 rounded-[32px] border border-neutral-100 dark:border-neutral-800 space-y-4">
               <Badge variant="outline" className="bg-white text-neutral-900 text-[10px]">Standard Chevron</Badge>
               <Breadcrumb>
                 <BreadcrumbList>
@@ -131,7 +130,7 @@ export function BreadcrumbMatrix() {
               </Breadcrumb>
             </div>
 
-            <div className="bg-neutral-50 dark:bg-neutral-100/50 p-8 rounded-[32px] border border-neutral-100 dark:border-neutral-800 space-y-4">
+            <div className="max-w-7xl p-8 rounded-[32px] border border-neutral-100 dark:border-neutral-800 space-y-4">
               <Badge variant="outline" className="bg-white text-neutral-900 text-[10px]">Slash Style</Badge>
               <Breadcrumb>
                 <BreadcrumbList>

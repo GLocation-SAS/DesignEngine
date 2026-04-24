@@ -41,8 +41,8 @@ export function SearchInputMatrix() {
       <div className="flex items-center gap-2">
         {showClearBtn && (
           <>
-            <X 
-              className="w-5 h-5 cursor-pointer hover:text-neutral-900 transition-colors" 
+            <X
+              className="w-5 h-5 cursor-pointer hover:text-primary-700 transition-colors"
               onClick={handleClear}
             />
             <div className="w-[1px] h-4 bg-neutral-300 dark:bg-neutral-700" />
@@ -54,15 +54,14 @@ export function SearchInputMatrix() {
   };
 
   return (
-    <div className="space-y-32 mt-16 pb-32 max-w-6xl">
+    <div className="space-y-24 mt-16 pb-16 max-w-7xl">
       {/* Header */}
       <div className="px-8 space-y-4">
         <div className="flex items-center gap-3">
           <Badge className="bg-primary-300 text-primary-500 border-none font-black px-3 py-1 rounded-full uppercase tracking-widest text-[10px]">Form System</Badge>
-          <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500 italic">node-2130-12077</span>
         </div>
-        <h2 className="text-5xl font-black tracking-tighter text-neutral-900 uppercase">Search Control</h2>
-        <p className="text-neutral-500 max-w-2xl text-lg">
+        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Buscador</h2>
+        <p className="text-neutral-900 max-w-2xl text-lg">
           Componente de búsqueda especializado con acciones compuestas (limpiar selección) y estados dinámicos.
         </p>
       </div>
@@ -71,11 +70,11 @@ export function SearchInputMatrix() {
         <div className="space-y-12">
           {/* Section Header */}
           <div className="flex items-center gap-3 border-l-4 border-black dark:border-white pl-4">
-            <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">Variantes y Estados</h4>
+            <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-600">Variantes y Estados</h4>
           </div>
 
           {/* Table Container */}
-          <div className="w-fit bg-white p-10 rounded-[48px] border border-neutral-100 shadow-sm">
+          <div className="w-fit bg-neutral-100/50 p-8 rounded-[48px] border border-neutral-200">
             <table className="w-full border-separate border-spacing-x-8 border-spacing-y-12">
               <thead>
                 <tr>

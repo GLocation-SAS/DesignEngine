@@ -26,17 +26,17 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
     const currentSize = sizeConfigs[sizeVariant];
 
     const getBorderStyles = () => {
-      if (disabled) return "border-[#d1d1d1] cursor-not-allowed";
-      if (error) return "border-[#fa003f]";
+      if (disabled) return "border-neutral-200 cursor-not-allowed";
+      if (error) return "border-error-500";
       if (success) return "border-success-500";
-      return "border-[#5a3988]";
+      return "border-primary-500";
     };
 
     const getInnerStyles = () => {
-      if (disabled) return "bg-[#d1d1d1]";
-      if (error) return "bg-[#fa003f]";
+      if (disabled) return "bg-neutral-200";
+      if (error) return "bg-error-500";
       if (success) return "bg-success-500";
-      return "bg-[#5a3988]";
+      return "bg-primary";
     };
 
     const handleToggle = () => {
@@ -48,7 +48,7 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
     };
 
     return (
-      <div 
+      <div
         className={cn(
           "flex items-start gap-4 transition-all group cursor-pointer",
           aligned === "right" ? "flex-row-reverse justify-end text-right" : "flex-row justify-start text-left",
@@ -76,7 +76,7 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
           )}
         >
           {isChecked && (
-            <div 
+            <div
               className={cn(
                 "rounded-full animate-in zoom-in-50 duration-200",
                 currentSize.inner,
@@ -91,7 +91,7 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
           <div className="flex flex-col gap-1 py-1">
             {label && (
               <span className={cn(
-                "font-['Montserrat'] font-medium leading-4 text-neutral-900 dark:text-neutral-100",
+                " font-medium leading-4 text-neutral-900 dark:text-neutral-100",
                 currentSize.text,
                 disabled && "text-neutral-400"
               )}>
@@ -100,7 +100,7 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
             )}
             {hint && (
               <span className={cn(
-                "font-['Montserrat'] font-normal leading-4 text-neutral-500",
+                " font-normal leading-4 text-neutral-500",
                 currentSize.text,
                 disabled && "text-neutral-300"
               )}>

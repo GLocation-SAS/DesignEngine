@@ -18,11 +18,11 @@ export function ResourcesSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Automation GIF */}
-        <div className="group relative bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-          <div className="aspect-video bg-white relative flex items-center justify-center p-4">
-            <img 
-              src="/automation.gif" 
-              alt="Automation Process" 
+        <div className="group relative dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+          <div className="aspect-video bg-neutral-50 relative flex items-center justify-center p-4">
+            <img
+              src="/automation.gif"
+              alt="Automation Process"
               className="max-h-full rounded-lg shadow-lg"
             />
           </div>
@@ -45,17 +45,18 @@ export function ResourcesSection() {
 
         {/* Logos Section - New */}
         {[
-          { id: "symbol", title: "Símbolo Isotipo", format: "PNG", src: "/logos/logo-symbol.png" },
-          { id: "h-white", title: "Logo Horizontal (Light)", format: "PNG", src: "/logos/logo-horizontal-white.png" },
-          { id: "h-blue", title: "Logo Horizontal (Dark)", format: "PNG", src: "/logos/logo-horizontal-blue.png" },
-          { id: "v-blue", title: "Logo Vertical (Dark)", format: "PNG", src: "/logos/logo-vertical-blue.png" },
-          { id: "v-purple", title: "Logo Vertical (Purple)", format: "PNG", src: "/logos/logo-vertical-purple.png" },
+          { id: "symbol", title: "Símbolo Isotipo", format: "PNG", src: "/logos/symbol.png" },
+          { id: "h-white", title: "Logo Horizontal (Light)", format: "PNG", src: "/logos/h-white.png" },
+          { id: "h-blue", title: "Logo Horizontal (Dark)", format: "PNG", src: "/logos/h-blue.png" },
+          { id: "v-white", title: "Logo Vertical (Light)", format: "PNG", src: "/logos/v-white.png" },
+          { id: "lt-h", title: "Logotipo Horizontal", format: "PNG", src: "/logos/lt-h.png" },
+          { id: "lt-h-white", title: "Logotipo Horizontal (Light)", format: "PNG", src: "/logos/lt-h-white.png" },
         ].map((logo) => (
-          <div key={logo.id} className="group relative bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-            <div className="aspect-video bg-neutral-50 dark:bg-neutral-900 relative flex items-center justify-center p-8">
-              <img 
-                src={logo.src} 
-                alt={logo.title} 
+          <div key={logo.id} className="group relative dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+            <div className="aspect-video bg-neutral-50 relative flex items-center justify-center p-8">
+              <img
+                src={logo.src}
+                alt={logo.title}
                 className="max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
               />
             </div>

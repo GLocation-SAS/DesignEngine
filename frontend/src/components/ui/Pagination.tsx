@@ -4,7 +4,7 @@ import * as React from "react";
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export interface PaginationProps extends React.ComponentProps<"nav"> {}
+export interface PaginationProps extends React.ComponentProps<"nav"> { }
 
 const Pagination = ({ className, ...props }: PaginationProps) => (
   <nav
@@ -51,11 +51,11 @@ const PaginationLink = ({
   <a
     aria-current={isActive ? "page" : undefined}
     className={cn(
-      "flex items-center justify-center font-['Montserrat'] font-medium text-sm transition-all duration-200 cursor-pointer",
-      isActive 
-        ? "bg-[#5a3988] text-white rounded-full h-11 w-11" 
-        : "text-[#5a3988] hover:bg-[#e6dff5] rounded-full h-11 w-11",
-      disabled && "text-[#a3a3a3] cursor-not-allowed hover:bg-transparent",
+      "flex items-center justify-center  font-medium text-sm transition-all duration-200 cursor-pointer",
+      isActive
+        ? "bg-primary text-white rounded-full h-11 w-11"
+        : "text-primary-500 hover:bg-primary-100 rounded-full h-11 w-11",
+      disabled && "text-neutral-400 cursor-not-allowed hover:bg-transparent",
       className
     )}
     {...props}
@@ -101,7 +101,7 @@ const PaginationEllipsis = ({
 }: React.ComponentProps<"span">) => (
   <span
     aria-hidden
-    className={cn("flex h-11 w-11 items-center justify-center text-[#5a3988] font-['Montserrat'] font-medium", className)}
+    className={cn("flex h-11 w-11 items-center justify-center text-primary-500  font-medium", className)}
     {...props}
   >
     <span className="mb-[-4px]">...</span>

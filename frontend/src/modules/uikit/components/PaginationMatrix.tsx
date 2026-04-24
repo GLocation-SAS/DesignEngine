@@ -14,15 +14,14 @@ import { Badge } from "@/components/ui/Badge";
 
 export function PaginationMatrix() {
   return (
-    <div className="space-y-32 mt-16 pb-32 max-w-6xl">
+    <div className="space-y-24 mt-16 pb-16 max-w-7xl">
       {/* Header */}
       <div className="px-8 space-y-4">
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-indigo-600 text-white uppercase tracking-widest text-[10px]">Navigation Controls</Badge>
-          <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500 italic">node-2130-13282</span>
         </div>
-        <h2 className="text-5xl font-black tracking-tighter text-neutral-900 uppercase">Pagination Architecture</h2>
-        <p className="text-neutral-500 max-w-2xl text-lg">
+        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Pagination</h2>
+        <p className="text-neutral-900 max-w-2xl text-lg">
           Sistema de navegación por páginas con estados circulares de alta precisión y controles direccionales.
         </p>
       </div>
@@ -148,7 +147,7 @@ export function PaginationMatrix() {
           <div className="grid grid-cols-3 gap-8">
             <div className="bg-neutral-50 dark:bg-neutral-100/50 p-8 rounded-[32px] border border-neutral-100 dark:border-neutral-800 space-y-6 flex flex-col items-center">
               <Badge variant="outline" className="bg-white text-neutral-900 text-[10px]">Button Hover</Badge>
-              <PaginationLink href="#" className="bg-[#e6dff5]">5</PaginationLink>
+              <PaginationLink href="#" className="bg-primary-100">5</PaginationLink>
             </div>
             <div className="bg-neutral-50 dark:bg-neutral-100/50 p-8 rounded-[32px] border border-neutral-100 dark:border-neutral-800 space-y-6 flex flex-col items-center">
               <Badge variant="outline" className="bg-white text-neutral-900 text-[10px]">Button Selected</Badge>

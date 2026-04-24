@@ -26,12 +26,12 @@ import { PaginationMatrix } from "./PaginationMatrix";
 
 export function ComponentsSection() {
   return (
-    <section id="components" className="space-y-32">
+    <section id="components" className="space-y-24">
       {/* Intro */}
-      <div className="px-8 max-w-6xl">
-        <h2 className="text-3xl font-bold tracking-tight text-primary-500">Components Architecture</h2>
-        <p className="text-neutral-500 mt-2">
-          Core UI components built with high-fidelity design tokens and modular logic.
+      <div className="px-8 max-w-7xl">
+        <h2 className="text-4xl font-bold tracking-tighter text-primary-500 dark:text-primary-700 underline">Arquitectura de componentes</h2>
+        <p className="text-neutral-900 mt-2">
+          Componentes de UI construidos con tokens de diseño de alta fidelidad y lógica modular.
         </p>
       </div>
 
@@ -64,7 +64,7 @@ export function ComponentsSection() {
       </div>
 
       {/* Badges — placeholder hasta implementar BadgeMatrix */}
-      <div id="badges" className="scroll-mt-24 px-8 max-w-6xl">
+      <div id="badges" className="scroll-mt-24 px-8 max-w-7xl">
         <h3 className="text-2xl font-bold text-primary-500">Badges</h3>
         <p className="text-neutral-500 mt-2">Coming soon — Badge system documentation.</p>
       </div>

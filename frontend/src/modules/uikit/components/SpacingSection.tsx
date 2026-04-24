@@ -19,9 +19,9 @@ export function SpacingSection() {
   return (
     <section id="spacing" className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold tracking-tight text-primary-500">Spacing</h2>
-        <p className="text-neutral-500 mt-2">
-          Consistent spacing scale used for margins, paddings, and layout gaps.
+        <h2 className="text-5xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Espaciado</h2>
+        <p className="text-neutral-900 max-w-2xl text-lg">
+          Escala de espaciado consistente utilizada para márgenes, rellenos y brechas de diseño.
         </p>
       </div>
 
@@ -29,11 +29,11 @@ export function SpacingSection() {
         <div className="grid gap-6">
           {spacingTokens.map((token) => (
             <div key={token.name} className="flex items-center gap-8">
-              <div className="w-12 text-sm font-mono text-neutral-400 dark:text-neutral-500">sp-{token.name}</div>
+              <div className="w-12 text-sm font-mono text-neutral-600">sp-{token.name}</div>
               <div className="flex-1 h-8 bg-primary-100 dark:bg-primary-900/30 rounded-sm overflow-hidden flex items-center px-4">
-                 <div className="h-full bg-primary-500" style={{ width: `var(--spacing-${token.name})` }} />
+                <div className="h-full bg-primary-500" style={{ width: `var(--spacing-${token.name})` }} />
               </div>
-              <div className="w-20 text-sm font-medium text-neutral-900 dark:text-neutral-100">{token.value}</div>
+              <div className="w-20 text-sm font-medium text-neutral-600">{token.value}</div>
             </div>
           ))}
         </div>

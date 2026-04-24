@@ -5,39 +5,38 @@ import { Notification } from "@/components/ui/Notification";
 import { Badge } from "@/components/ui/Badge";
 
 const STATES = [
-  { 
-    key: "Info", 
-    title: "Info Notification", 
-    message: "Esta es una notificación de información para el usuario." 
+  {
+    key: "Info",
+    title: "Info Notification",
+    message: "Esta es una notificación de información para el usuario."
   },
-  { 
-    key: "Success", 
-    title: "Success Notification", 
-    message: "¡Operación completada con éxito! Los cambios se han guardado." 
+  {
+    key: "Success",
+    title: "Success Notification",
+    message: "¡Operación completada con éxito! Los cambios se han guardado."
   },
-  { 
-    key: "Error", 
-    title: "Error Notification", 
-    message: "Ha ocurrido un error al procesar tu solicitud. Inténtalo de nuevo." 
+  {
+    key: "Error",
+    title: "Error Notification",
+    message: "Ha ocurrido un error al procesar tu solicitud. Inténtalo de nuevo."
   },
-  { 
-    key: "Warning", 
-    title: "Warning Notification", 
-    message: "Atención: Tu sesión expirará pronto por inactividad." 
+  {
+    key: "Warning",
+    title: "Warning Notification",
+    message: "Atención: Tu sesión expirará pronto por inactividad."
   },
 ] as const;
 
 export function NotificationMatrix() {
   return (
-    <div className="space-y-32 mt-16 pb-32 max-w-6xl">
+    <div className="space-y-24 mt-16 pb-16 max-w-7xl">
       {/* Header */}
       <div className="px-8 space-y-4">
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-primary-600 text-white uppercase tracking-widest text-[10px]">Feedback System</Badge>
-          <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500 italic">node-2130-12593</span>
         </div>
-        <h2 className="text-5xl font-black tracking-tighter text-neutral-900 uppercase">In-App Notifications</h2>
-        <p className="text-neutral-500 max-w-2xl text-lg">
+        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Notificaciones</h2>
+        <p className="text-neutral-900 max-w-2xl text-lg">
           Sistema de notificaciones para retroalimentación inmediata del sistema. Soportan múltiples estados semánticos y acciones integradas.
         </p>
       </div>
@@ -50,7 +49,7 @@ export function NotificationMatrix() {
           </div>
 
           {/* Grid Container */}
-          <div className="bg-neutral-50 dark:bg-neutral-100/50 p-10 rounded-[48px] border border-neutral-100 dark:border-neutral-800">
+          <div className="bg-neutral-100 p-10 rounded-[48px] border border-neutral-200 ">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {STATES.map((state) => (
                 <div key={state.key} className="space-y-4">

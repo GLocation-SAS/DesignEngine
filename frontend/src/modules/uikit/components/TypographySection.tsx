@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 const displayVariants = [
   { name: "Display 2XL", size: "72px", weight: "900", lh: "1.1", ls: "-2.16px", class: "text-[length:var(--font-size-display-2xl)] font-black leading-[var(--line-height-display)] tracking-[var(--letter-spacing-display-2xl)]" },
   { name: "Display XL", size: "60px", weight: "900", lh: "1.1", ls: "-1.8px", class: "text-[length:var(--font-size-display-xl)] font-black leading-[var(--line-height-display)] tracking-[var(--letter-spacing-display-xl)]" },
@@ -39,16 +37,16 @@ const labelVariants = [
 
 export function TypographySection() {
   const renderGroup = (title: string, variants: any[]) => (
-    <div className="space-y-12">
+    <div className="space-y-4">
       <div className="flex items-center gap-3 border-l-4 border-primary-500 pl-4">
-        <h3 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">
+        <h3 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-600 dark:text-neutral-900">
           {title}
         </h3>
       </div>
       <div className="space-y-10 pl-5">
         {variants.map((v) => (
           <div key={v.name} className="space-y-2 group">
-            <p className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-primary-500 transition-colors">
+            <p className="text-[10px] uppercase tracking-widest text-neutral-600 group-hover:text-primary-500 transition-colors">
               {v.name} — {v.size} / {v.weight} / {v.lh}x {v.ls ? `/ ${v.ls}` : ""}
             </p>
             <div className={`${v.class} text-neutral-900`}>
@@ -61,18 +59,18 @@ export function TypographySection() {
   );
 
   return (
-    <section id="typography" className="space-y-24 mt-16 pb-32 max-w-6xl">
+    <section id="typography" className="space-y-24 mt-8 pb-8 max-w-7xl">
       {/* Header */}
-      <div className="px-8 space-y-4">
-        <h2 className="text-5xl font-black tracking-tighter text-primary-500 uppercase">
-          Typography System
+      <div className="space-y-4">
+        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">
+          Tipografía
         </h2>
-        <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl text-lg">
-          Our typographic system is designed for maximum readability across all platforms, using <b>Geist Sans</b> as our primary typeface.
+        <p className="text-neutral-900 max-w-2xl text-lg">
+          Sistema de tipografía diseñado para máxima legibilidad en todas las plataformas, usando <b>Geist Sans</b> como nuestra tipografía principal.
         </p>
       </div>
 
-      <div className="px-8 space-y-24">
+      <div className="space-y-24">
         {renderGroup("Display", displayVariants)}
         {renderGroup("Heading", headingVariants)}
         {renderGroup("Title", titleVariants)}

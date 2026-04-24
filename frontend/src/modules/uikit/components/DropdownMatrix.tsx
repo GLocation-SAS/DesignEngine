@@ -31,15 +31,14 @@ const STATES = [
 
 export function DropdownMatrix() {
   return (
-    <div className="space-y-32 mt-16 pb-32 max-w-6xl">
+    <div className="space-y-24 mt-16 pb-16 max-w-7xl">
       {/* Header */}
       <div className="px-8 space-y-4">
         <div className="flex items-center gap-3">
           <Badge className="bg-primary-300 text-primary-500 border-none font-black px-3 py-1 rounded-full uppercase tracking-widest text-[10px]">Form System</Badge>
-          <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500 italic">node-2130-11910</span>
         </div>
-        <h2 className="text-5xl font-black tracking-tighter text-primary-500 uppercase">Dropdown Master</h2>
-        <p className="text-neutral-500 max-w-2xl text-lg">
+        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Dropdown Master</h2>
+        <p className="text-neutral-900 max-w-2xl text-lg">
           Sistema de selección desplegable con soporte para múltiples jerarquías de información y estados dinámicos.
         </p>
       </div>
@@ -48,9 +47,9 @@ export function DropdownMatrix() {
         {SIZES.map((size) => (
           <div key={size.key} className="space-y-12">
             {/* Size Section Header */}
-            <div className="sticky top-20 z-50 bg-white/90 backdrop-blur-md py-6 px-8 border-b border-neutral-100 flex items-center justify-between shadow-sm rounded-t-3xl">
+            <div className="sticky top-20 z-50 bg-neutral-100/50 backdrop-blur-md py-6 px-8 border-b border-neutral-100 flex items-center justify-between shadow-sm rounded-t-3xl w-full md:w-50/100">
               <div className="flex items-center gap-4">
-                <span className="text-4xl font-black text-primary-500 uppercase tracking-tighter">{size.label}</span>
+                <span className="text-3xl font-semibold text-primary-500 dark:text-primary-600 tracking-tighter">{size.label}</span>
                 <Badge className="bg-primary-300 text-primary-500 border-none font-black px-4 py-1 rounded-full text-xs uppercase tracking-widest">Size: {size.key}</Badge>
               </div>
             </div>
@@ -64,15 +63,15 @@ export function DropdownMatrix() {
                   </div>
 
                   {/* Horizontal States container */}
-                  <div className="w-fit bg-white p-10 rounded-[48px] border border-neutral-100 shadow-sm">
-                    <div className="flex gap-16 min-w-max">
+                  <div className="w-full bg-neutral-100 p-6 md:p-10 rounded-[48px] border border-neutral-100 shadow-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16">
                       {STATES.map((state) => (
-                        <div key={`${size.key}-${combo.id}-${state.key}`} className="space-y-6 w-[280px]">
+                        <div key={`${size.key}-${combo.id}-${state.key}`} className="space-y-6 w-full max-w-[320px] mx-auto">
                           <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest block border-b border-neutral-200 dark:border-neutral-800 pb-2 text-center">
                             {state.label}
                           </span>
                           <div className={state.key === "Active" ? "h-[360px] relative z-50" : "relative"}>
-                            <Dropdown 
+                            <Dropdown
                               sizeVariant={size.key}
                               {...combo.props}
                               {...state.props}

@@ -52,9 +52,8 @@ function ColorSwatch({ token, scale, paletteName }: { token: string; scale: numb
       >
         {/* Copied overlay */}
         <div
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-200 ${
-            copied ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-200 ${copied ? "opacity-100" : "opacity-0"
+            }`}
           style={{ backgroundColor: "rgba(0,0,0,0.35)" }}
         >
           <span className="text-white text-[10px] font-bold tracking-widest uppercase">✓ Copiado</span>
@@ -64,7 +63,7 @@ function ColorSwatch({ token, scale, paletteName }: { token: string; scale: numb
       {/* Info */}
       <div className="flex flex-col gap-0.5 px-0.5">
         {/* Scale label */}
-        <span className="text-[11px] font-bold text-neutral-700 dark:text-neutral-300 leading-tight">
+        <span className="text-[11px] font-bold text-neutral-700 leading-tight">
           {paletteName} {scale}
         </span>
 
@@ -72,7 +71,7 @@ function ColorSwatch({ token, scale, paletteName }: { token: string; scale: numb
         <button
           onClick={handleCopy}
           title="Click para copiar"
-          className="text-left text-[10px] font-mono text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 transition-colors duration-150 cursor-pointer truncate"
+          className="text-left text-[10px] font-mono text-neutral-400 dark:text-neutral-900 hover:text-neutral-700 transition-colors duration-150 cursor-pointer truncate"
         >
           {hex || `--color-${token}`}
         </button>
@@ -83,30 +82,30 @@ function ColorSwatch({ token, scale, paletteName }: { token: string; scale: numb
 
 export function ColorsSection() {
   return (
-    <section id="colors" className="space-y-16 mt-16 pb-32 max-w-6xl">
+    <section id="colors" className="space-y-16 mt-8 pb-8 max-w-7xl">
       {/* Header */}
-      <div className="px-8 space-y-4">
-        <h2 className="text-5xl font-black tracking-tighter text-primary-500 uppercase">
+      <div className="space-y-4">
+        <h2 className="text-5xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">
           Color System
         </h2>
-        <p className="text-neutral-500 max-w-2xl text-lg">
+        <p className="text-neutral-900 max-w-2xl text-lg">
           Paleta de colores basada en variables CSS con soporte para modo oscuro. Haz click en el código para copiarlo.
         </p>
       </div>
 
-      <div className="space-y-16 px-8">
+      <div className="space-y-16 ">
         {colorPalettes.map((palette) => (
           <div key={palette.key} className="space-y-6">
             {/* Palette header */}
             <div className="flex items-center gap-3 border-l-4 border-neutral-900 dark:border-white pl-4">
-              <h3 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">
+              <h3 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-900">
                 {palette.name}
               </h3>
             </div>
 
             {/* Swatches container */}
-            <div className="bg-neutral-50 dark:bg-neutral-100/50 p-8 rounded-[48px] border border-neutral-100 dark:border-neutral-800">
-              <div className="grid grid-cols-5 lg:grid-cols-10 gap-4">
+            <div className="bg-neutral-100 p-8 rounded-[48px] border border-neutral-200">
+              <div className="grid grid-cols-2 lg:grid-cols-10 gap-4">
                 {colorScales.map((scale) => {
                   const token = `${palette.key}-${scale}`;
                   return (

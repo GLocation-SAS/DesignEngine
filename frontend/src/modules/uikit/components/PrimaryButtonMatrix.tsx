@@ -22,15 +22,14 @@ const STATES = [
 
 export function PrimaryButtonMatrix() {
   return (
-    <div className="space-y-32 mt-16 pb-32 max-w-6xl">
+    <div className="space-y-24 mt-16 pb-16 max-w-7xl">
       {/* Header */}
       <div className="px-8 space-y-4">
         <div className="flex items-center gap-3">
           <Badge className="bg-primary-300 text-primary-500 border-none font-black px-3 py-1 rounded-full uppercase tracking-widest text-[10px]">Button System</Badge>
-          <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500 italic">node-2130-11365</span>
         </div>
-        <h2 className="text-5xl font-black tracking-tighter text-primary-500 uppercase">Primary Action</h2>
-        <p className="text-neutral-500 max-w-2xl text-lg">
+        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Acciones Primarias</h2>
+        <p className="text-neutral-900 max-w-2xl text-lg">
           Botón principal de la interfaz con soporte para múltiples tamaños, estados semánticos y composiciones con iconos.
         </p>
       </div>
@@ -39,17 +38,17 @@ export function PrimaryButtonMatrix() {
         <div className="space-y-12">
           {/* Section Header */}
           <div className="flex items-center gap-3 border-l-4 border-black dark:border-white pl-4">
-            <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">Variantes y Estados</h4>
+            <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-900">Variantes y Estados</h4>
           </div>
 
           {/* Table Container */}
-          <div className="w-fit bg-white p-10 rounded-[48px] border border-neutral-100 shadow-sm">
+          <div className="w-fit bg-neutral-100/50 p-8 rounded-[48px] border border-neutral-200">
             <table className="w-full border-separate border-spacing-x-8 border-spacing-y-12">
               <thead>
                 <tr>
                   <th className="text-left py-4 px-2"></th>
                   {SIZES.map((s) => (
-                    <th key={s.key} className="text-center text-[10px] font-bold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 py-4 px-2">
+                    <th key={s.key} className="text-center text-[10px] font-bold uppercase tracking-widest text-neutral-600 py-4 px-2">
                       {s.label}
                     </th>
                   ))}
@@ -58,7 +57,7 @@ export function PrimaryButtonMatrix() {
               <tbody>
                 {STATES.map((state) => (
                   <tr key={state.key}>
-                    <td className="text-left text-xs font-black text-neutral-400 dark:text-neutral-500 uppercase tracking-widest pr-8 border-b border-neutral-200/50 dark:border-neutral-800 pb-2">
+                    <td className="text-left text-xs font-black text-neutral-600 uppercase tracking-widest pr-8 border-b border-neutral-200/50 dark:border-neutral-800 pb-2">
                       {state.label}
                     </td>
                     {SIZES.map((size) => (

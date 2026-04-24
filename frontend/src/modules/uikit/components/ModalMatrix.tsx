@@ -22,15 +22,14 @@ export function ModalMatrix() {
   const [activeModal, setActiveModal] = useState<{ state: typeof STATES[number]["key"], size: typeof SIZES[number]["key"] } | null>(null);
 
   return (
-    <div className="space-y-32 mt-16 pb-32 max-w-6xl" id="modals">
+    <div className="space-y-24 mt-16 pb-16 max-w-7xl" id="modals">
       {/* Header */}
       <div className="px-8 space-y-4">
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-black text-white dark:bg-white dark:text-black uppercase tracking-widest text-[10px]">Feedback System</Badge>
-          <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500 italic">node-2130-12444</span>
         </div>
-        <h2 className="text-5xl font-black tracking-tighter text-neutral-900 uppercase">Basic Modals</h2>
-        <p className="text-neutral-500 max-w-2xl text-lg">
+        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Modales</h2>
+        <p className="text-neutral-900 dark:text-primary-700 max-w-2xl text-lg">
           Modales de retroalimentación y confirmación. Soportan múltiples estados semánticos y tamaños adaptables.
         </p>
       </div>
@@ -39,17 +38,17 @@ export function ModalMatrix() {
         <div className="space-y-12">
           {/* Section Header */}
           <div className="flex items-center gap-3 border-l-4 border-black dark:border-white pl-4">
-            <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">Variantes y Tamaños</h4>
+            <h4 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-600 dark:text-neutral-500">Variantes y Tamaños</h4>
           </div>
 
           {/* Table Container */}
-          <div className="overflow-x-auto bg-neutral-50 dark:bg-neutral-100/50 p-10 rounded-[48px] border border-neutral-100 dark:border-neutral-800">
+          <div className="overflow-x-auto bg-neutral-100 p-10 rounded-[48px] border border-neutral-200">
             <table className="w-full border-separate border-spacing-x-8 border-spacing-y-8">
               <thead>
                 <tr>
                   <th className="text-left py-4 px-2"></th>
                   {SIZES.map((s) => (
-                    <th key={s.key} className="text-center text-[10px] font-bold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 py-4 px-2 whitespace-nowrap">
+                    <th key={s.key} className="text-center text-[10px] font-bold uppercase tracking-widest text-neutral-600 py-4 px-2 whitespace-nowrap">
                       {s.label}
                     </th>
                   ))}
@@ -58,13 +57,13 @@ export function ModalMatrix() {
               <tbody>
                 {STATES.map((state) => (
                   <tr key={state.key}>
-                    <td className="text-left text-xs font-black text-neutral-400 dark:text-neutral-500 uppercase tracking-widest pr-8 border-b border-neutral-200/50 dark:border-neutral-800 pb-2 align-middle">
+                    <td className="text-left text-xs font-black text-neutral-600 uppercase tracking-widest pr-8 border-b border-neutral-200/50 dark:border-neutral-800 pb-2 align-middle">
                       {state.label}
                     </td>
                     {SIZES.map((size) => (
                       <td key={`${state.key}-${size.key}`} className="text-center py-2 align-top">
-                        <Button 
-                          variant="neutral" 
+                        <Button
+                          variant="neutral"
                           className="w-full"
                           onClick={() => setActiveModal({ state: state.key, size: size.key })}
                         >

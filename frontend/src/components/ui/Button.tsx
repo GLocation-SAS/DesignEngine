@@ -7,12 +7,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-[#5A3988] text-white hover:bg-[#5C3E91] active:bg-[#4A3174] hover:shadow-[inset_0px_2px_13.1px_0px_#B091DB]",
+        primary: "bg-primary text-white hover:bg-primary-600 active:bg-primary-700 hover:shadow-[inset_0px_2px_13.1px_0px_#B091DB]",
         secondary: "bg-white text-secondary-500 border-2 border-secondary-500 hover:bg-secondary-600 hover:text-white hover:border-transparent hover:shadow-[inset_0px_0px_13.1px_1px_#BFDBFE] active:bg-secondary-700 active:text-white active:border-transparent dark:bg-transparent dark:text-secondary-400 dark:border-secondary-400 dark:hover:bg-secondary-500 dark:active:bg-secondary-600",
-        success: "bg-semantic-background-success-default text-white hover:bg-[#19635B] active:bg-[#134C45] hover:shadow-[inset_0px_0px_13.1px_1px_#9FD5CA]",
-        error: "bg-semantic-background-error-default text-white hover:bg-[#D10035] active:bg-[#A8002A] hover:shadow-[inset_0px_0px_13.1px_1px_#FFA3BF]",
-        info: "bg-semantic-background-info-default text-white hover:bg-[#1D4ED8] active:bg-[#1E40AF] hover:shadow-[inset_0px_0px_13.1px_1px_#BFDBFE]",
-        warning: "bg-semantic-background-warning-default text-white hover:bg-[#B45309] active:bg-[#92400E] hover:shadow-[inset_0px_0px_13.1px_0px_#FDE68A]",
+        success: "bg-semantic-background-success-default text-white hover:bg-success-600 active:bg-success-700 hover:shadow-[inset_0px_0px_13.1px_1px_#9FD5CA]",
+        error: "bg-semantic-background-error-default text-white hover:bg-error-600 active:bg-error-700 hover:shadow-[inset_0px_0px_13.1px_1px_#FFA3BF]",
+        info: "bg-semantic-background-info-default text-white hover:bg-info-600 active:bg-info-700 hover:shadow-[inset_0px_0px_13.1px_1px_#BFDBFE]",
+        warning: "bg-semantic-background-warning-default text-white hover:bg-warning-700 active:bg-warning-800 hover:shadow-[inset_0px_0px_13.1px_0px_#FDE68A]",
         neutral: "bg-semantic-background-neutral-surface text-semantic-text-disabled-default border-2 border-semantic-background-neutral-muted hover:bg-semantic-background-neutral-hover hover:text-semantic-text-on-color hover:border-semantic-background-neutral-hover active:bg-semantic-background-neutral-Pressed active:text-semantic-text-on-color active:border-semantic-background-neutral-Pressed",
         outline: "border-2 border-primary-500 bg-transparent text-primary-500 hover:bg-primary-50 active:bg-primary-100",
         ghost: "bg-transparent hover:bg-neutral-100 text-neutral-700",
@@ -36,23 +36,23 @@ const buttonVariants = cva(
     },
     compoundVariants: [
       // Primary States
-      { variant: "primary", state: "hover", className: "!bg-[#5C3E91] !shadow-[inset_0px_2px_13.1px_0px_#B091DB]" },
-      { variant: "primary", state: "active", className: "!bg-[#4A3174]" },
+      { variant: "primary", state: "hover", className: "!bg-primary-600 !shadow-[inset_0px_2px_13.1px_0px_#B091DB]" },
+      { variant: "primary", state: "active", className: "!bg-primary-700" },
       // Secondary States
       { variant: "secondary", state: "hover", className: "!bg-secondary-600 !text-white !border-transparent !shadow-[inset_0px_0px_13.1px_1px_#BFDBFE]" },
       { variant: "secondary", state: "active", className: "!bg-secondary-700 !text-white !border-transparent" },
       // Success States
-      { variant: "success", state: "hover", className: "!bg-[#19635B] !shadow-[inset_0px_0px_13.1px_1px_#9FD5CA]" },
-      { variant: "success", state: "active", className: "!bg-[#134C45]" },
+      { variant: "success", state: "hover", className: "!bg-success-600 !shadow-[inset_0px_0px_13.1px_1px_#9FD5CA]" },
+      { variant: "success", state: "active", className: "!bg-success-700" },
       // Error States
-      { variant: "error", state: "hover", className: "!bg-[#D10035] !shadow-[inset_0px_0px_13.1px_1px_#FFA3BF]" },
-      { variant: "error", state: "active", className: "!bg-[#A8002A]" },
+      { variant: "error", state: "hover", className: "!bg-error-600 !shadow-[inset_0px_0px_13.1px_1px_#FFA3BF]" },
+      { variant: "error", state: "active", className: "!bg-error-700" },
       // Info States
-      { variant: "info", state: "hover", className: "!bg-[#1D4ED8] !shadow-[inset_0px_0px_13.1px_1px_#BFDBFE]" },
-      { variant: "info", state: "active", className: "!bg-[#1E40AF]" },
+      { variant: "info", state: "hover", className: "!bg-info-600 !shadow-[inset_0px_0px_13.1px_1px_#BFDBFE]" },
+      { variant: "info", state: "active", className: "!bg-info-700" },
       // Warning States
-      { variant: "warning", state: "hover", className: "!bg-[#B45309] !shadow-[inset_0px_0px_13.1px_0px_#FDE68A]" },
-      { variant: "warning", state: "active", className: "!bg-[#92400E]" },
+      { variant: "warning", state: "hover", className: "!bg-warning-700 !shadow-[inset_0px_0px_13.1px_0px_#FDE68A]" },
+      { variant: "warning", state: "active", className: "!bg-warning-700" },
       // Neutral States
       { variant: "neutral", state: "hover", className: "!bg-semantic-background-neutral-hover !text-semantic-text-on-color !border-semantic-background-neutral-hover" },
       { variant: "neutral", state: "active", className: "!bg-semantic-background-neutral-Pressed !text-semantic-text-on-color !border-semantic-background-neutral-Pressed" },
@@ -67,7 +67,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+  VariantProps<typeof buttonVariants> { }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, state, ...props }, ref) => {

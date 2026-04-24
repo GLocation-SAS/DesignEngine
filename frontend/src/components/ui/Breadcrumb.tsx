@@ -50,7 +50,7 @@ const BreadcrumbLink = React.forwardRef<
     <a
       ref={ref}
       className={cn(
-        "inline-flex items-center gap-2 font-['Nunito'] font-medium text-[#5a3988] underline decoration-solid transition-colors hover:text-[#4a2e70] cursor-pointer",
+        "inline-flex items-center gap-2 font-['Nunito'] font-medium text-primary-500 underline decoration-solid transition-colors hover:text-primary-600 cursor-pointer",
         className
       )}
       {...props}
@@ -74,7 +74,7 @@ const BreadcrumbPage = React.forwardRef<
     aria-disabled="true"
     aria-current="page"
     className={cn(
-      "inline-flex items-center gap-2 font-['Nunito'] font-normal text-[#494949] leading-[18px]",
+      "inline-flex items-center gap-2 font-['Nunito'] font-normal text-primary-500 leading-[18px]",
       className
     )}
     {...props}

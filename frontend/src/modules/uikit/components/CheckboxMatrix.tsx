@@ -26,14 +26,13 @@ const STATES = [
 
 export function CheckboxMatrix() {
   return (
-    <div className="space-y-32 mt-16 pb-32 max-w-6xl">
+    <div className="space-y-24 mt-16 pb-16 max-w-7xl">
       {/* Header */}
       <div className="px-8 space-y-4">
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-primary-600 text-white uppercase tracking-widest text-[10px]">Form Controls</Badge>
-          <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500 italic">node-2130-12731</span>
         </div>
-        <h2 className="text-5xl font-black tracking-tighter text-neutral-900 uppercase">Checkbox Architecture</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Checkbox</h2>
         <p className="text-neutral-500 max-w-2xl text-lg">
           Organización vertical por tamaño, detallando todas las combinaciones de composición y estados.
         </p>
@@ -44,8 +43,8 @@ export function CheckboxMatrix() {
           {/* Size Section Header */}
           <div className="sticky top-20 z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-xl py-6 px-8 border-b border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
             <div className="flex items-center gap-4">
-               <span className="text-4xl font-black text-neutral-900 uppercase tracking-tighter">{size.label}</span>
-               <Badge variant="outline" className="bg-primary-50 text-primary-600 border-none font-bold">Size: {size.key}</Badge>
+              <span className="text-4xl font-black text-neutral-900 uppercase tracking-tighter">{size.label}</span>
+              <Badge variant="outline" className="bg-primary-50 text-primary-600 border-none font-bold">Size: {size.key}</Badge>
             </div>
           </div>
 
@@ -58,15 +57,15 @@ export function CheckboxMatrix() {
                 </div>
 
                 {/* States for this specific combination */}
-                <div className="overflow-x-auto bg-neutral-50 dark:bg-neutral-100/50 p-10 rounded-[48px] border border-neutral-100 dark:border-neutral-800">
-                  <div className="flex gap-20 min-w-max items-start">
+                <div className={`${combo.id === 'full' ? 'w-full' : 'overflow-x-auto'} bg-neutral-100/50 p-10 rounded-[48px] border border-neutral-100 dark:border-neutral-800`}>
+                  <div className={combo.id === 'full' ? 'grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12 items-start' : 'flex gap-20 min-w-max items-start'}>
                     {STATES.map((state) => (
-                      <div key={`${size.key}-${combo.id}-${state.key}`} className="space-y-6 w-[200px]">
+                      <div key={`${size.key}-${combo.id}-${state.key}`} className={`space-y-6 ${combo.id === 'full' ? 'w-full' : 'w-[200px]'}`}>
                         <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest block border-b border-neutral-200 dark:border-neutral-800 pb-2 text-center">
                           {state.label}
                         </span>
                         <div className="flex justify-center">
-                          <Checkbox 
+                          <Checkbox
                             sizeVariant={size.key}
                             {...combo.props}
                             {...state.props}
@@ -74,15 +73,15 @@ export function CheckboxMatrix() {
                         </div>
                       </div>
                     ))}
-                    
+
                     {/* Aligned Right variation for the full one */}
                     {combo.id === "full" && (
-                      <div className="space-y-6 w-[220px] ml-12 border-l border-neutral-200 dark:border-neutral-800 pl-12">
+                      <div className={`space-y-6 ${combo.id === 'full' ? 'w-full md:col-span-2 mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-800' : 'w-[220px] ml-12 border-l border-neutral-200 dark:border-neutral-800 pl-12'}`}>
                         <span className="text-[10px] font-bold text-primary-500 uppercase tracking-widest block border-b border-primary-200 pb-2 text-center">
                           Aligned Right
                         </span>
                         <div className="flex justify-center">
-                          <Checkbox 
+                          <Checkbox
                             sizeVariant={size.key}
                             aligned="right"
                             {...combo.props}

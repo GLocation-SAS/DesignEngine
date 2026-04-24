@@ -34,23 +34,23 @@ export const Modal = ({
 
   const stateConfigs = {
     Error: {
-      icon: <AlertCircle size={40} className="text-[#FA003F]" />,
-      bg: "bg-[#FFD1DF]",
+      icon: <AlertCircle size={40} className="text-error-500" />,
+      bg: "bg-error-100",
       buttonVariant: "error" as const,
     },
     Success: {
-      icon: <CheckCircle2 size={50} className="text-[#1F7A6B]" />,
-      bg: "bg-[#CFEAE3]",
+      icon: <CheckCircle2 size={50} className="text-success-500" />,
+      bg: "bg-success-100",
       buttonVariant: "success" as const,
     },
     Warning: {
-      icon: <AlertTriangle size={40} className="text-[#D97706]" />,
-      bg: "bg-[#FEF3C7]",
+      icon: <AlertTriangle size={40} className="text-warning-500" />,
+      bg: "bg-warning-100",
       buttonVariant: "warning" as const,
     },
     Info: {
-      icon: <Info size={40} className="text-[#2563EB]" />,
-      bg: "bg-[#DBEAFE]",
+      icon: <Info size={40} className="text-info-500" />,
+      bg: "bg-info-100",
       buttonVariant: "info" as const,
     },
   };
@@ -91,10 +91,10 @@ export const Modal = ({
 
         {/* Content Area */}
         <div className="text-center flex flex-col items-center w-full">
-          <h3 className="text-[20px] font-semibold text-[#141414] leading-[28px] font-['Montserrat'] mb-2">
+          <h3 className="text-[20px] font-semibold text-neutral-900 dark:text-neutral-50 leading-[28px] mb-2">
             {title}
           </h3>
-          <p className="text-[16px] text-[#141414] leading-[24px] font-['Montserrat'] max-w-[420px] mx-auto">
+          <p className="text-[16px] text-neutral-900 dark:text-neutral-50 leading-[24px] max-w-[420px] mx-auto">
             {description}
           </p>
         </div>
