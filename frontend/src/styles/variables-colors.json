@@ -3,7 +3,7 @@
     "color": {
       "primary": {
         "50": {
-          "value": "#E8F2F7FF",
+          "value": "#F5F0FFFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -15,7 +15,7 @@
           }
         },
         "100": {
-          "value": "#E6DFF5FF",
+          "value": "#E9DDFFFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -27,7 +27,7 @@
           }
         },
         "200": {
-          "value": "#CBB8E8FF",
+          "value": "#D7C0FFFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -39,7 +39,7 @@
           }
         },
         "300": {
-          "value": "#B091DBFF",
+          "value": "#BE93FFFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -51,7 +51,7 @@
           }
         },
         "400": {
-          "value": "#6F4BAEFF",
+          "value": "#9B5EF5FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -63,7 +63,7 @@
           }
         },
         "500": {
-          "value": "#5A3988FF",
+          "value": "#7A35D8FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -75,7 +75,7 @@
           }
         },
         "600": {
-          "value": "#5C3E91FF",
+          "value": "#5F24ADFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -87,7 +87,7 @@
           }
         },
         "700": {
-          "value": "#4A3174FF",
+          "value": "#481B83FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -99,7 +99,7 @@
           }
         },
         "800": {
-          "value": "#382558FF",
+          "value": "#32135EFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -111,7 +111,7 @@
           }
         },
         "900": {
-          "value": "#BBBBBBFF",
+          "value": "#210C3FFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -125,7 +125,7 @@
       },
       "secondary": {
         "50": {
-          "value": "#EEF5F8FF",
+          "value": "#F3FAFDFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -137,7 +137,7 @@
           }
         },
         "100": {
-          "value": "#D7E7EFFF",
+          "value": "#E2F3FAFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -149,7 +149,7 @@
           }
         },
         "200": {
-          "value": "#AFCFDFFF",
+          "value": "#C5E6F3FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -161,7 +161,7 @@
           }
         },
         "300": {
-          "value": "#87B7CFFF",
+          "value": "#96CFE4FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -173,7 +173,7 @@
           }
         },
         "400": {
-          "value": "#2D5F7CFF",
+          "value": "#5DAFCCFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -185,7 +185,7 @@
           }
         },
         "500": {
-          "value": "#1F4459FF",
+          "value": "#2D85A8FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -197,7 +197,7 @@
           }
         },
         "600": {
-          "value": "#254E66FF",
+          "value": "#1F668AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -209,7 +209,7 @@
           }
         },
         "700": {
-          "value": "#1D3D51FF",
+          "value": "#164B68FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -221,7 +221,7 @@
           }
         },
         "800": {
-          "value": "#152C3BFF",
+          "value": "#10384FFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -233,7 +233,7 @@
           }
         },
         "900": {
-          "value": "#0E1B26FF",
+          "value": "#071D2AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -247,7 +247,7 @@
       },
       "neutral": {
         "50": {
-          "value": "#F5F5F5FF",
+          "value": "#FAFAFAFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -259,7 +259,7 @@
           }
         },
         "100": {
-          "value": "#E8E8E8FF",
+          "value": "#F4F4F5FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -271,7 +271,7 @@
           }
         },
         "200": {
-          "value": "#D1D1D1FF",
+          "value": "#E4E4E7FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -283,7 +283,7 @@
           }
         },
         "300": {
-          "value": "#BABABAFF",
+          "value": "#D4D4D8FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -295,7 +295,7 @@
           }
         },
         "400": {
-          "value": "#A3A3A3FF",
+          "value": "#A1A1AAFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -307,7 +307,7 @@
           }
         },
         "500": {
-          "value": "#5B5B5BFF",
+          "value": "#71717AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -319,7 +319,7 @@
           }
         },
         "600": {
-          "value": "#494949FF",
+          "value": "#52525BFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -331,7 +331,7 @@
           }
         },
         "700": {
-          "value": "#383838FF",
+          "value": "#3F3F46FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -343,7 +343,7 @@
           }
         },
         "800": {
-          "value": "#262626FF",
+          "value": "#27272AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -355,7 +355,7 @@
           }
         },
         "900": {
-          "value": "#141414FF",
+          "value": "#18181BFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -379,7 +379,7 @@
           }
         },
         "black": {
-          "value": "#111827FF",
+          "value": "#111111FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -393,7 +393,7 @@
       },
       "warning": {
         "50": {
-          "value": "#FFFBEBFF",
+          "value": "#FFF9E6FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -405,7 +405,7 @@
           }
         },
         "100": {
-          "value": "#FEF3C7FF",
+          "value": "#FFF0B8FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -417,7 +417,7 @@
           }
         },
         "200": {
-          "value": "#FDE68AFF",
+          "value": "#FFE27AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -429,7 +429,7 @@
           }
         },
         "300": {
-          "value": "#FCD34DFF",
+          "value": "#FFD13DFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -441,7 +441,7 @@
           }
         },
         "400": {
-          "value": "#D97706FF",
+          "value": "#F7B718FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -465,7 +465,7 @@
           }
         },
         "600": {
-          "value": "#D97706FF",
+          "value": "#B85F05FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -477,18 +477,6 @@
           }
         },
         "700": {
-          "value": "#B45309FF",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "light"
-            }
-          }
-        },
-        "800": {
           "value": "#92400EFF",
           "type": "color",
           "scope": [
@@ -500,8 +488,20 @@
             }
           }
         },
-        "900": {
+        "800": {
           "value": "#78350FFF",
+          "type": "color",
+          "scope": [
+            "ALL_SCOPES"
+          ],
+          "$extensions": {
+            "tokens-studio": {
+              "mode": "light"
+            }
+          }
+        },
+        "900": {
+          "value": "#451A03FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -563,7 +563,7 @@
           }
         },
         "400": {
-          "value": "#1D4ED8FF",
+          "value": "#60A5FAFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -587,18 +587,6 @@
           }
         },
         "600": {
-          "value": "#2563EBFF",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "light"
-            }
-          }
-        },
-        "700": {
           "value": "#1D4ED8FF",
           "type": "color",
           "scope": [
@@ -610,7 +598,7 @@
             }
           }
         },
-        "800": {
+        "700": {
           "value": "#1E40AFFF",
           "type": "color",
           "scope": [
@@ -622,8 +610,20 @@
             }
           }
         },
-        "900": {
+        "800": {
           "value": "#1E3A8AFF",
+          "type": "color",
+          "scope": [
+            "ALL_SCOPES"
+          ],
+          "$extensions": {
+            "tokens-studio": {
+              "mode": "light"
+            }
+          }
+        },
+        "900": {
+          "value": "#172554FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -637,7 +637,7 @@
       },
       "success": {
         "50": {
-          "value": "#E8F6EFFF",
+          "value": "#ECFDF5FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -649,7 +649,7 @@
           }
         },
         "100": {
-          "value": "#CFEAE3FF",
+          "value": "#D1FAE5FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -661,7 +661,7 @@
           }
         },
         "200": {
-          "value": "#9FD5CAFF",
+          "value": "#A7F3D0FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -673,7 +673,7 @@
           }
         },
         "300": {
-          "value": "#6FBFAFFF",
+          "value": "#6EE7B7FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -685,7 +685,7 @@
           }
         },
         "400": {
-          "value": "#1F7A6BFF",
+          "value": "#34D399FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -697,7 +697,7 @@
           }
         },
         "500": {
-          "value": "#1F7A6BFF",
+          "value": "#10B981FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -709,7 +709,7 @@
           }
         },
         "600": {
-          "value": "#19635BFF",
+          "value": "#059669FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -721,7 +721,7 @@
           }
         },
         "700": {
-          "value": "#134C45FF",
+          "value": "#047857FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -733,7 +733,7 @@
           }
         },
         "800": {
-          "value": "#0D3531FF",
+          "value": "#065F46FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -745,7 +745,7 @@
           }
         },
         "900": {
-          "value": "#071E1EFF",
+          "value": "#064E3BFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -759,7 +759,7 @@
       },
       "error": {
         "50": {
-          "value": "#FFE8EFFF",
+          "value": "#FFF1F2FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -771,7 +771,7 @@
           }
         },
         "100": {
-          "value": "#FFD1DFFF",
+          "value": "#FFE4E8FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -783,7 +783,7 @@
           }
         },
         "200": {
-          "value": "#FFA3BFFF",
+          "value": "#FECDD5FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -795,7 +795,7 @@
           }
         },
         "300": {
-          "value": "#FF759FFF",
+          "value": "#FDA4B4FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -807,7 +807,7 @@
           }
         },
         "400": {
-          "value": "#D10035FF",
+          "value": "#FB7185FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -819,7 +819,7 @@
           }
         },
         "500": {
-          "value": "#FA003FFF",
+          "value": "#E11D48FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -831,7 +831,7 @@
           }
         },
         "600": {
-          "value": "#D10035FF",
+          "value": "#BE123CFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -843,7 +843,7 @@
           }
         },
         "700": {
-          "value": "#A8002AFF",
+          "value": "#9F1239FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -855,7 +855,7 @@
           }
         },
         "800": {
-          "value": "#7F0020FF",
+          "value": "#881337FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -867,7 +867,7 @@
           }
         },
         "900": {
-          "value": "#570015FF",
+          "value": "#4C0519FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1267,7 +1267,7 @@
     "color": {
       "primary": {
         "50": {
-          "value": "#382558FF",
+          "value": "#211536FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1279,7 +1279,7 @@
           }
         },
         "100": {
-          "value": "#4A3174FF",
+          "value": "#2F1B4DFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1291,7 +1291,7 @@
           }
         },
         "200": {
-          "value": "#5C3E91FF",
+          "value": "#3E2565FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1303,7 +1303,7 @@
           }
         },
         "300": {
-          "value": "#5A3988FF",
+          "value": "#513180FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1315,7 +1315,7 @@
           }
         },
         "400": {
-          "value": "#6F4BAEFF",
+          "value": "#6B42A3FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1327,7 +1327,7 @@
           }
         },
         "500": {
-          "value": "#B091DBFF",
+          "value": "#8A5BD0FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1339,7 +1339,7 @@
           }
         },
         "600": {
-          "value": "#B091DBFF",
+          "value": "#A77BE8FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1351,7 +1351,7 @@
           }
         },
         "700": {
-          "value": "#CBB8E8FF",
+          "value": "#C19BFAFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1363,7 +1363,7 @@
           }
         },
         "800": {
-          "value": "#E6DFF5FF",
+          "value": "#D8C1FFFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1375,7 +1375,7 @@
           }
         },
         "900": {
-          "value": "#F4F1FAFF",
+          "value": "#EFE6FFFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1389,7 +1389,7 @@
       },
       "secondary": {
         "50": {
-          "value": "#0E1B26FF",
+          "value": "#071D2AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1401,7 +1401,7 @@
           }
         },
         "100": {
-          "value": "#152C3BFF",
+          "value": "#0B2A3CFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1413,7 +1413,7 @@
           }
         },
         "200": {
-          "value": "#1D3D51FF",
+          "value": "#10384FFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1425,7 +1425,7 @@
           }
         },
         "300": {
-          "value": "#254E66FF",
+          "value": "#164B68FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1437,7 +1437,7 @@
           }
         },
         "400": {
-          "value": "#1F4459FF",
+          "value": "#1F668AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1449,7 +1449,7 @@
           }
         },
         "500": {
-          "value": "#2D5F7CFF",
+          "value": "#2D85A8FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1461,7 +1461,7 @@
           }
         },
         "600": {
-          "value": "#87B7CFFF",
+          "value": "#5DAFCCFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1473,7 +1473,7 @@
           }
         },
         "700": {
-          "value": "#AFCFDFFF",
+          "value": "#96CFE4FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1485,7 +1485,7 @@
           }
         },
         "800": {
-          "value": "#D7E7EFFF",
+          "value": "#C5E6F3FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1497,7 +1497,7 @@
           }
         },
         "900": {
-          "value": "#EEF5F8FF",
+          "value": "#E2F3FAFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1511,7 +1511,7 @@
       },
       "neutral": {
         "50": {
-          "value": "#141414FF",
+          "value": "#111111FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1523,7 +1523,7 @@
           }
         },
         "100": {
-          "value": "#262626FF",
+          "value": "#1C1C1EFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1535,7 +1535,7 @@
           }
         },
         "200": {
-          "value": "#383838FF",
+          "value": "#2A2A2DFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1547,7 +1547,7 @@
           }
         },
         "300": {
-          "value": "#494949FF",
+          "value": "#3A3A3EFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1559,7 +1559,7 @@
           }
         },
         "400": {
-          "value": "#5B5B5BFF",
+          "value": "#52525BFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1571,7 +1571,7 @@
           }
         },
         "500": {
-          "value": "#A3A3A3FF",
+          "value": "#71717AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1583,7 +1583,7 @@
           }
         },
         "600": {
-          "value": "#BABABAFF",
+          "value": "#A1A1AAFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1595,7 +1595,7 @@
           }
         },
         "700": {
-          "value": "#D1D1D1FF",
+          "value": "#D4D4D8FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1607,7 +1607,7 @@
           }
         },
         "800": {
-          "value": "#E8E8E8FF",
+          "value": "#E4E4E7FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1619,7 +1619,7 @@
           }
         },
         "900": {
-          "value": "#F5F5F5FF",
+          "value": "#F4F4F5FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1657,7 +1657,7 @@
       },
       "warning": {
         "50": {
-          "value": "#FFFBEBFF",
+          "value": "#2A1603FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1669,7 +1669,7 @@
           }
         },
         "100": {
-          "value": "#FEF3C7FF",
+          "value": "#3F2104FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1681,7 +1681,7 @@
           }
         },
         "200": {
-          "value": "#FDE68AFF",
+          "value": "#5A3006FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1693,7 +1693,7 @@
           }
         },
         "300": {
-          "value": "#FCD34DFF",
+          "value": "#7A4308FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1705,7 +1705,7 @@
           }
         },
         "400": {
-          "value": "#FCD970FF",
+          "value": "#9A5A0AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1729,7 +1729,7 @@
           }
         },
         "600": {
-          "value": "#D97706FF",
+          "value": "#F59E0BFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1741,7 +1741,7 @@
           }
         },
         "700": {
-          "value": "#B45309FF",
+          "value": "#FBBF24FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1753,7 +1753,7 @@
           }
         },
         "800": {
-          "value": "#92400EFF",
+          "value": "#FCD970FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1765,7 +1765,7 @@
           }
         },
         "900": {
-          "value": "#78350FFF",
+          "value": "#FFF0B8FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1779,7 +1779,7 @@
       },
       "info": {
         "50": {
-          "value": "#EFF6FFFF",
+          "value": "#0B1B3AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1791,7 +1791,7 @@
           }
         },
         "100": {
-          "value": "#DBEAFEFF",
+          "value": "#102A56FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1803,7 +1803,7 @@
           }
         },
         "200": {
-          "value": "#BFDBFEFF",
+          "value": "#163B75FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1815,7 +1815,7 @@
           }
         },
         "300": {
-          "value": "#93C5FDFF",
+          "value": "#1D4E9AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1827,7 +1827,7 @@
           }
         },
         "400": {
-          "value": "#93C5FDFF",
+          "value": "#2563EBFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1839,7 +1839,7 @@
           }
         },
         "500": {
-          "value": "#2563EBFF",
+          "value": "#3B82F6FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1851,7 +1851,7 @@
           }
         },
         "600": {
-          "value": "#2563EBFF",
+          "value": "#60A5FAFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1863,7 +1863,7 @@
           }
         },
         "700": {
-          "value": "#1D4ED8FF",
+          "value": "#93C5FDFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1875,7 +1875,7 @@
           }
         },
         "800": {
-          "value": "#1E40AFFF",
+          "value": "#BFDBFEFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1887,7 +1887,7 @@
           }
         },
         "900": {
-          "value": "#1E3A8AFF",
+          "value": "#DBEAFEFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1901,7 +1901,7 @@
       },
       "success": {
         "50": {
-          "value": "#E8F6EFFF",
+          "value": "#041F1AFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1913,7 +1913,7 @@
           }
         },
         "100": {
-          "value": "#CFEAE3FF",
+          "value": "#07352CFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1925,7 +1925,7 @@
           }
         },
         "200": {
-          "value": "#9FD5CAFF",
+          "value": "#0B4A3DFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1937,7 +1937,7 @@
           }
         },
         "300": {
-          "value": "#6FBFAFFF",
+          "value": "#11614FFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1949,7 +1949,7 @@
           }
         },
         "400": {
-          "value": "#5FBCA4FF",
+          "value": "#168568FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1961,7 +1961,7 @@
           }
         },
         "500": {
-          "value": "#1F7A6BFF",
+          "value": "#10B981FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1973,7 +1973,7 @@
           }
         },
         "600": {
-          "value": "#19635BFF",
+          "value": "#34D399FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1985,7 +1985,7 @@
           }
         },
         "700": {
-          "value": "#134C45FF",
+          "value": "#6EE7B7FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -1997,7 +1997,7 @@
           }
         },
         "800": {
-          "value": "#0D3531FF",
+          "value": "#A7F3D0FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2009,7 +2009,7 @@
           }
         },
         "900": {
-          "value": "#071E1EFF",
+          "value": "#D1FAE5FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2023,7 +2023,7 @@
       },
       "error": {
         "50": {
-          "value": "#FFE8EFFF",
+          "value": "#2A0610FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2035,7 +2035,7 @@
           }
         },
         "100": {
-          "value": "#FFD1DFFF",
+          "value": "#3F0A18FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2047,7 +2047,7 @@
           }
         },
         "200": {
-          "value": "#FFA3BFFF",
+          "value": "#5C1023FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2059,7 +2059,7 @@
           }
         },
         "300": {
-          "value": "#FF759FFF",
+          "value": "#7A1730FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2071,7 +2071,7 @@
           }
         },
         "400": {
-          "value": "#FF7AA3FF",
+          "value": "#A61D3DFF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2083,7 +2083,7 @@
           }
         },
         "500": {
-          "value": "#FA003FFF",
+          "value": "#E11D48FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2095,7 +2095,7 @@
           }
         },
         "600": {
-          "value": "#D10035FF",
+          "value": "#FB7185FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2107,7 +2107,7 @@
           }
         },
         "700": {
-          "value": "#A8002AFF",
+          "value": "#FDA4B4FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2119,7 +2119,7 @@
           }
         },
         "800": {
-          "value": "#7F0020FF",
+          "value": "#FECDD5FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -2131,7 +2131,7 @@
           }
         },
         "900": {
-          "value": "#570015FF",
+          "value": "#FFE4E8FF",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -3628,1112 +3628,6 @@
         "$extensions": {
           "tokens-studio": {
             "mode": "light"
-          }
-        }
-      }
-    }
-  },
-  "semantics-dark": {
-    "background": {
-      "primary": {
-        "default": {
-          "value": "{color.primary.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "hover": {
-          "value": "{color.primary.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "pressed": {
-          "value": "{color.primary.700}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "surface": {
-          "value": "{color.primary.900}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "secondary": {
-        "default": {
-          "value": "{color.secondary.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "hover": {
-          "value": "{color.secondary.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "pressed": {
-          "value": "{color.secondary.700}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "surface": {
-          "value": "{color.secondary.900}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "neutral": {
-        "default": {
-          "value": "{color.neutral.900}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "hover": {
-          "value": "{color.neutral.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "Pressed": {
-          "value": "{color.neutral.800}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "surface": {
-          "value": "{color.neutral.800}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "muted": {
-          "value": "{color.neutral.700}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "disabled": {
-        "default": {
-          "value": "{color.neutral.700}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "hover": {
-          "value": "{color.neutral.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "pressed": {
-          "value": "{color.neutral.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "surface": {
-          "value": "{color.neutral.800}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "success": {
-        "default": {
-          "value": "{color.success.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "hover": {
-          "value": "{color.success.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "pressed": {
-          "value": "{color.success.700}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "surface": {
-          "value": "{color.success.800}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "warning": {
-        "default": {
-          "value": "{color.warning.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "hover": {
-          "value": "{color.warning.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "pressed": {
-          "value": "{color.warning.700}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "surface": {
-          "value": "{color.warning.800}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "error": {
-        "default": {
-          "value": "{color.error.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "hover": {
-          "value": "{color.error.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "pressed": {
-          "value": "{color.error.700}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "surface": {
-          "value": "{color.error.800}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "info": {
-        "default": {
-          "value": "{color.info.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "hover": {
-          "value": "{color.info.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "pressed": {
-          "value": "{color.info.700}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "surface": {
-          "value": "{color.info.800}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      }
-    },
-    "text": {
-      "primary": {
-        "default": {
-          "value": "{color.neutral.50}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "secondary": {
-        "default": {
-          "value": "{color.neutral.50}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "neutral": {
-        "primary": {
-          "value": "{color.neutral.100}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "secondary": {
-          "value": "{color.neutral.200}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "brand": {
-          "value": "{color.primary.100}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "disabled": {
-        "default": {
-          "value": "{color.neutral.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "secondary": {
-          "value": "{color.neutral.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "success": {
-        "default": {
-          "value": "{color.success.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "warning": {
-        "default": {
-          "value": "{color.warning.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "error": {
-        "default": {
-          "value": "{color.error.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "info": {
-        "default": {
-          "value": "{color.info.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "on-color": {
-        "value": "{color.neutral.white}",
-        "type": "color",
-        "scope": [
-          "ALL_SCOPES"
-        ],
-        "$extensions": {
-          "tokens-studio": {
-            "mode": "dark"
-          }
-        }
-      },
-      "on-light": {
-        "value": "{color.neutral.900}",
-        "type": "color",
-        "scope": [
-          "ALL_SCOPES"
-        ],
-        "$extensions": {
-          "tokens-studio": {
-            "mode": "dark"
-          }
-        }
-      }
-    },
-    "border": {
-      "primary": {
-        "default": {
-          "value": "{color.primary.400}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "secondary": {
-        "default": {
-          "value": "{color.secondary.400}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "neutral": {
-        "default": {
-          "value": "{color.neutral.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "subtle": {
-          "value": "{color.neutral.700}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "strong": {
-          "value": "{color.neutral.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "disabled": {
-        "default": {
-          "value": "{color.neutral.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "subtle": {
-          "value": "{color.neutral.700}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "strong": {
-          "value": "{color.neutral.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "success": {
-        "default": {
-          "value": "{color.success.400}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "warning": {
-        "default": {
-          "value": "{color.warning.400}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "error": {
-        "default": {
-          "value": "{color.error.400}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "info": {
-        "default": {
-          "value": "{color.info.400}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      }
-    },
-    "icon": {
-      "primary": {
-        "default": {
-          "value": "{color.primary.400}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "light": {
-          "value": "{color.primary.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "strong": {
-          "value": "{color.primary.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "secondary": {
-        "default": {
-          "value": "{color.secondary.400}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "light": {
-          "value": "{color.secondary.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "strong": {
-          "value": "{color.secondary.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "neutral": {
-        "primary": {
-          "value": "{color.neutral.200}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "secondary": {
-          "value": "{color.neutral.400}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "light": {
-          "value": "{color.neutral.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "strong": {
-          "value": "{color.neutral.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "disabled": {
-        "default": {
-          "value": "{color.neutral.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "secondary": {
-          "value": "{color.neutral.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "light": {
-          "value": "{color.neutral.600}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "strong": {
-          "value": "{color.neutral.400}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "success": {
-        "default": {
-          "value": "{color.success.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "light": {
-          "value": "{color.success.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "strong": {
-          "value": "{color.success.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "warning": {
-        "default": {
-          "value": "{color.warning.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "light": {
-          "value": "{color.warning.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "strong": {
-          "value": "{color.warning.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "error": {
-        "default": {
-          "value": "{color.error.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "light": {
-          "value": "{color.error.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "strong": {
-          "value": "{color.error.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "info": {
-        "default": {
-          "value": "{color.info.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "light": {
-          "value": "{color.info.300}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        },
-        "strong": {
-          "value": "{color.info.500}",
-          "type": "color",
-          "scope": [
-            "ALL_SCOPES"
-          ],
-          "$extensions": {
-            "tokens-studio": {
-              "mode": "dark"
-            }
-          }
-        }
-      },
-      "on-color": {
-        "value": "{color.neutral.white}",
-        "type": "color",
-        "scope": [
-          "ALL_SCOPES"
-        ],
-        "$extensions": {
-          "tokens-studio": {
-            "mode": "dark"
-          }
-        }
-      },
-      "on-light": {
-        "value": "{color.neutral.900}",
-        "type": "color",
-        "scope": [
-          "ALL_SCOPES"
-        ],
-        "$extensions": {
-          "tokens-studio": {
-            "mode": "dark"
           }
         }
       }

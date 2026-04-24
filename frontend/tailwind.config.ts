@@ -63,7 +63,7 @@ const config: Config = {
           'background-secondary-surface': 'var(--semantic-background-secondary-surface)',
           'background-neutral-default': 'var(--semantic-background-neutral-default)',
           'background-neutral-hover': 'var(--semantic-background-neutral-hover)',
-          'background-neutral-Pressed': 'var(--semantic-background-neutral-Pressed)',
+          'background-neutral-pressed': 'var(--semantic-background-neutral-pressed)',
           'background-neutral-surface': 'var(--semantic-background-neutral-surface)',
           'background-neutral-muted': 'var(--semantic-background-neutral-muted)',
           'background-disabled-default': 'var(--semantic-background-disabled-default)',
