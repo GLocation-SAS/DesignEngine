@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/context/ThemeContext";
 
 const colorScales = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 const colorPalettes = [
@@ -14,23 +15,58 @@ const colorPalettes = [
   { name: "Info", key: "info" },
 ];
 
+const baseColors = [
+  { name: "White", token: "neutral-white" },
+  { name: "Black", token: "neutral-black" },
+];
+
 function resolveColor(token: string): string {
   if (typeof window === "undefined") return "";
   const style = getComputedStyle(document.documentElement);
   const value = style.getPropertyValue(`--color-${token}`).trim();
+  
+  // Si es RGB, convertir a HEX para mejor visualización
+  if (value.startsWith("rgb")) {
+    const match = value.match(/\d+/g);
+    if (match && match.length >= 3) {
+      const r = parseInt(match[0]);
+      const g = parseInt(match[1]);
+      const b = parseInt(match[2]);
+      return `#${((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1).toUpperCase()}`;
+    }
+  }
+  
   return value;
 }
 
-function ColorSwatch({ token, scale, paletteName }: { token: string; scale: number; paletteName: string }) {
+function ColorSwatch({ token, scale, paletteName }: { token: string; scale?: number | string; paletteName: string }) {
+  const { theme } = useTheme();
   const [hex, setHex] = useState("");
   const [copied, setCopied] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    // Resolve after mount so CSS vars are available
-    const raw = resolveColor(token);
-    setHex(raw.toUpperCase());
-  }, [token]);
+    const updateHex = () => {
+      const raw = resolveColor(token);
+      setHex(raw.toUpperCase());
+    };
+
+    // Resolución inicial
+    updateHex();
+
+    // Observar cambios en la clase del documentElement (dark mode toggle)
+    const observer = new MutationObserver(() => {
+      // Pequeño delay para asegurar que las variables CSS se han actualizado en el DOM
+      setTimeout(updateHex, 0);
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, [token, theme]);
 
   const handleCopy = () => {
     const textToCopy = hex || `var(--color-${token})`;
@@ -41,8 +77,7 @@ function ColorSwatch({ token, scale, paletteName }: { token: string; scale: numb
     });
   };
 
-  // Determine if text should be dark or light based on the scale
-  const isLight = scale <= 200;
+
 
   return (
     <div className="group flex flex-col gap-2">
@@ -57,8 +92,8 @@ function ColorSwatch({ token, scale, paletteName }: { token: string; scale: numb
         <div
           className={cn(
             "absolute inset-0 flex items-center justify-center transition-all duration-300 backdrop-blur-[2px]",
-            copied 
-              ? "opacity-100 translate-y-0" 
+            copied
+              ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-1 pointer-events-none invisible"
           )}
           style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
@@ -73,7 +108,7 @@ function ColorSwatch({ token, scale, paletteName }: { token: string; scale: numb
       <div className="flex flex-col gap-0.5 px-0.5">
         {/* Scale label */}
         <span className="text-[11px] font-bold text-neutral-700 leading-tight">
-          {paletteName} {scale}
+          {paletteName} {scale ?? ""}
         </span>
 
         {/* Hex code — click to copy */}
@@ -130,6 +165,26 @@ export function ColorsSection() {
             </div>
           </div>
         ))}
+
+        {/* Base Colors Section */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-3 border-l-4 border-neutral-900 dark:border-white pl-4">
+            <h3 className="text-sm font-black uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-900">
+              Base Colors
+            </h3>
+          </div>
+          <div className="bg-neutral-100 p-8 rounded-[48px] border border-neutral-200">
+            <div className="grid grid-cols-2 lg:grid-cols-10 gap-4">
+              {baseColors.map((color) => (
+                <ColorSwatch
+                  key={color.token}
+                  token={color.token}
+                  paletteName={color.name}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
