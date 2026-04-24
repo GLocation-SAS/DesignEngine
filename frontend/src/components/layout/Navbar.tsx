@@ -16,7 +16,7 @@ export function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-surface-200 bg-white/80 backdrop-blur-lg dark:border-surface-800 dark:bg-surface-950/80">
+    <header className="sticky top-0 z-50 border-b border-surface-200 bg-neutral-50 backdrop-blur-lg dark:border-neutral-200">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link
@@ -38,7 +38,7 @@ export function Navbar() {
               />
             </svg>
           </div>
-          <span className="text-lg font-bold tracking-tight text-surface-900 dark:text-white">
+          <span className="text-lg font-bold tracking-tight text-neutral-900">
             Design<span className="gradient-text">Engine</span>
           </span>
         </Link>
@@ -52,8 +52,8 @@ export function Navbar() {
                 className={cn(
                   "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                   isActive(ROUTES.dashboard)
-                    ? "bg-primary-50 text-primary-700 dark:bg-primary-950/30 dark:text-primary-400"
-                    : "text-surface-600 hover:bg-surface-100 hover:text-surface-900 dark:text-surface-400 dark:hover:bg-surface-800 dark:hover:text-surface-200"
+                    ? "bg-primary-50 text-primary-700 dark:bg-primary-100 dark:text-primary-800"
+                    : "text-neutral-900 hover:bg-surface-100 dark:hover:bg-neutral-200"
                 )}
               >
                 Dashboard
@@ -63,8 +63,8 @@ export function Navbar() {
                 className={cn(
                   "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                   isActive("/uikit")
-                    ? "bg-primary-50 text-primary-700 dark:bg-primary-950/30 dark:text-primary-400"
-                    : "text-surface-600 hover:bg-surface-100 hover:text-surface-900 dark:text-surface-400 dark:hover:bg-surface-800 dark:hover:text-surface-200"
+                    ? "bg-primary-50 text-primary-700 dark:bg-primary-100 dark:text-primary-800"
+                    : "text-neutral-900 hover:bg-surface-100 dark:hover:bg-neutral-200"
                 )}
               >
                 UI Kit
@@ -97,7 +97,7 @@ export function Navbar() {
         {/* Mobile menu button */}
         <button
           id="mobile-menu-toggle"
-          className="inline-flex items-center justify-center rounded-lg p-2 text-surface-600 hover:bg-surface-100 md:hidden dark:text-surface-400 dark:hover:bg-surface-800"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-neutral-900 hover:bg-surface-100 md:hidden dark:hover:bg-neutral-200"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -127,12 +127,12 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="animate-slide-down border-t border-surface-200 bg-white px-4 py-4 md:hidden dark:border-surface-800 dark:bg-surface-950">
+        <div className="animate-slide-down border-t border-surface-200 bg-white px-4 py-4 md:hidden dark:border-neutral-200 dark:bg-neutral-100">
           {user ? (
             <div className="flex flex-col gap-2">
               <Link
                 href={ROUTES.dashboard}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-surface-600 hover:bg-surface-100 dark:text-surface-400 dark:hover:bg-surface-800"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-neutral-900 hover:bg-surface-100 dark:hover:bg-neutral-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Dashboard
@@ -152,7 +152,7 @@ export function Navbar() {
           ) : (
             <div className="flex flex-col gap-2">
               <Link href={ROUTES.login} onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="ghost" size="sm" fullWidth>
+                <Button variant="ghost" size="sm" fullWidth className="text-neutral-900">
                   Iniciar sesión
                 </Button>
               </Link>
