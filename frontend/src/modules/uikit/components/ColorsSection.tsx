@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const colorScales = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 const colorPalettes = [
@@ -47,16 +48,24 @@ function ColorSwatch({ token, scale, paletteName }: { token: string; scale: numb
     <div className="group flex flex-col gap-2">
       {/* Swatch */}
       <div
-        className="relative h-16 w-full rounded-xl transition-transform duration-150 group-hover:scale-105 overflow-hidden"
+        onClick={handleCopy}
+        className="relative h-16 w-full rounded-xl transition-transform duration-150 group-hover:scale-105 overflow-hidden cursor-pointer shadow-sm hover:shadow-md"
         style={{ backgroundColor: `var(--color-${token})` }}
+        title={`Copiar ${hex || `--color-${token}`}`}
       >
         {/* Copied overlay */}
         <div
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-200 ${copied ? "opacity-100" : "opacity-0"
-            }`}
-          style={{ backgroundColor: "rgba(0,0,0,0.35)" }}
+          className={cn(
+            "absolute inset-0 flex items-center justify-center transition-all duration-300 backdrop-blur-[2px]",
+            copied 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-1 pointer-events-none invisible"
+          )}
+          style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
         >
-          <span className="text-white text-[10px] font-bold tracking-widest uppercase">✓ Copiado</span>
+          <span className="text-white text-[10px] font-black tracking-[0.2em] uppercase drop-shadow-sm">
+            ✓ Copiado
+          </span>
         </div>
       </div>
 
