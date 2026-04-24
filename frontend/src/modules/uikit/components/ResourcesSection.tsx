@@ -16,7 +16,8 @@ export function ResourcesSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Automation GIF */}
         <div className="group relative bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
           <div className="aspect-video bg-white relative flex items-center justify-center p-4">
             <img 
@@ -41,6 +42,40 @@ export function ResourcesSection() {
             </div>
           </div>
         </div>
+
+        {/* Logos Section - New */}
+        {[
+          { id: "symbol", title: "Símbolo Isotipo", format: "PNG", src: "/logos/logo-symbol.png" },
+          { id: "h-white", title: "Logo Horizontal (Light)", format: "PNG", src: "/logos/logo-horizontal-white.png" },
+          { id: "h-blue", title: "Logo Horizontal (Dark)", format: "PNG", src: "/logos/logo-horizontal-blue.png" },
+          { id: "v-blue", title: "Logo Vertical (Dark)", format: "PNG", src: "/logos/logo-vertical-blue.png" },
+          { id: "v-purple", title: "Logo Vertical (Purple)", format: "PNG", src: "/logos/logo-vertical-purple.png" },
+        ].map((logo) => (
+          <div key={logo.id} className="group relative bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+            <div className="aspect-video bg-neutral-50 dark:bg-neutral-900 relative flex items-center justify-center p-8">
+              <img 
+                src={logo.src} 
+                alt={logo.title} 
+                className="max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div className="p-6 space-y-4">
+              <div className="space-y-1">
+                <h4 className="text-lg font-bold text-neutral-900">{logo.title}</h4>
+                <p className="text-xs text-neutral-500 dark:text-neutral-400">Recurso oficial para uso en aplicaciones.</p>
+              </div>
+              <div className="flex items-center justify-between pt-2">
+                <span className="text-[10px] font-black uppercase tracking-widest text-neutral-400">{logo.format}</span>
+                <a href={logo.src} download={logo.src.split('/').pop()}>
+                  <Button variant="outline" size="sm" className="gap-2">
+                    <Download className="w-4 h-4" />
+                    Download
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

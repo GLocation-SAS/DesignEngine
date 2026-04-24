@@ -13,16 +13,16 @@ const buttonVariants = cva(
         error: "bg-semantic-background-error-default text-white hover:bg-[#D10035] active:bg-[#A8002A] hover:shadow-[inset_0px_0px_13.1px_1px_#FFA3BF]",
         info: "bg-semantic-background-info-default text-white hover:bg-[#1D4ED8] active:bg-[#1E40AF] hover:shadow-[inset_0px_0px_13.1px_1px_#BFDBFE]",
         warning: "bg-semantic-background-warning-default text-white hover:bg-[#B45309] active:bg-[#92400E] hover:shadow-[inset_0px_0px_13.1px_0px_#FDE68A]",
-        neutral: "bg-white dark:bg-neutral-900 text-[#a3a3a3] border-2 border-[#e8e8e8] hover:bg-[#5b5b5b] hover:text-white hover:border-[#5b5b5b] active:bg-[#383838] active:text-white active:border-[#383838]",
+        neutral: "bg-semantic-background-neutral-surface text-semantic-text-disabled-default border-2 border-semantic-background-neutral-muted hover:bg-semantic-background-neutral-hover hover:text-semantic-text-on-color hover:border-semantic-background-neutral-hover active:bg-semantic-background-neutral-Pressed active:text-semantic-text-on-color active:border-semantic-background-neutral-Pressed",
         outline: "border-2 border-primary-500 bg-transparent text-primary-500 hover:bg-primary-50 active:bg-primary-100",
         ghost: "bg-transparent hover:bg-neutral-100 text-neutral-700",
         glass: "glass bg-white/10 backdrop-blur-md border border-white/20 text-neutral-900 hover:bg-white/20 shadow-glow",
       },
       size: {
-        default: "h-11 px-4 py-2 gap-2 text-base",
-        sm: "h-10 px-3 py-1.5 gap-1.5 text-sm",
-        lg: "h-14 px-5 py-2.5 gap-2 text-lg",
-        xs: "h-9 px-3 py-1 gap-1.5 text-sm",
+        default: "h-[44px] px-5 py-2.5 gap-2 text-base",
+        sm: "h-[40px] px-5 py-2.5 gap-2 text-sm",
+        lg: "h-[56px] px-6 py-3 gap-2 text-lg",
+        xs: "h-[36px] px-4 py-2 gap-2 text-sm",
         icon: "h-10 w-10",
       },
       state: {
@@ -54,8 +54,8 @@ const buttonVariants = cva(
       { variant: "warning", state: "hover", className: "!bg-[#B45309] !shadow-[inset_0px_0px_13.1px_0px_#FDE68A]" },
       { variant: "warning", state: "active", className: "!bg-[#92400E]" },
       // Neutral States
-      { variant: "neutral", state: "hover", className: "!bg-[#5b5b5b] !text-white !border-[#5b5b5b]" },
-      { variant: "neutral", state: "active", className: "!bg-[#383838] !text-white !border-[#383838]" },
+      { variant: "neutral", state: "hover", className: "!bg-semantic-background-neutral-hover !text-semantic-text-on-color !border-semantic-background-neutral-hover" },
+      { variant: "neutral", state: "active", className: "!bg-semantic-background-neutral-Pressed !text-semantic-text-on-color !border-semantic-background-neutral-Pressed" },
     ],
     defaultVariants: {
       variant: "primary",
