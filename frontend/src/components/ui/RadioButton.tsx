@@ -56,11 +56,11 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
         )}
         onClick={handleToggle}
       >
-        {/* Hidden Input for Accessibility */}
         <input
           type="radio"
           className="sr-only"
           checked={isChecked}
+          onChange={handleToggle}
           disabled={disabled}
           ref={ref}
           {...props}

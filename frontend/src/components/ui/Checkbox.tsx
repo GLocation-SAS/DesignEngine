@@ -55,8 +55,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           type="checkbox"
           className="sr-only"
           checked={isChecked}
+          onChange={handleToggle}
           disabled={disabled}
-          readOnly
           ref={ref}
           {...props}
         />
