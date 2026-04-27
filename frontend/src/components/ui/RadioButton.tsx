@@ -91,7 +91,7 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
           <div className="flex flex-col gap-1 py-1">
             {label && (
               <span className={cn(
-                " font-medium leading-4 text-neutral-900 dark:text-neutral-100",
+                " font-medium leading-4 text-neutral-900",
                 currentSize.text,
                 disabled && "text-neutral-400"
               )}>

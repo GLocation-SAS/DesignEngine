@@ -115,16 +115,16 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
     };
 
     const stateStyles = {
-      "Default": "bg-white border-neutral-100 border-[2.5px] text-neutral-600",
-      "Hover": "bg-white border-primary-default border-[2.5px] text-neutral-600",
-      "Active": "bg-white border-primary-500 border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
-      "Active Hover": "bg-white border-primary-500 border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
-      "Active Selected": "bg-white border-primary-500 border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
-      "Collapsed": "bg-white border-primary-700 border-[2.5px] text-neutral-600",
-      "Disabled": "bg-neutral-100 border-transparent border-[2.5px] text-neutral-400 cursor-not-allowed opacity-100",
-      "Error Filled": "bg-white border-error-500 border-2 text-neutral-600 shadow-[inset_0_0_13.1px_1px_#FFA3BF]",
-      "Error Filled Hover": "bg-white border-error-500 border-2 text-neutral-600 shadow-[inset_0_0_13.1px_0_#FFA3BF]",
-      "Success": "bg-white border-success-500 border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_1px_#9FD5CA]",
+      "Default": "bg-surface-primary-default border-semantic-border-neutral-default border-[2.5px] text-neutral-600",
+      "Hover": "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] text-neutral-600",
+      "Active": "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
+      "Active Hover": "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
+      "Active Selected": "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
+      "Collapsed": "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] text-neutral-600",
+      "Disabled": "bg-neutral-200 border-transparent border-[2.5px] text-neutral-400 cursor-not-allowed opacity-100",
+      "Error Filled": " border-error-500 border-2 text-neutral-600",
+      "Error Filled Hover": "border-error-500 border-2 text-neutral-600",
+      "Success": "border-success-500 border-[2.5px] text-neutral-600",
     };
 
     const iconColorStyles = {
@@ -206,7 +206,7 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
                 ref={inputRef}
                 type="text"
                 className={cn(
-                  "w-full bg-transparent border-none outline-none font-medium text-neutral-600 dark:text-neutral-100 placeholder-neutral-400 p-0",
+                  "w-full bg-transparent border-none outline-none font-medium text-neutral-600 placeholder-neutral-400 p-0",
                   "focus:ring-0"
                 )}
                 placeholder={displayValue === placeholder ? placeholder : displayValue}
@@ -218,7 +218,7 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
               <span
                 className={cn(
                   "w-full text-left font-medium outline-none truncate select-none",
-                  effectiveState === "Disabled" ? "text-neutral-400" : "text-neutral-600 dark:text-neutral-100"
+                  effectiveState === "Disabled" ? "text-neutral-400" : "text-neutral-600"
                 )}
               >
                 {displayValue}
@@ -274,7 +274,7 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
         )}
 
         {isActive && (
-          <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white border-[2.5px] border-primary-500 rounded-[8px] z-[60] overflow-hidden p-0 shadow-2xl">
+          <div className="absolute top-[calc(100%+8px)] left-0 w-full border-[2.5px] border-primary-500 rounded-[8px] z-[60] overflow-hidden p-0 shadow-2xl">
             <div className="flex flex-col max-h-[240px] overflow-y-auto">
               {filteredOptions.length > 0 ? (
                 filteredOptions.map((opt) => {

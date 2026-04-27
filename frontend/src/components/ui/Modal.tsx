@@ -61,7 +61,7 @@ export const Modal = ({
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
       <div
         className={cn(
-          "bg-white rounded-[8px] shadow-[0px_8px_10px_-5px_rgba(0,0,0,0.04),0px_20px_25px_-5px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center p-10 relative overflow-hidden",
+          "bg-white dark:bg-neutral-white rounded-[8px] shadow-[0px_8px_10px_-5px_rgba(0,0,0,0.04),0px_20px_25px_-5px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center p-10 relative overflow-hidden",
           sizeVariant === "L" ? "w-[570px] h-[469px]" : sizeVariant === "M" ? "w-[529px] h-[474px]" : "w-[376px] h-auto",
           sizeVariant !== "S" && "gap-[38px]",
           sizeVariant === "S" && "gap-6",
@@ -91,10 +91,10 @@ export const Modal = ({
 
         {/* Content Area */}
         <div className="text-center flex flex-col items-center w-full">
-          <h3 className="text-[20px] font-semibold text-neutral-900 dark:text-neutral-50 leading-[28px] mb-2">
+          <h3 className="text-[20px] font-semibold text-neutral-900 leading-[28px] mb-2">
             {title}
           </h3>
-          <p className="text-[16px] text-neutral-900 dark:text-neutral-50 leading-[24px] max-w-[420px] mx-auto">
+          <p className="text-[16px] text-neutral-900 leading-[24px] max-w-[420px] mx-auto">
             {description}
           </p>
         </div>

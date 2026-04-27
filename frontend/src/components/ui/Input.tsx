@@ -51,13 +51,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     };
 
     const stateStyles = {
-      Default: "bg-white border-semantic-border-neutral-default border-[2.5px]",
-      Hover: "bg-white border-semantic-border-primary-default border-[2.5px]",
-      Focused: "bg-white border-semantic-border-primary-default border-[2.5px] shadow-[inset_0_0_13.1px_0_#CBB8E8]",
-      Filled: "bg-white border-semantic-border-primary-default border-[2.5px]",
+      Default: "bg-surface-primary-default border-semantic-border-neutral-default border-[2.5px]",
+      Hover: "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px]",
+      Focused: "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] shadow-[inset_0_0_3.1px_0_#CBB8E8] dark:shadow-[inset_0_0_13px_0_rgba(203,184,232,0.5)]",
+      Filled: "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px]",
       Disabled: "bg-semantic-background-disabled-surface border-transparent border-[2.5px] text-semantic-text-disabled-default cursor-not-allowed opacity-100",
-      Error: "bg-white border-semantic-border-error-default border-[2.5px] shadow-[inset_0_0_13.1px_1px_#FFA3BF]",
-      Success: "bg-white border-semantic-border-success-default border-[2.5px] shadow-[inset_0_0_13.1px_1px_#9FD5CA]",
+      Error: "bg-surface-primary-default border-semantic-border-error-default border-[2.5px] shadow-[inset_0_0_13.1px_1px_#FFA3BF] dark:shadow-none",
+      Success: "bg-surface-primary-default border-semantic-border-success-default border-[2.5px] shadow-[inset_0_0_13.1px_1px_#9FD5CA] dark:shadow-none",
     };
 
     const iconColorStyles = {

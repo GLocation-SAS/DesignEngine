@@ -106,7 +106,7 @@ export const Notification = ({
 
       {/* Body */}
       <div className={cn(
-        "bg-white px-4 h-[72px] border-b border-l border-r rounded-b-[8px] flex items-center shrink-0",
+        " px-4 h-[72px] border-b border-l border-r rounded-b-[8px] flex items-center shrink-0",
         config.borderColor,
         config.shadow
       )}>
