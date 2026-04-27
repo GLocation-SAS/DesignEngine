@@ -12,10 +12,10 @@ Los valores expuestos provienen de los tokens base y semánticos, usando la estr
 
 | Token | Valor (500) | Uso |
 |------|------|-----|
-| primary | `#5A3988FF` | Acciones principales, botones primarios, enlaces destacados |
-| secondary | `#1F4459FF` | Elementos secundarios, acciones de soporte, componentes menos prominentes |
+| primary | `#7A35D8FF` | Acciones principales, botones primarios, enlaces destacados |
+| secondary | `#1D8DE3FF` | Elementos secundarios, acciones de soporte, componentes menos prominentes |
 | white | `#FFFFFFFF` | Fondo principal, color de texto invertido |
-| black | `#111827FF` | Texto principal, fondos oscuros |
+| black | `#111111FF` | Texto principal, fondos oscuros |
 
 *Nota: Se lista el valor 500 como color de base para `primary` y `secondary`. Las escalas completas van del 50 al 900.*
 
@@ -27,16 +27,16 @@ Las siguientes escalas se utilizan para dar retroalimentación visual al usuario
 
 | Nivel | Success | Warning | Error | Info |
 |-------|---------|---------|-------|------|
-| 50 | `#E8F6EFFF` | `#FFFBEBFF` | `#FFE8EFFF` | `#EFF6FFFF` |
-| 100 | `#CFEAE3FF` | `#FEF3C7FF` | `#FFD1DFFF` | `#DBEAFEFF` |
-| 200 | `#9FD5CAFF` | `#FDE68AFF` | `#FFA3BFFF` | `#BFDBFEFF` |
-| 300 | `#6FBFAFFF` | `#FCD34DFF` | `#FF759FFF` | `#93C5FDFF` |
-| 400 | `#1F7A6BFF` | `#D97706FF` | `#D10035FF` | `#1D4ED8FF` |
-| 500 | `#1F7A6BFF` | `#D97706FF` | `#FA003FFF` | `#2563EBFF` |
-| 600 | `#19635BFF` | `#D97706FF` | `#D10035FF` | `#2563EBFF` |
-| 700 | `#134C45FF` | `#B45309FF` | `#A8002AFF` | `#1D4ED8FF` |
-| 800 | `#0D3531FF` | `#92400EFF` | `#7F0020FF` | `#1E40AFFF` |
-| 900 | `#071E1EFF` | `#78350FFF` | `#570015FF` | `#1E3A8AFF` |
+| 50 | `#ECFDF5FF` | `#FFF9E6FF` | `#FFF1F2FF` | `#EFF6FFFF` |
+| 100 | `#D1FAE5FF` | `#FFF0B8FF` | `#FFE4E8FF` | `#DBEAFEFF` |
+| 200 | `#A7F3D0FF` | `#FFE27AFF` | `#FECDD5FF` | `#BFDBFEFF` |
+| 300 | `#6EE7B7FF` | `#FFD13DFF` | `#FDA4B4FF` | `#93C5FDFF` |
+| 400 | `#34D399FF` | `#F7B718FF` | `#FB7185FF` | `#60A5FAFF` |
+| 500 | `#10B981FF` | `#D97706FF` | `#E11D48FF` | `#2563EBFF` |
+| 600 | `#059669FF` | `#B85F05FF` | `#BE123CFF` | `#1D4ED8FF` |
+| 700 | `#047857FF` | `#92400EFF` | `#9F1239FF` | `#1E40AFFF` |
+| 800 | `#065F46FF` | `#78350FFF` | `#881337FF` | `#1E3A8AFF` |
+| 900 | `#064E3BFF` | `#451A03FF` | `#4C0519FF` | `#172554FF` |
 
 **Uso por tipo:**
 - **success**: Mensajes de éxito, confirmaciones, estados positivos.
@@ -54,16 +54,16 @@ Utilizada para fondos, bordes, divisiones, y textos de menor jerarquía.
 
 | Token | Valor |
 |------|------|
-| 50 | `#F5F5F5FF` |
-| 100 | `#E8E8E8FF` |
-| 200 | `#D1D1D1FF` |
-| 300 | `#BABABAFF` |
-| 400 | `#A3A3A3FF` |
-| 500 | `#5B5B5BFF` |
-| 600 | `#494949FF` |
-| 700 | `#383838FF` |
-| 800 | `#262626FF` |
-| 900 | `#141414FF` |
+| 50 | `#FAFAFAFF` |
+| 100 | `#F4F4F5FF` |
+| 200 | `#E4E4E7FF` |
+| 300 | `#D4D4D8FF` |
+| 400 | `#A1A1AAFF` |
+| 500 | `#71717AFF` |
+| 600 | `#52525BFF` |
+| 700 | `#3F3F46FF` |
+| 800 | `#27272AFF` |
+| 900 | `#18181BFF` |
 
 ---
 

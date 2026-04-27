@@ -261,12 +261,12 @@
   --radius-xl: 16px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
-  --shadow-2: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
-  --shadow-3: 0px 8px 16px 0px rgba(0, 0, 0, 0.14);
-  --shadow-4: 0px 12px 24px 0px rgba(0, 0, 0, 0.16);
-  --shadow-5: 0px 16px 32px 0px rgba(0, 0, 0, 0.18);
+  /* Elevation */
+  --elevation-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  --elevation-2: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
+  --elevation-3: 0px 8px 16px 0px rgba(0, 0, 0, 0.14);
+  --elevation-4: 0px 12px 24px 0px rgba(0, 0, 0, 0.16);
+  --elevation-5: 0px 16px 32px 0px rgba(0, 0, 0, 0.18);
 }
 
 @layer base {
@@ -445,40 +445,84 @@
 
   .dark {
     /* Primitives Dark - Colors */
-    --color-primary-50: #230E44FF;
-    --color-primary-100: #331461FF;
-    --color-primary-200: #481B83FF;
-    --color-primary-300: #5F24ADFF;
-    --color-primary-400: #7A35D8FF;
-    --color-primary-500: #9B5EF5FF;
-    --color-primary-600: #BE93FFFF;
-    --color-primary-700: #D7C0FFFF;
-    --color-primary-800: #E9DDFFFF;
-    --color-primary-900: #F5F0FFFF;
+    --color-primary-50: #211536FF;
+    --color-primary-100: #2F1B4DFF;
+    --color-primary-200: #3E2565FF;
+    --color-primary-300: #513180FF;
+    --color-primary-400: #6B42A3FF;
+    --color-primary-500: #8A5BD0FF;
+    --color-primary-600: #A77BE8FF;
+    --color-primary-700: #C19BFAFF;
+    --color-primary-800: #D8C1FFFF;
+    --color-primary-900: #EFE6FFFF;
 
-    --color-secondary-50: #08273FFF;
-    --color-secondary-100: #0C3A5EFF;
-    --color-secondary-200: #104F7FFF;
-    --color-secondary-300: #1569AAFF;
-    --color-secondary-400: #1D8DE3FF;
-    --color-secondary-500: #4BABEAFF;
-    --color-secondary-600: #89CFF3FF;
-    --color-secondary-700: #BDE4F9FF;
-    --color-secondary-800: #E2F2FCFF;
-    --color-secondary-900: #F1F9FEFF;
+    --color-secondary-50: #071D2AFF;
+    --color-secondary-100: #0B2A3CFF;
+    --color-secondary-200: #10384FFF;
+    --color-secondary-300: #164B68FF;
+    --color-secondary-400: #1F668AFF;
+    --color-secondary-500: #2D85A8FF;
+    --color-secondary-600: #5DAFCCFF;
+    --color-secondary-700: #96CFE4FF;
+    --color-secondary-800: #C5E6F3FF;
+    --color-secondary-900: #E2F3FAFF;
 
-    --color-neutral-50: #18181BFF;
-    --color-neutral-100: #27272AFF;
-    --color-neutral-200: #3F3F46FF;
-    --color-neutral-300: #52525BFF;
-    --color-neutral-400: #71717AFF;
-    --color-neutral-500: #A1A1AAFF;
-    --color-neutral-600: #D4D4D8FF;
-    --color-neutral-700: #E4E4E7FF;
-    --color-neutral-800: #F4F4F5FF;
-    --color-neutral-900: #FAFAFAFF;
+    --color-neutral-50: #111111FF;
+    --color-neutral-100: #1C1C1EFF;
+    --color-neutral-200: #2A2A2DFF;
+    --color-neutral-300: #3A3A3EFF;
+    --color-neutral-400: #52525BFF;
+    --color-neutral-500: #71717AFF;
+    --color-neutral-600: #A1A1AAFF;
+    --color-neutral-700: #D4D4D8FF;
+    --color-neutral-800: #E4E4E7FF;
+    --color-neutral-900: #F4F4F5FF;
     --color-neutral-white: #121212FF;
     --color-neutral-black: #F8F9FAFF;
+
+    --color-warning-50: #2A1603FF;
+    --color-warning-100: #3F2104FF;
+    --color-warning-200: #5A3006FF;
+    --color-warning-300: #7A4308FF;
+    --color-warning-400: #9A5A0AFF;
+    --color-warning-500: #D97706FF;
+    --color-warning-600: #F59E0BFF;
+    --color-warning-700: #FBBF24FF;
+    --color-warning-800: #FCD970FF;
+    --color-warning-900: #FFF0B8FF;
+
+    --color-info-50: #0B1B3AFF;
+    --color-info-100: #102A56FF;
+    --color-info-200: #163B75FF;
+    --color-info-300: #1D4E9AFF;
+    --color-info-400: #2563EBFF;
+    --color-info-500: #3B82F6FF;
+    --color-info-600: #60A5FAFF;
+    --color-info-700: #93C5FDFF;
+    --color-info-800: #BFDBFEFF;
+    --color-info-900: #DBEAFEFF;
+
+    --color-success-50: #041F1AFF;
+    --color-success-100: #07352CFF;
+    --color-success-200: #0B4A3DFF;
+    --color-success-300: #11614FFF;
+    --color-success-400: #168568FF;
+    --color-success-500: #10B981FF;
+    --color-success-600: #34D399FF;
+    --color-success-700: #6EE7B7FF;
+    --color-success-800: #A7F3D0FF;
+    --color-success-900: #D1FAE5FF;
+
+    --color-error-50: #2A0610FF;
+    --color-error-100: #3F0A18FF;
+    --color-error-200: #5C1023FF;
+    --color-error-300: #7A1730FF;
+    --color-error-400: #A61D3DFF;
+    --color-error-500: #E11D48FF;
+    --color-error-600: #FB7185FF;
+    --color-error-700: #FDA4B4FF;
+    --color-error-800: #FECDD5FF;
+    --color-error-900: #FFE4E8FF;
 
     /* Semantics Dark */
     --semantic-background-primary-default: var(--color-primary-500);
@@ -595,4 +639,3 @@
     box-shadow: 0 0 20px rgba(90, 57, 136, 0.2);
   }
 }
-
