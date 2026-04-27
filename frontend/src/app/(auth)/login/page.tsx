@@ -1,12 +1,11 @@
-"use client";
+import LoginPage from "@/modules/auth/pages/LoginPage";
+import { Metadata } from "next";
 
-export default function LoginPage() {
+export const metadata: Metadata = {
+  title: "Iniciar sesión | QA Automatization",
+  description: "Accede a tu cuenta de QA Automatization para gestionar tus pruebas.",
+};
 
-  return (
-    <div className="flex min-h-screen">
-      <h2 className="text-3xl font-bold text-white mb-4">
-        Bienvenido a DesignEngine
-      </h2>
-    </div>
-  );
+export default function Page() {
+  return <LoginPage />;
 }
