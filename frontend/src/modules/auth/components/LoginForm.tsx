@@ -30,7 +30,7 @@ export function LoginForm() {
 
       {/* Header */}
       <div className="space-y-2">
-        <h1 className="text-5xl font-bold tracking-tight text-primary">
+        <h1 className="text-[40px] font-bold tracking-tight text-primary">
           Bienvenido
         </h1>
         <p className="text-neutral-900">

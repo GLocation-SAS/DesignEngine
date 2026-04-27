@@ -1,16 +1,16 @@
 "use client";
 
+import { AuthSidebar } from "../components/AuthSidebar";
 import { LoginForm } from "../components/LoginForm";
-import { LoginSidebar } from "../components/LoginSidebar";
 
 export default function LoginPage() {
   return (
-    <div className="dark">
+    <div >
       <main className="flex min-h-screen w-full bg-neutral-white text-neutral-900">
         <div className="grid w-full grid-cols-1 lg:grid-cols-2">
           {/* Left Section: Visual Sidebar */}
           <section className="hidden p-6 lg:block h-screen sticky top-0">
-            <LoginSidebar />
+            <AuthSidebar />
           </section>
 
           {/* Right Section: Authentication Form */}

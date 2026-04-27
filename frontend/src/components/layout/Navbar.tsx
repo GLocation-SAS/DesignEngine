@@ -15,6 +15,11 @@ export function Navbar() {
 
   const isActive = (path: string) => pathname === path;
 
+  // Do not show navbar on login or register pages
+  if (pathname === ROUTES.login || pathname === ROUTES.register) {
+    return null;
+  }
+
   return (
     <header className="sticky top-0 z-50 border-b border-surface-200 bg-neutral-50 backdrop-blur-lg dark:border-neutral-200">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
