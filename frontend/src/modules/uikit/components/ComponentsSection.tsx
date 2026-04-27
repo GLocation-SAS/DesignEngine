@@ -16,6 +16,7 @@ import { TextInputMatrix } from "./TextInputMatrix";
 import { SearchInputMatrix } from "./SearchInputMatrix";
 import { DropdownMatrix } from "./DropdownMatrix";
 import { ModalMatrix } from "./ModalMatrix";
+import { DialogModalMatrix } from "./DialogModalMatrix";
 import { NotificationMatrix } from "./NotificationMatrix";
 import { TagMatrix } from "./TagMatrix";
 import { CheckboxMatrix } from "./CheckboxMatrix";
@@ -23,6 +24,9 @@ import { RadioButtonMatrix } from "./RadioButtonMatrix";
 import { ToggleMatrix } from "./ToggleMatrix";
 import { BreadcrumbMatrix } from "./BreadcrumbMatrix";
 import { PaginationMatrix } from "./PaginationMatrix";
+import { TabsMatrix } from "./TabsMatrix";
+import { AvatarMatrix } from "./AvatarMatrix";
+import { TableMatrix } from "./TableMatrix";
 
 export function ComponentsSection() {
   return (
@@ -44,8 +48,6 @@ export function ComponentsSection() {
         <WarningButtonMatrix />
         <InfoButtonMatrix />
         <NeutralButtonMatrix />
-
-
       </div>
 
       {/* Inputs System */}
@@ -72,6 +74,7 @@ export function ComponentsSection() {
       {/* Modals */}
       <div id="modals" className="scroll-mt-24">
         <ModalMatrix />
+        <DialogModalMatrix />
       </div>
 
       {/* Notifications */}
@@ -108,12 +111,21 @@ export function ComponentsSection() {
       <div id="pagination" className="scroll-mt-24">
         <PaginationMatrix />
       </div>
+
+      {/* Tabs */}
+      <div id="tabs" className="scroll-mt-24">
+        <TabsMatrix />
+      </div>
+
+      {/* Avatars */}
+      <div id="avatars" className="scroll-mt-24">
+        <AvatarMatrix />
+      </div>
+
+      {/* Tables */}
+      <div id="tables" className="scroll-mt-24">
+        <TableMatrix />
+      </div>
     </section>
   );
 }
-
-
-
-
-
-

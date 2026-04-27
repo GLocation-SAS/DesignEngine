@@ -34,6 +34,7 @@ const NAV_GROUPS = [
       { id: "dropdowns", label: "Dropdowns", icon: Box },
       { id: "badges", label: "Badges", icon: Box },
       { id: "modals", label: "Modals", icon: Box },
+      { id: "dialog-modals", label: "Dialog Modals", icon: Box },
       { id: "notifications", label: "Notifications", icon: Box },
       { id: "tags", label: "Tags System", icon: Box },
       { id: "checkboxes", label: "Checkboxes", icon: Box },
@@ -41,6 +42,9 @@ const NAV_GROUPS = [
       { id: "toggles", label: "Toggles", icon: Box },
       { id: "breadcrumbs", label: "Breadcrumbs", icon: Box },
       { id: "pagination", label: "Pagination", icon: Box },
+      { id: "tabs", label: "Tabs", icon: Box },
+      { id: "avatars", label: "Avatars", icon: Box },
+      { id: "tables", label: "Tables", icon: Box },
     ],
   },
   {
