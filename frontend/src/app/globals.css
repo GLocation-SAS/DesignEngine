@@ -267,6 +267,14 @@
   --elevation-3: 0px 8px 16px 0px rgba(0, 0, 0, 0.14);
   --elevation-4: 0px 12px 24px 0px rgba(0, 0, 0, 0.16);
   --elevation-5: 0px 16px 32px 0px rgba(0, 0, 0, 0.18);
+
+  /* Shadows Mapping */
+  --shadow-0: none;
+  --shadow-1: var(--elevation-1);
+  --shadow-2: var(--elevation-2);
+  --shadow-3: var(--elevation-3);
+  --shadow-4: var(--elevation-4);
+  --shadow-5: var(--elevation-5);
 }
 
 @layer base {

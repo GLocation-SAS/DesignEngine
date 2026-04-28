@@ -15,7 +15,7 @@ Los valores expuestos provienen de los tokens base y semánticos, usando la estr
 | primary | `#7A35D8FF` | Acciones principales, botones primarios, enlaces destacados |
 | secondary | `#1D8DE3FF` | Elementos secundarios, acciones de soporte, componentes menos prominentes |
 | white | `#FFFFFFFF` | Fondo principal, color de texto invertido |
-| black | `#111111FF` | Texto principal, fondos oscuros |
+| black | `#18181BFF` | Texto principal (neutral-900), fondos oscuros |
 
 *Nota: Se lista el valor 500 como color de base para `primary` y `secondary`. Las escalas completas van del 50 al 900.*
 
@@ -164,7 +164,7 @@ Sistema métrico para márgenes, paddings y distancias entre elementos, extraíd
 - `default`: Estado base.
 - `hover`: Oscurecer el fondo ligeramente (ej. de 500 a 600).
 - `active`: Clic presionado (ej. de 600 a 700).
-- `disabled`: Fondo neutral-200, texto neutral-400. Inactivo.
+- `disabled`: Fondo neutral-200, texto neutral-600. Inactivo.
 
 **Reglas de uso:**
 - Utilizar componentes predefinidos sin sobrescribir estilos inline.
@@ -186,7 +186,7 @@ Este componente debe corresponder exactamente con su equivalente en Figma, inclu
 - `default`: Borde neutral-300, fondo blanco.
 - `focus`: Borde primary-500, sin outline de navegador.
 - `error`: Borde error-500, texto de ayuda en error-500.
-- `disabled`: Fondo neutral-100, texto neutral-400.
+- `disabled`: Fondo neutral-100, texto neutral-600.
 
 **Reglas de uso:**
 - Deben incluir siempre una etiqueta visual clara.
