@@ -14,3 +14,5 @@ export type { TableProps, TableColumn } from "./Table";
 export { Tooltip } from "./Tooltip";
 export { Toast } from "./Toast";
 export type { ToastProps } from "./Toast";
+export { Modal } from "./Modal";
+export type { ModalProps } from "./Modal";

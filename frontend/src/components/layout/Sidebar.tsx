@@ -8,12 +8,22 @@ import {
   ChevronDown,
   ChevronsUpDown,
   LayoutGrid,
-  Component,
   Palette,
   User,
   PanelLeftClose,
-  PanelLeftOpen
+  PanelLeftOpen,
+  Type,
+  Box,
+  Zap,
+  ShoppingBag,
+  Users,
+  LayoutDashboard,
+  Sun,
+  Moon,
+  Menu,
+  X
 } from "lucide-react";
+import { useTheme } from "@/context/ThemeContext";
 
 interface SidebarItem {
   id?: string;
@@ -30,11 +40,9 @@ interface SidebarGroup {
 }
 
 interface SidebarProps {
-  groups: SidebarGroup[];
   collapsed?: boolean;
   onToggle?: () => void;
   activeId?: string;
-  footer?: React.ReactNode;
   user?: {
     name: string;
     email: string;
@@ -42,18 +50,88 @@ interface SidebarProps {
   };
 }
 
+const menusBySection: Record<string, SidebarGroup[]> = {
+  uikit: [
+    {
+      label: "Core Tokens",
+      icon: Palette,
+      items: [
+        { id: "colors", label: "Colors", href: "/uikit#colors", icon: Palette },
+        { id: "typography", label: "Typography", href: "/uikit#typography", icon: Type },
+        { id: "spacing", label: "Spacing", href: "/uikit#spacing", icon: LayoutGrid },
+        { id: "effects", label: "Effects", href: "/uikit#effects", icon: Zap },
+      ]
+    },
+    {
+      label: "Components",
+      icon: Box,
+      items: [
+        { id: "buttons", label: "Buttons System", href: "/uikit#buttons", icon: Box },
+        { id: "inputs", label: "Text Inputs", href: "/uikit#inputs", icon: Box },
+        { id: "textareas", label: "Textareas", href: "/uikit#textareas", icon: Box },
+        { id: "search", label: "Search Input", href: "/uikit#search", icon: Box },
+        { id: "dropdowns", label: "Dropdowns", href: "/uikit#dropdowns", icon: Box },
+        { id: "badges", label: "Badges", href: "/uikit#badges", icon: Box },
+        { id: "modals", label: "Modals", href: "/uikit#modals", icon: Box },
+        { id: "dialog-modals", label: "Dialog Modals", href: "/uikit#dialog-modals", icon: Box },
+        { id: "notifications", label: "Notifications", href: "/uikit#notifications", icon: Box },
+        { id: "tags", label: "Tags System", href: "/uikit#tags", icon: Box },
+        { id: "checkboxes", label: "Checkboxes", href: "/uikit#checkboxes", icon: Box },
+        { id: "radio", label: "Radio Buttons", href: "/uikit#radio", icon: Box },
+        { id: "toggles", label: "Toggles", href: "/uikit#toggles", icon: Box },
+        { id: "breadcrumbs", label: "Breadcrumbs", href: "/uikit#breadcrumbs", icon: Box },
+        { id: "pagination", label: "Pagination", href: "/uikit#pagination", icon: Box },
+        { id: "tabs", label: "Tabs", href: "/uikit#tabs", icon: Box },
+        { id: "avatars", label: "Avatars", href: "/uikit#avatars", icon: Box },
+        { id: "tables", label: "Tables", href: "/uikit#tables", icon: Box },
+        { id: "tooltips", label: "Tooltips", href: "/uikit#tooltips", icon: Box },
+        { id: "toasts", label: "Toasts", href: "/uikit#toasts", icon: Box },
+        { id: "cards", label: "Cards", href: "/uikit#cards", icon: Box },
+      ]
+    },
+    {
+      label: "Assets",
+      icon: ShoppingBag,
+      items: [
+        { id: "resources", label: "Resources", href: "/uikit#resources", icon: ShoppingBag },
+      ]
+    }
+  ],
+  users: [
+    {
+      label: "Usuarios",
+      icon: Users,
+      items: [
+        { label: "Gestión", href: "/users", icon: Users }
+      ]
+    }
+  ],
+  dashboard: [
+    {
+      label: "Dashboard",
+      icon: LayoutDashboard,
+      items: [
+        { label: "Overview", href: "/dashboard", icon: LayoutDashboard }
+      ]
+    }
+  ]
+};
+
 export function Sidebar({
-  groups,
   collapsed = false,
   onToggle,
   activeId,
-  footer,
   user = {
     name: "Design Team",
     email: "team@designengine.ai",
   },
 }: SidebarProps) {
   const pathname = usePathname();
+  const section = pathname.split("/")[1] || "dashboard";
+  const groups = menusBySection[section] || [];
+  const { theme, setTheme } = useTheme();
+  const [open, setOpen] = useState(false);
+
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() => {
     const initial: Record<string, boolean> = {};
     groups.forEach(g => {
@@ -79,19 +157,46 @@ export function Sidebar({
   };
 
   return (
-    <aside
-      className={cn(
-        "flex h-full flex-col border-r border-neutral-200 bg-white transition-all duration-300 dark:border-neutral-200 dark:bg-neutral-100",
-        collapsed ? "w-[68px]" : "w-64"
-      )}
-    >
-      {/* Brand Header */}
-      <div className="flex h-14 items-center gap-3 px-4">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary-600 text-white shadow-lg shadow-primary-500/20">
-          <Palette className="h-5 w-5" />
+    <>
+      {/* Mobile Hamburger Header */}
+      <div className="fixed left-0 right-0 top-0 z-40 flex h-14 items-center justify-between border-b border-neutral-200 bg-white px-4 lg:hidden dark:border-neutral-200 dark:bg-neutral-100">
+        <div className="flex items-center gap-3">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary-600 text-white shadow-lg shadow-primary-500/20">
+            <Palette className="h-5 w-5" />
+          </div>
+          <span className="text-sm font-bold tracking-tight text-neutral-900">
+            DesignEngine
+          </span>
         </div>
-        {!collapsed && (
-          <div className="flex flex-1 items-center justify-between overflow-hidden">
+        <button
+          onClick={() => setOpen(true)}
+          className="-mr-2 rounded-lg p-2 text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+        >
+          <Menu className="h-6 w-6" />
+        </button>
+      </div>
+
+      {/* Mobile Overlay */}
+      {open && (
+        <div
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity lg:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
+      <aside
+        className={cn(
+          "fixed inset-y-0 left-0 z-50 flex h-full flex-col border-r border-neutral-200 bg-white transition-all duration-300 dark:border-neutral-200 dark:bg-neutral-100 lg:static lg:translate-x-0",
+          open ? "w-[75%] translate-x-0" : "w-[75%] -translate-x-full",
+          collapsed ? "lg:w-[68px]" : "lg:w-64"
+        )}
+      >
+        {/* Mobile Brand Header (inside Drawer) */}
+        <div className="flex h-14 items-center justify-between border-b border-neutral-200 px-4 lg:hidden dark:border-neutral-200">
+          <div className="flex items-center gap-3">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary-600 text-white shadow-lg shadow-primary-500/20">
+              <Palette className="h-5 w-5" />
+            </div>
             <div className="flex flex-col overflow-hidden">
               <span className="truncate text-sm font-bold tracking-tight text-neutral-900">
                 DesignEngine
@@ -100,10 +205,34 @@ export function Sidebar({
                 Core System
               </span>
             </div>
-            <ChevronsUpDown className="h-4 w-4 text-neutral-400" />
           </div>
-        )}
-      </div>
+          <button
+            onClick={() => setOpen(false)}
+            className="rounded-lg p-2 text-neutral-500 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        {/* Desktop Brand Header */}
+        <div className="hidden h-14 items-center gap-3 px-4 lg:flex">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary-600 text-white shadow-lg shadow-primary-500/20">
+            <Palette className="h-5 w-5" />
+          </div>
+          {!collapsed && (
+            <div className="flex flex-1 items-center justify-between overflow-hidden">
+              <div className="flex flex-col overflow-hidden">
+                <span className="truncate text-sm font-bold tracking-tight text-neutral-900">
+                  DesignEngine
+                </span>
+                <span className="truncate text-[10px] text-neutral-500">
+                  Core System
+                </span>
+              </div>
+              <ChevronsUpDown className="h-4 w-4 text-neutral-400" />
+            </div>
+          )}
+        </div>
 
       {/* Navigation */}
       <nav className="flex-1 overflow-y-auto px-2 py-4 scrollbar-thin scrollbar-thumb-neutral-200 dark:scrollbar-thumb-neutral-800">
@@ -156,6 +285,7 @@ export function Sidebar({
                         <Link
                           key={item.id || item.href}
                           href={item.href}
+                          onClick={() => setOpen(false)}
                           className={cn(
                             "flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-all duration-200",
                             isActive
@@ -209,7 +339,7 @@ export function Sidebar({
           {/* Toggle Button */}
           <button
             onClick={onToggle}
-            className="flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-all dark:hover:bg-neutral-200/50 dark:hover:text-neutral-100"
+            className="flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-all"
             aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
           >
             {collapsed ? (
@@ -217,14 +347,115 @@ export function Sidebar({
             ) : (
               <div className="flex items-center gap-2 px-2 text-xs font-medium">
                 <PanelLeftClose className="h-4 w-4" />
-                <span>Collapse Sidebar</span>
+                <span>Colapsar menú</span>
               </div>
             )}
           </button>
+          {/* Theme Toggle */}
+          {collapsed ? (
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="mt-2 flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 transition-all hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Moon className="h-5 w-5 text-neutral-400" />
+              ) : (
+                <Sun className="h-5 w-5 text-neutral-500" />
+              )}
+            </button>
+          ) : (
+            <div className="mt-2 flex h-12 w-full items-center justify-center gap-3 rounded-lg px-2">
+              <span
+                className={cn(
+                  "text-[15px] font-bold transition-colors",
+                  theme === "light" ? "text-neutral-800" : "text-neutral-600"
+                )}
+              >
+                Light
+              </span>
+
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className={cn(
+                  "relative flex h-[32px] w-[64px] shrink-0 items-center rounded-full transition-colors duration-500 focus:outline-none",
+                  theme === "dark" ? "bg-neutral-950" : "bg-primary-400"
+                )}
+                aria-label="Toggle theme"
+              >
+                {/* Dark Mode Stars */}
+                <div
+                  className={cn(
+                    "absolute inset-0 flex items-center justify-start pl-2 transition-opacity duration-500",
+                    theme === "dark" ? "opacity-100" : "opacity-0"
+                  )}
+                >
+                  {theme === "dark" && (
+                    <div className="relative h-full w-1/2">
+                      <svg className="absolute left-[3px] top-[7px] h-[7px] w-[7px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                      </svg>
+                      <svg className="absolute left-[2px] top-[16px] h-[4px] w-[4px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                      </svg>
+                      <svg className="absolute left-[13px] top-[10px] h-[3px] w-[3px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                      </svg>
+                      <svg className="absolute left-[11px] top-[18px] h-[5px] w-[5px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+
+                {/* Light Mode Clouds/Dots */}
+                <div
+                  className={cn(
+                    "absolute inset-0 flex items-center justify-end pr-2 transition-opacity duration-500",
+                    theme === "light" ? "opacity-100" : "opacity-0"
+                  )}
+                >
+                  {theme === "light" && (
+                    <div className="relative h-full w-1/2">
+                      <div className="absolute right-[4px] top-[8px] h-[5px] w-[5px] rounded-full bg-white" />
+                      <div className="absolute right-[14px] top-[14px] h-[3px] w-[3px] rounded-full bg-white" />
+                    </div>
+                  )}
+                </div>
+
+                {/* Knob */}
+                <div
+                  className={cn(
+                    "absolute left-1 top-1 flex h-[24px] w-[24px] items-center justify-center rounded-full transition-transform duration-500",
+                    theme === "dark" ? "translate-x-[32px] bg-transparent" : "translate-x-0 bg-white"
+                  )}
+                >
+                  {theme === "dark" && (
+                    <svg
+                      className="h-[20px] w-[20px] text-white"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      stroke="none"
+                    >
+                      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                  )}
+                </div>
+              </button>
+
+              <span
+                className={cn(
+                  "text-[15px] font-bold transition-colors",
+                  theme === "dark" ? "text-white" : "text-neutral-300"
+                )}
+              >
+                Dark
+              </span>
+            </div>
+          )}
         </div>
       </div>
-
-      {footer && <div className="p-2 pt-0">{footer}</div>}
     </aside>
+    </>
   );
 }

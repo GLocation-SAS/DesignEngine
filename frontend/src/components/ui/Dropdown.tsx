@@ -285,12 +285,12 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
                     <div
                       key={opt.value}
                       className={cn(
-                        "w-full px-[16px] py-[12px] flex items-center justify-start cursor-pointer transition-colors duration-150",
+                        "w-full px-[16px] py-[12px] flex items-center justify-start cursor-pointer transition-colors duration-150 bg-neutral-900",
                         isSelected
                           ? "bg-primary text-white"
                           : isForceHovered
-                            ? "bg-primary-100 text-primary-500 dark:bg-primary-500 dark:text-neutral-900"
-                            : "bg-transparent text-neutral-600 hover:bg-primary-100 hover:text-primary-500 dark:hover:bg-primary-900"
+                            ? "bg-neutral-100 text-primary-500 dark:bg-primary-500 dark:text-neutral-900"
+                            : "bg-neutral-100 text-neutral-600 hover:bg-primary-100 hover:text-primary-500 dark:hover:bg-primary-900"
                       )}
                       onClick={() => handleSelect(opt.value)}
                     >
