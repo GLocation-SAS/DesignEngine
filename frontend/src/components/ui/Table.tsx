@@ -42,7 +42,7 @@ export function Table({ columns, data, className, containerClassName }: TablePro
             data.map((row, rowIndex) => (
               <tr
                 key={rowIndex}
-                className="hover:bg-primary-100 transition-colors group bg-neutral-50"
+                className="hover:bg-neutral-100/90 transition-colors group bg-neutral-50"
               >
                 {columns.map((column) => (
                   <td

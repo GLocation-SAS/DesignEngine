@@ -30,6 +30,7 @@ const NAV_GROUPS = [
     items: [
       { id: "buttons", label: "Buttons System", icon: Box },
       { id: "inputs", label: "Text Inputs", icon: Box },
+      { id: "textareas", label: "Textareas", icon: Box },
       { id: "search", label: "Search Input", icon: Box },
       { id: "dropdowns", label: "Dropdowns", icon: Box },
       { id: "badges", label: "Badges", icon: Box },
@@ -45,6 +46,9 @@ const NAV_GROUPS = [
       { id: "tabs", label: "Tabs", icon: Box },
       { id: "avatars", label: "Avatars", icon: Box },
       { id: "tables", label: "Tables", icon: Box },
+      { id: "tooltips", label: "Tooltips", icon: Box },
+      { id: "toasts", label: "Toasts", icon: Box },
+      { id: "cards", label: "Cards", icon: Box },
     ],
   },
   {

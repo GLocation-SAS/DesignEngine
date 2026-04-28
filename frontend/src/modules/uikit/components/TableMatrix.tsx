@@ -1,7 +1,10 @@
 "use client";
 
 import React from "react";
+import { Pencil, Trash2 } from "lucide-react";
 import { Table } from "@/components/ui/Table";
+import { Button } from "@/components/ui/Button";
+import { Tooltip } from "@/components/ui/Tooltip";
 
 const COLUMNS = [
   { key: "id", label: "ID" },
@@ -9,6 +12,7 @@ const COLUMNS = [
   { key: "email", label: "Email" },
   { key: "role", label: "Rol" },
   { key: "status", label: "Estado" },
+  { key: "actions", label: "Acciones" },
 ];
 
 const DATA = [
@@ -18,6 +22,20 @@ const DATA = [
     email: "alex@designengine.io",
     role: "Admin",
     status: "Activo",
+    actions: (
+      <div className="flex items-center gap-2">
+        <Tooltip content="Editar">
+          <Button variant="ghost" size="icon" className="w-8 h-8">
+            <Pencil className="w-4 h-4 text-primary-500" />
+          </Button>
+        </Tooltip>
+        <Tooltip content="Eliminar">
+          <Button variant="ghost" size="icon" className="w-8 h-8">
+            <Trash2 className="w-4 h-4 text-error-500" />
+          </Button>
+        </Tooltip>
+      </div>
+    ),
   },
   {
     id: "#1235",
@@ -25,6 +43,20 @@ const DATA = [
     email: "maria@designengine.io",
     role: "Editor",
     status: "Inactivo",
+    actions: (
+      <div className="flex items-center gap-2">
+        <Tooltip content="Editar">
+          <Button variant="ghost" size="icon" className="w-8 h-8">
+            <Pencil className="w-4 h-4 text-primary-500" />
+          </Button>
+        </Tooltip>
+        <Tooltip content="Eliminar">
+          <Button variant="ghost" size="icon" className="w-8 h-8">
+            <Trash2 className="w-4 h-4 text-error-500" />
+          </Button>
+        </Tooltip>
+      </div>
+    ),
   },
   {
     id: "#1236",
@@ -32,6 +64,20 @@ const DATA = [
     email: "john@designengine.io",
     role: "Viewer",
     status: "Activo",
+    actions: (
+      <div className="flex items-center gap-2">
+        <Tooltip content="Editar">
+          <Button variant="ghost" size="icon" className="w-8 h-8">
+            <Pencil className="w-4 h-4 text-primary-500" />
+          </Button>
+        </Tooltip>
+        <Tooltip content="Eliminar">
+          <Button variant="ghost" size="icon" className="w-8 h-8">
+            <Trash2 className="w-4 h-4 text-error-500" />
+          </Button>
+        </Tooltip>
+      </div>
+    ),
   },
   {
     id: "#1237",
@@ -39,6 +85,20 @@ const DATA = [
     email: "sarah@designengine.io",
     role: "Admin",
     status: "Pendiente",
+    actions: (
+      <div className="flex items-center gap-2">
+        <Tooltip content="Editar">
+          <Button variant="ghost" size="icon" className="w-8 h-8">
+            <Pencil className="w-4 h-4 text-primary-500" />
+          </Button>
+        </Tooltip>
+        <Tooltip content="Eliminar">
+          <Button variant="ghost" size="icon" className="w-8 h-8">
+            <Trash2 className="w-4 h-4 text-error-500" />
+          </Button>
+        </Tooltip>
+      </div>
+    ),
   },
 ];
 

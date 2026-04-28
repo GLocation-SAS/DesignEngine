@@ -13,6 +13,7 @@ import { WarningButtonMatrix } from "./WarningButtonMatrix";
 import { InfoButtonMatrix } from "./InfoButtonMatrix";
 import { NeutralButtonMatrix } from "./NeutralButtonMatrix";
 import { TextInputMatrix } from "./TextInputMatrix";
+import { TextareaMatrix } from "./TextareaMatrix";
 import { SearchInputMatrix } from "./SearchInputMatrix";
 import { DropdownMatrix } from "./DropdownMatrix";
 import { ModalMatrix } from "./ModalMatrix";
@@ -27,6 +28,10 @@ import { PaginationMatrix } from "./PaginationMatrix";
 import { TabsMatrix } from "./TabsMatrix";
 import { AvatarMatrix } from "./AvatarMatrix";
 import { TableMatrix } from "./TableMatrix";
+import { BadgeMatrix } from "./BadgeMatrix";
+import { TooltipMatrix } from "./TooltipMatrix";
+import { ToastMatrix } from "./ToastMatrix";
+import { CardMatrix } from "./CardMatrix";
 
 export function ComponentsSection() {
   return (
@@ -55,6 +60,11 @@ export function ComponentsSection() {
         <TextInputMatrix />
       </div>
 
+      {/* Textareas System */}
+      <div id="textareas" className="scroll-mt-24">
+        <TextareaMatrix />
+      </div>
+
       {/* Search Input */}
       <div id="search" className="scroll-mt-24">
         <SearchInputMatrix />
@@ -65,11 +75,11 @@ export function ComponentsSection() {
         <DropdownMatrix />
       </div>
 
-      {/* Badges — placeholder hasta implementar BadgeMatrix */}
-      <div id="badges" className="scroll-mt-24 px-8 max-w-7xl">
-        <h3 className="text-2xl font-bold text-primary-500">Badges</h3>
-        <p className="text-neutral-500 mt-2">Coming soon — Badge system documentation.</p>
+      {/* Badges */}
+      <div id="badges" className="scroll-mt-24">
+        <BadgeMatrix />
       </div>
+
 
       {/* Modals */}
       <div id="modals" className="scroll-mt-24">
@@ -125,6 +135,21 @@ export function ComponentsSection() {
       {/* Tables */}
       <div id="tables" className="scroll-mt-24">
         <TableMatrix />
+      </div>
+
+      {/* Tooltips */}
+      <div id="tooltips" className="scroll-mt-24">
+        <TooltipMatrix />
+      </div>
+
+      {/* Toasts */}
+      <div id="toasts" className="scroll-mt-24">
+        <ToastMatrix />
+      </div>
+
+      {/* Cards */}
+      <div id="cards" className="scroll-mt-24">
+        <CardMatrix />
       </div>
     </section>
   );

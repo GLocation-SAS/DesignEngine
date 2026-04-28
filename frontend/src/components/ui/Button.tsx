@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:pointer-events-none disabled:bg-semantic-background-disabled-surface disabled:text-semantic-text-disabled-default disabled:border-transparent active:scale-95",
+  "inline-flex items-center justify-center rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:pointer-events-none disabled:bg-semantic-background-disabled-surface disabled:text-semantic-text-disabled-default disabled:border-transparent active:scale-95 w-full",
   {
     variants: {
       variant: {
@@ -15,7 +15,7 @@ const buttonVariants = cva(
         warning: "bg-semantic-background-warning-default text-white hover:bg-warning-700 active:bg-warning-800 hover:shadow-[inset_0px_0px_13.1px_0px_#FDE68A]",
         neutral: "bg-semantic-background-neutral-surface text-semantic-text-disabled-default border-2 border-semantic-background-neutral-muted hover:bg-semantic-background-neutral-hover hover:text-semantic-text-on-color hover:border-semantic-background-neutral-hover active:bg-semantic-background-neutral-Pressed active:text-semantic-text-on-color active:border-semantic-background-neutral-Pressed",
         outline: "border-2 border-primary-500 bg-transparent text-primary-500 hover:bg-primary-50 active:bg-primary-100",
-        ghost: "bg-transparent hover:bg-neutral-100 text-neutral-700",
+        ghost: "bg-transparent hover:scale-110",
         glass: "glass bg-white/10 backdrop-blur-md border border-white/20 text-neutral-900 hover:bg-white/20 shadow-glow",
       },
       size: {
@@ -70,7 +70,7 @@ export interface ButtonProps
   VariantProps<typeof buttonVariants> { }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, state, ...props }, ref) => {
+  ({ className, variant, size, state, fullWidth, ...props }, ref) => {
     return (
       <button
         className={cn(buttonVariants({ variant, size, state, className }))}

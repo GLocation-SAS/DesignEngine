@@ -19,9 +19,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     const isChecked = controlledChecked !== undefined ? controlledChecked : internalChecked;
 
     const sizeConfigs = {
-      L: { box: "w-8 h-8", check: 18, text: "text-[12px]" },
-      M: { box: "w-6 h-6", check: 14, text: "text-[12px]" },
-      S: { box: "w-4 h-4", check: 10, text: "text-[12px]" },
+      L: { box: "w-8 h-8", check: 18, text: "text-[14px]" },
+      M: { box: "w-6 h-6", check: 14, text: "text-[14px]" },
+      S: { box: "w-4 h-4", check: 10, text: "text-[14px]" },
     };
 
     const currentSize = sizeConfigs[sizeVariant];
@@ -30,7 +30,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
       if (disabled) return "bg-neutral-200 border-neutral-200 cursor-not-allowed";
       if (error) return isChecked ? "bg-error-500 border-error-500" : "bg-white border-error-500";
       if (success) return isChecked ? "bg-success-500 border-success-500" : "bg-white border-success-500";
-      return isChecked ? "bg-primary border-primary" : "bg-white border-primary";
+      return isChecked ? "bg-primary border-primary" : "bg-transparent border-primary";
     };
 
     const handleToggle = () => {
@@ -44,7 +44,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <div
         className={cn(
-          "flex items-start gap-4 transition-all group",
+          "flex items-start gap-3 transition-all group",
           aligned === "right" ? "flex-row-reverse justify-end text-right" : "flex-row justify-start text-left",
           className
         )}
@@ -83,7 +83,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           <div className="flex flex-col gap-1 py-0.5">
             {label && (
               <span className={cn(
-                " font-medium leading-4 text-neutral-900",
+                "leading-4 text-neutral-900",
                 currentSize.text,
                 disabled && "text-neutral-400"
               )}>
