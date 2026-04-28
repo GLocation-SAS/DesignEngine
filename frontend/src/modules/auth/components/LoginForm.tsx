@@ -1,11 +1,48 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Mail, Lock, Eye } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Button, Input, Checkbox } from "@/components/ui";
 
 export function LoginForm() {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+
+  const validate = () => {
+    const newErrors: { email?: string; password?: string } = {};
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      newErrors.email = "El correo es obligatorio";
+    } else if (!emailRegex.test(email)) {
+      newErrors.email = "Formato no valido";
+    }
+
+    // Password validation
+    if (!password) {
+      newErrors.password = "La contraseña es obligatoria";
+    } else if (password.length < 6) {
+      newErrors.password = "La contraseña debe tener al menos 6 caracteres";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (validate()) {
+      router.push("/users");
+    }
+  };
+
   return (
     <div className="mx-auto w-full max-w-[440px] space-y-10">
       {/* Logo */}
@@ -39,7 +76,7 @@ export function LoginForm() {
       </div>
 
       {/* Form */}
-      <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+      <form className="space-y-6" onSubmit={handleSubmit} noValidate>
         <div className="space-y-5">
           <div className="space-y-2">
             <label className="text-sm font-medium text-neutral-900">
@@ -50,6 +87,10 @@ export function LoginForm() {
               placeholder="Ejemplo@gmail.com"
               iconLeft={<Mail className="h-5 w-5" />}
               className="w-full"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              error={errors.email}
+              success={email !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)}
             />
           </div>
 
@@ -58,11 +99,26 @@ export function LoginForm() {
               Contraseña
             </label>
             <Input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="............"
               iconLeft={<Lock className="h-5 w-5" />}
-              iconRight={<Eye className="h-5 w-5 cursor-pointer text-neutral-900 hover:text-neutral-300 transition-colors" />}
+              iconRight={
+                showPassword ? (
+                  <EyeOff
+                    className="h-5 w-5 cursor-pointer text-neutral-900 hover:text-neutral-300 transition-colors"
+                    onClick={() => setShowPassword(false)}
+                  />
+                ) : (
+                  <Eye
+                    className="h-5 w-5 cursor-pointer text-neutral-900 hover:text-neutral-300 transition-colors"
+                    onClick={() => setShowPassword(true)}
+                  />
+                )
+              }
               className="w-full"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              error={errors.password}
             />
           </div>
         </div>
@@ -77,7 +133,7 @@ export function LoginForm() {
           </Link>
         </div>
 
-        <Button variant="primary" size="lg">
+        <Button variant="primary" size="lg" type="submit">
           Iniciar sesión
         </Button>
 
