@@ -13,6 +13,7 @@ const badgeVariants = cva(
         error: "border-transparent bg-error-500 text-white hover:bg-error-600",
         warning: "border-transparent bg-warning-500 text-white hover:bg-warning-600",
         info: "border-transparent bg-info-500 text-white hover:bg-info-600",
+        neutral: "border-transparent bg-neutral-500 text-white hover:bg-neutral-600",
         outline: "text-neutral-900 border-neutral-300",
       },
     },

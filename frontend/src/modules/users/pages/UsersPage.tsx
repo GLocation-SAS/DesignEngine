@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from 'react';
+import Avatar from '@/components/ui/Avatar';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -19,7 +20,7 @@ import {
 } from '@/components/ui/Pagination';
 import { Badge } from '@/components/ui/Badge';
 import { Tooltip } from '@/components/ui/Tooltip';
-import { Users, ShieldCheck, Search, Plus, Edit, Trash2, Filter, Eye, EyeOff, UserCheck, Database } from 'lucide-react';
+import { Users, ShieldCheck, Search, Plus, Edit, Trash2, Filter, Eye, EyeOff, UserCheck, Database, User as UserIcon, CheckCircle2, XCircle } from 'lucide-react';
 import { useToast } from '@/context/ToastContext';
 
 interface User {
@@ -229,8 +230,15 @@ export const UsersPage = () => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     return filteredUsers.slice(startIndex, startIndex + ITEMS_PER_PAGE).map(user => ({
       ...user,
+      nameColumn: (
+        <div className="flex items-center gap-3">
+          <Avatar name={user.name} size="sm" />
+          <span className="font-medium text-neutral-900">{user.name}</span>
+        </div>
+      ),
       state: (
-        <Badge variant={user.status === "Activo" ? "success" : "warning"}>
+        <Badge variant={user.status === "Activo" ? "success" : "neutral"} className="flex items-center gap-1.5 w-fit">
+          {user.status === "Activo" ? <CheckCircle2 className="w-3.5 h-3.5" /> : <XCircle className="w-3.5 h-3.5" />}
           {user.status}
         </Badge>
       ),
@@ -239,7 +247,7 @@ export const UsersPage = () => {
           <Tooltip content="Editar usuario">
             <Button
               variant="ghost"
-              className="p-2 h-auto text-primary-500"
+              className="p-2 h-auto text-neutral-500"
               onClick={() => handleOpenEdit(user)}
             >
               <Edit className="w-4 h-4" />
@@ -363,17 +371,67 @@ export const UsersPage = () => {
 
           {/* Table Section */}
           <section className="flex-1">
-            <Table
-              columns={[
-                { key: 'name', label: 'Nombre' },
-                { key: 'email', label: 'Email' },
-                { key: 'role', label: 'Rol' },
-                { key: 'state', label: 'Estado' },
-                { key: 'lastAccess', label: 'Último acceso' },
-                { key: 'actions', label: 'Acciones' },
-              ]}
-              data={tableData}
-            />
+            {/* Desktop Table */}
+            <div className="hidden md:block">
+              <Table
+                columns={[
+                  { key: 'nameColumn', label: 'Nombre' },
+                  { key: 'email', label: 'Email' },
+                  { key: 'role', label: 'Rol' },
+                  { key: 'state', label: 'Estado' },
+                  { key: 'lastAccess', label: 'Último acceso' },
+                  { key: 'actions', label: 'Acciones' },
+                ]}
+                data={tableData}
+              />
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="flex flex-col gap-4 md:hidden">
+              {tableData.map((user) => (
+                <Card key={user.id} showEffect={false} className="shadow-sm max-w-none">
+                  <div className="flex flex-col gap-4 -mt-2">
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-center gap-3">
+                        <Avatar name={user.name} />
+                        <div>
+                          <h3 className="font-bold text-neutral-900 text-sm">{user.name}</h3>
+                          <p className="text-xs text-neutral-500">{user.email}</p>
+                        </div>
+                      </div>
+                      <div className="mt-1 flex-shrink-0">
+                        {user.status === "Activo" ? <CheckCircle2 className="w-4 h-4 text-success-500" /> : <XCircle className="w-4 h-4 text-neutral-500" />}
+                      </div>
+                    </div>
+
+                    <div className="h-px bg-neutral-200 w-full" />
+
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-xs text-neutral-500 font-medium px-2.5 py-1">
+                        <UserIcon className="w-4 h-4" />
+                        <span>{user.role}</span>
+                      </div>
+                      <div className="flex gap-2">
+                        <Button
+                          variant="ghost"
+                          className="p-1.5 h-auto text-neutral-500 rounded-lg hover:text-neutral-600"
+                          onClick={() => handleOpenEdit(user as User)}
+                        >
+                          <Edit className="w-4 h-4 text-neutral-500" />
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          className="p-1.5 h-auto rounded-lg hover:text-error-600"
+                          onClick={() => handleOpenDelete(user.id)}
+                        >
+                          <Trash2 className="w-4 h-4 text-error-500" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </section>
 
           {/* Pagination Section */}

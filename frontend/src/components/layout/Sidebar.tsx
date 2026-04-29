@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   ChevronDown,
-  ChevronsUpDown,
   LayoutGrid,
   Palette,
   User,
@@ -229,7 +228,6 @@ export function Sidebar({
                   Core System
                 </span>
               </div>
-              <ChevronsUpDown className="h-4 w-4 text-neutral-400" />
             </div>
           )}
         </div>
@@ -309,48 +307,6 @@ export function Sidebar({
         {/* Footer / Toggle */}
         <div className="mt-auto border-t border-neutral-200 p-2 dark:border-neutral-200">
           <div className="flex flex-col gap-1">
-            {/* User Profile */}
-            <button className={cn(
-              "flex items-center gap-3 rounded-lg p-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-200/50",
-              collapsed && "justify-center"
-            )}>
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-300">
-                {user.avatar ? (
-                  <img src={user.avatar} alt={user.name} className="h-full w-full rounded-full object-cover" />
-                ) : (
-                  <User className="h-4 w-4 text-neutral-500" />
-                )}
-              </div>
-              {!collapsed && (
-                <div className="flex flex-1 items-center justify-between overflow-hidden">
-                  <div className="flex flex-col overflow-hidden">
-                    <span className="truncate text-sm font-medium text-neutral-900 leading-tight">
-                      {user.name}
-                    </span>
-                    <span className="truncate text-[10px] text-neutral-500 leading-tight">
-                      {user.email}
-                    </span>
-                  </div>
-                  <ChevronsUpDown className="h-4 w-4 text-neutral-400" />
-                </div>
-              )}
-            </button>
-
-            {/* Toggle Button */}
-            <button
-              onClick={onToggle}
-              className="flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-all"
-              aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-            >
-              {collapsed ? (
-                <PanelLeftOpen className="h-4 w-4" />
-              ) : (
-                <div className="flex items-center gap-2 px-2 text-xs font-medium">
-                  <PanelLeftClose className="h-4 w-4" />
-                  <span>Colapsar menú</span>
-                </div>
-              )}
-            </button>
             {/* Theme Toggle */}
             {collapsed ? (
               <button
@@ -453,6 +409,48 @@ export function Sidebar({
                 </span>
               </div>
             )}
+
+            {/* Toggle Button */}
+            <button
+              onClick={onToggle}
+              className="flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-all"
+              aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+            >
+              {collapsed ? (
+                <PanelLeftOpen className="h-4 w-4" />
+              ) : (
+                <div className="flex items-center gap-2 px-2 text-xs font-medium">
+                  <PanelLeftClose className="h-4 w-4" />
+                  <span>Colapsar menú</span>
+                </div>
+              )}
+            </button>
+
+            {/* User Profile */}
+            <button className={cn(
+              "flex items-center gap-3 rounded-lg p-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-200/50",
+              collapsed && "justify-center"
+            )}>
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-300">
+                {user.avatar ? (
+                  <img src={user.avatar} alt={user.name} className="h-full w-full rounded-full object-cover" />
+                ) : (
+                  <User className="h-4 w-4 text-neutral-500" />
+                )}
+              </div>
+              {!collapsed && (
+                <div className="flex flex-1 items-center justify-between overflow-hidden">
+                  <div className="flex flex-col overflow-hidden">
+                    <span className="truncate text-sm font-medium text-neutral-900 leading-tight">
+                      {user.name}
+                    </span>
+                    <span className="truncate text-[10px] text-neutral-500 leading-tight">
+                      {user.email}
+                    </span>
+                  </div>
+                </div>
+              )}
+            </button>
           </div>
         </div>
       </aside>
