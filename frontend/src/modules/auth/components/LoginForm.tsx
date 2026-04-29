@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Button, Input, Checkbox } from "@/components/ui";
+import { publicUrl } from "@/lib/utils";
 
 export function LoginForm() {
   const router = useRouter();
@@ -54,7 +55,7 @@ export function LoginForm() {
       {/* Logo */}
       <div className="flex justify-start">
         <Image
-          src="/logos/lt-h.png"
+          src={publicUrl("/logos/lt-h.png")}
           alt="QA Automatization"
           width={217}
           height={48}
@@ -62,7 +63,7 @@ export function LoginForm() {
           priority
         />
         <Image
-          src="/logos/lt-h-white.png"
+          src={publicUrl("/logos/lt-h-white.png")}
           alt="QA Automatization"
           width={217}
           height={48}

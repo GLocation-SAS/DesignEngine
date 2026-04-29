@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { publicUrl } from "@/lib/utils";
 
 interface AvatarProps {
   name: string;
@@ -36,7 +37,7 @@ const Avatar: React.FC<AvatarProps> = ({ name, src, size = "md" }) => {
     >
       {src ? (
         <Image
-          src={src}
+          src={publicUrl(src)}
           alt={name}
           fill
           className="aspect-square h-full w-full object-cover"

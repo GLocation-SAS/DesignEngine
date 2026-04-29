@@ -22,6 +22,7 @@ import { Badge } from '@/components/ui/Badge';
 import { Tooltip } from '@/components/ui/Tooltip';
 import { Users, ShieldCheck, Search, Plus, Edit, Trash2, Filter, Eye, EyeOff, UserCheck, Database, User as UserIcon, CheckCircle2, XCircle } from 'lucide-react';
 import { useToast } from '@/context/ToastContext';
+import { publicUrl } from '@/lib/utils';
 
 interface User {
   id: number;
@@ -594,7 +595,7 @@ export const UsersPage = () => {
           {isDeleting && (
             <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
               <div className="flex flex-col items-center gap-4">
-                <img src="/automation.gif" alt="Cargando..." className="w-48 h-48 rounded-2xl shadow-2xl" />
+                <img src={publicUrl("/automation.gif")} alt="Cargando..." className="w-48 h-48 rounded-2xl shadow-2xl" />
                 <p className="text-white font-bold text-xl tracking-wider">Procesando...</p>
               </div>
             </div>

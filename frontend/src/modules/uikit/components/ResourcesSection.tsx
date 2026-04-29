@@ -3,6 +3,7 @@
 import React from "react";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { publicUrl } from "@/lib/utils";
 
 export function ResourcesSection() {
   return (
@@ -21,7 +22,7 @@ export function ResourcesSection() {
         <div className="group relative dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
           <div className="aspect-video bg-neutral-50 relative flex items-center justify-center p-4">
             <img
-              src="/automation.gif"
+              src={publicUrl("/automation.gif")}
               alt="Automation Process"
               className="max-h-full rounded-lg shadow-lg"
             />
@@ -33,7 +34,7 @@ export function ResourcesSection() {
             </div>
             <div className="flex items-center justify-between pt-2">
               <span className="text-[10px] font-black uppercase tracking-widest text-neutral-400">GIF FORMAT</span>
-              <a href="/automation.gif" download="automation.gif">
+              <a href={publicUrl("/automation.gif")} download="automation.gif">
                 <Button variant="outline" size="sm" className="gap-2">
                   <Download className="w-4 h-4" />
                   Download
@@ -55,7 +56,7 @@ export function ResourcesSection() {
           <div key={logo.id} className="group relative dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
             <div className="aspect-video bg-neutral-50 relative flex items-center justify-center p-8">
               <img
-                src={logo.src}
+                src={publicUrl(logo.src)}
                 alt={logo.title}
                 className="max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
               />
@@ -67,7 +68,7 @@ export function ResourcesSection() {
               </div>
               <div className="flex items-center justify-between pt-2">
                 <span className="text-[10px] font-black uppercase tracking-widest text-neutral-400">{logo.format}</span>
-                <a href={logo.src} download={logo.src.split('/').pop()}>
+                <a href={publicUrl(logo.src)} download={logo.src.split('/').pop()}>
                   <Button variant="outline" size="sm" className="gap-2">
                     <Download className="w-4 h-4" />
                     Download

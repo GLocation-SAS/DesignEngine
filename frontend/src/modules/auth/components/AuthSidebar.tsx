@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { CheckCircle2, FileText } from "lucide-react";
+import { publicUrl } from "@/lib/utils";
 
 const FEATURES = [
   "Ejecución de pruebas automatizadas",
@@ -14,7 +15,7 @@ export function AuthSidebar() {
     <div className="relative w-full h-full rounded-3xl overflow-hidden">
       <div className="w-full h-full object-cover">
         <Image
-          src="/login.png"
+          src={publicUrl("/login.png")}
           alt="Login Visual"
           fill
           className="w-full h-full rounded-[40px]"
