@@ -25,17 +25,24 @@ export function RegisterForm() {
     password?: string;
     confirmPassword?: string;
   }>({});
+  const [hasHadError, setHasHadError] = useState<{ email?: boolean }>({});
+
+  const validateEmail = (val: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!val) return "El correo es obligatorio";
+    if (!emailRegex.test(val)) return "Formato no valido";
+    return undefined;
+  };
 
   const validate = () => {
     const newErrors: typeof errors = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!formData.name) newErrors.name = "El nombre es obligatorio";
 
-    if (!formData.email) {
-      newErrors.email = "El correo es obligatorio";
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Formato no valido";
+    const emailError = validateEmail(formData.email);
+    if (emailError) {
+      newErrors.email = emailError;
+      setHasHadError((prev) => ({ ...prev, email: true }));
     }
 
     if (!formData.password) {
@@ -74,6 +81,11 @@ export function RegisterForm() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === "email") {
+      const err = validateEmail(value);
+      if (err) setHasHadError((prev) => ({ ...prev, email: true }));
+      setErrors((prev) => ({ ...prev, email: err }));
+    }
   };
 
   return (
@@ -115,6 +127,7 @@ export function RegisterForm() {
               value={formData.name}
               onChange={handleChange}
               error={errors.name}
+              sizeVariant="M"
             />
           </div>
 
@@ -131,7 +144,8 @@ export function RegisterForm() {
               value={formData.email}
               onChange={handleChange}
               error={errors.email}
-              success={formData.email !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)}
+              success={!errors.email && hasHadError.email && formData.email !== ""}
+              sizeVariant="M"
             />
           </div>
 
@@ -161,6 +175,7 @@ export function RegisterForm() {
               value={formData.password}
               onChange={handleChange}
               error={errors.password}
+              sizeVariant="M"
             />
           </div>
 
@@ -190,11 +205,12 @@ export function RegisterForm() {
               value={formData.confirmPassword}
               onChange={handleChange}
               error={errors.confirmPassword}
+              sizeVariant="M"
             />
           </div>
         </div>
 
-        <Button variant="primary" size="lg" type="submit">
+        <Button variant="primary" size="default" type="submit">
           Registrarse
         </Button>
 

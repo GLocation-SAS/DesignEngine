@@ -57,6 +57,7 @@ export const UsersPage = () => {
   // Estado para la modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [isConfirmSaveModalOpen, setIsConfirmSaveModalOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [userToDelete, setUserToDelete] = useState<number | null>(null);
@@ -80,12 +81,14 @@ export const UsersPage = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [hasHadError, setHasHadError] = useState<{ email?: boolean; name?: boolean }>({});
 
   // Handlers
   const handleOpenCreate = () => {
     setEditingUser(null);
     setFormData({ name: "", email: "", password: "", role: "QA", status: "Activo" });
     setErrors({ name: "", email: "", password: "" });
+    setHasHadError({});
     setShowPassword(false);
     setIsModalOpen(true);
   };
@@ -100,6 +103,7 @@ export const UsersPage = () => {
       status: user.status as "Activo" | "Inactivo"
     });
     setErrors({ name: "", email: "", password: "" });
+    setHasHadError({});
     setShowPassword(false);
     setIsModalOpen(true);
   };
@@ -128,24 +132,34 @@ export const UsersPage = () => {
     }
   };
 
+  const validateName = (val: string) => {
+    if (!val.trim()) return "El nombre es obligatorio";
+    if (/\d/.test(val)) return "El nombre no puede contener números";
+    return "";
+  };
+
+  const validateEmail = (val: string) => {
+    if (!val.trim()) return "El correo es obligatorio";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return "Formato de correo inválido";
+    return "";
+  };
+
   const validateForm = () => {
     const newErrors = { name: "", email: "", password: "" };
     let isValid = true;
 
-    if (!formData.name.trim()) {
-      newErrors.name = "El nombre es obligatorio";
+    const nameError = validateName(formData.name);
+    if (nameError) {
+      newErrors.name = nameError;
       isValid = false;
-    } else if (/\d/.test(formData.name)) {
-      newErrors.name = "El nombre no puede contener números";
-      isValid = false;
+      setHasHadError((prev) => ({ ...prev, name: true }));
     }
 
-    if (!formData.email.trim()) {
-      newErrors.email = "El correo es obligatorio";
+    const emailError = validateEmail(formData.email);
+    if (emailError) {
+      newErrors.email = emailError;
       isValid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Formato de correo inválido";
-      isValid = false;
+      setHasHadError((prev) => ({ ...prev, email: true }));
     }
 
     if (!editingUser && !formData.password) {
@@ -159,7 +173,10 @@ export const UsersPage = () => {
 
   const handleSave = () => {
     if (!validateForm()) return;
+    setIsConfirmSaveModalOpen(true);
+  };
 
+  const confirmSave = () => {
     if (editingUser) {
       // Editar
       setUsersList(prev => prev.map(u =>
@@ -191,6 +208,7 @@ export const UsersPage = () => {
         variant: "success"
       });
     }
+    setIsConfirmSaveModalOpen(false);
     setIsModalOpen(false);
   };
 
@@ -318,6 +336,7 @@ export const UsersPage = () => {
               </div>
               <div className="w-full md:w-64">
                 <Dropdown
+                  className="w-full"
                   label="Filtrar por rol"
                   sizeVariant="M"
                   iconLeft={<Filter className="w-5 h-5" />}
@@ -332,7 +351,8 @@ export const UsersPage = () => {
               </div>
             </div>
             <Button
-              className="w-auto h-[54px]"
+              className="w-auto"
+              size="default"
               variant="primary"
               onClick={handleOpenCreate}
             >
@@ -406,11 +426,11 @@ export const UsersPage = () => {
             sizeVariant="M"
             footer={
               <>
-                <Button variant="neutral" size="lg" onClick={() => setIsModalOpen(false)}>
+                <Button variant="neutral" size="default" onClick={() => setIsModalOpen(false)}>
                   Cancelar
                 </Button>
-                <Button variant="primary" size="lg" onClick={handleSave}>
-                  Guardar
+                <Button variant="primary" size="default" onClick={handleSave}>
+                  {editingUser ? "Guardar cambios" : "Crear usuario"}
                 </Button>
               </>
             }
@@ -423,9 +443,13 @@ export const UsersPage = () => {
                 className="w-full"
                 sizeVariant="M"
                 error={errors.name}
+                success={!errors.name && hasHadError.name && formData.name !== ""}
                 onChange={(e) => {
-                  setFormData({ ...formData, name: e.target.value });
-                  if (errors.name) setErrors({ ...errors, name: "" });
+                  const val = e.target.value;
+                  setFormData({ ...formData, name: val });
+                  const err = validateName(val);
+                  if (err) setHasHadError((prev) => ({ ...prev, name: true }));
+                  setErrors({ ...errors, name: err });
                 }}
               />
               <Input
@@ -436,9 +460,13 @@ export const UsersPage = () => {
                 className="w-full"
                 sizeVariant="M"
                 error={errors.email}
+                success={!errors.email && hasHadError.email && formData.email !== ""}
                 onChange={(e) => {
-                  setFormData({ ...formData, email: e.target.value });
-                  if (errors.email) setErrors({ ...errors, email: "" });
+                  const val = e.target.value;
+                  setFormData({ ...formData, email: val });
+                  const err = validateEmail(val);
+                  if (err) setHasHadError((prev) => ({ ...prev, email: true }));
+                  setErrors({ ...errors, email: err });
                 }}
               />
               <Input
@@ -465,6 +493,7 @@ export const UsersPage = () => {
                 }}
               />
               <Dropdown
+                className="w-full"
                 label="Rol"
                 value={formData.role}
                 options={[
@@ -488,6 +517,19 @@ export const UsersPage = () => {
             secondaryActionLabel="Cancelar"
             onPrimaryAction={confirmDelete}
             onSecondaryAction={() => setIsDeleteModalOpen(false)}
+          />
+
+          {/* Modal de Confirmación de Guardar */}
+          <Modal
+            isOpen={isConfirmSaveModalOpen}
+            onClose={() => setIsConfirmSaveModalOpen(false)}
+            title={editingUser ? "¿Confirmar actualización?" : "¿Confirmar creación?"}
+            description={editingUser ? `¿Estás seguro que deseas guardar los cambios para el usuario ${formData.name}?` : `¿Estás seguro que deseas crear el usuario ${formData.name} con el rol de ${formData.role}?`}
+            state="Info"
+            primaryActionLabel="Confirmar"
+            secondaryActionLabel="Cancelar"
+            onPrimaryAction={confirmSave}
+            onSecondaryAction={() => setIsConfirmSaveModalOpen(false)}
           />
 
           {/* Overlay de Carga */}

@@ -13,16 +13,22 @@ export function LoginForm() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+  const [hasHadError, setHasHadError] = useState<{ email?: boolean }>({});
+
+  const validateEmail = (val: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!val) return "El correo es obligatorio";
+    if (!emailRegex.test(val)) return "Formato no valido";
+    return undefined;
+  };
 
   const validate = () => {
     const newErrors: { email?: string; password?: string } = {};
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email) {
-      newErrors.email = "El correo es obligatorio";
-    } else if (!emailRegex.test(email)) {
-      newErrors.email = "Formato no valido";
+    const emailError = validateEmail(email);
+    if (emailError) {
+      newErrors.email = emailError;
+      setHasHadError((prev) => ({ ...prev, email: true }));
     }
 
     // Password validation
@@ -88,9 +94,16 @@ export function LoginForm() {
               iconLeft={<Mail className="h-5 w-5" />}
               className="w-full"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                const val = e.target.value;
+                setEmail(val);
+                const err = validateEmail(val);
+                if (err) setHasHadError((prev) => ({ ...prev, email: true }));
+                setErrors((prev) => ({ ...prev, email: err }));
+              }}
               error={errors.email}
-              success={email !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)}
+              success={!errors.email && hasHadError.email && email !== ""}
+              sizeVariant="M"
             />
           </div>
 
@@ -119,6 +132,7 @@ export function LoginForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               error={errors.password}
+              sizeVariant="M"
             />
           </div>
         </div>
@@ -133,7 +147,7 @@ export function LoginForm() {
           </Link>
         </div>
 
-        <Button variant="primary" size="lg" type="submit">
+        <Button variant="primary" size="default" type="submit">
           Iniciar sesión
         </Button>
 
@@ -145,7 +159,7 @@ export function LoginForm() {
         </div>
 
         {/* Social Login */}
-        <Button variant="neutral" size="lg">
+        <Button variant="neutral" size="default">
           <svg className="h-5 w-5" viewBox="0 0 24 24">
             <path
               fill="#4285F4"

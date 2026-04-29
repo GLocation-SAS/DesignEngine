@@ -11,15 +11,22 @@ export function ForgotPasswordForm() {
   const { show } = useToast();
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState<{ email?: string }>({});
+  const [hasHadError, setHasHadError] = useState<{ email?: boolean }>({});
+
+  const validateEmail = (val: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!val) return "El correo es obligatorio";
+    if (!emailRegex.test(val)) return "Formato no valido";
+    return undefined;
+  };
 
   const validate = () => {
     const newErrors: { email?: string } = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!email) {
-      newErrors.email = "El correo es obligatorio";
-    } else if (!emailRegex.test(email)) {
-      newErrors.email = "Formato no valido";
+    const emailError = validateEmail(email);
+    if (emailError) {
+      newErrors.email = emailError;
+      setHasHadError((prev) => ({ ...prev, email: true }));
     }
 
     setErrors(newErrors);
@@ -75,14 +82,21 @@ export function ForgotPasswordForm() {
               iconLeft={<Mail className="h-5 w-5" />}
               className="w-full"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                const val = e.target.value;
+                setEmail(val);
+                const err = validateEmail(val);
+                if (err) setHasHadError((prev) => ({ ...prev, email: true }));
+                setErrors((prev) => ({ ...prev, email: err }));
+              }}
               error={errors.email}
-              success={email !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)}
+              success={!errors.email && hasHadError.email && email !== ""}
+              sizeVariant="M"
             />
           </div>
         </div>
 
-        <Button variant="primary" size="lg" type="submit">
+        <Button variant="primary" size="default" type="submit">
           Recuperar contraseña
         </Button>
 
