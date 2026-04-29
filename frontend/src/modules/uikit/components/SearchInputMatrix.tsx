@@ -6,10 +6,10 @@ import { Search, X } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 
 const SIZES = [
-  { key: "L", label: "Large (65px)" },
-  { key: "M", label: "Medium (54px)" },
-  { key: "S", label: "Small (44px)" },
-  { key: "XS", label: "Extra Small (40px)" },
+  { key: "L", label: "Large (65px)", sizeVariant: "lg" as const },
+  { key: "M", label: "Medium (54px)", sizeVariant: "md" as const },
+  { key: "S", label: "Small (44px)", sizeVariant: "sm" as const },
+  { key: "XS", label: "Extra Small (40px)", sizeVariant: "xs" as const },
 ] as const;
 
 const STATES = [
@@ -98,7 +98,7 @@ export function SearchInputMatrix() {
                           label="Búsqueda"
                           placeholder="Buscar elementos..."
                           notes="Ingresa un término de búsqueda"
-                          sizeVariant={size.key}
+                          sizeVariant={size.sizeVariant}
                           iconRight={getRightIcon(state.key)}
                           {...state.props}
                           {...(state.key === "Disabled" && { placeholder: "Búsqueda deshabilitada" })}

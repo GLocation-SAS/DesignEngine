@@ -56,28 +56,28 @@ export function DialogModalMatrix() {
               label="Nombre completo"
               placeholder="Ej. Juan Pérez"
               iconLeft={<User className="w-4 h-4" />}
-              sizeVariant="M"
+              sizeVariant="md"
             />
             <Input
               label="Correo electrónico"
               type="email"
               placeholder="juan@ejemplo.com"
               iconLeft={<Mail className="w-4 h-4" />}
-              sizeVariant="M"
+              sizeVariant="md"
             />
             <Input
               label="Cédula"
               type="text"
               placeholder="1234567890"
               iconLeft={<IdCard className="w-4 h-4" />}
-              sizeVariant="M"
+              sizeVariant="md"
             />
             <Input
               label="Contraseña"
               type="password"
               placeholder="••••••••"
               iconLeft={<Lock className="w-4 h-4" />}
-              sizeVariant="M"
+              sizeVariant="md"
             />
           </div>
 

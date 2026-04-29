@@ -42,6 +42,8 @@ interface SidebarProps {
   collapsed?: boolean;
   onToggle?: () => void;
   activeId?: string;
+  /** Sustituye el bloque del conmutador de tema (p. ej. UI Kit). */
+  footer?: React.ReactNode;
   user?: {
     name: string;
     email: string;
@@ -120,6 +122,7 @@ export function Sidebar({
   collapsed = false,
   onToggle,
   activeId,
+  footer,
   user = {
     name: "Design Team",
     email: "team@designengine.ai",
@@ -307,107 +310,113 @@ export function Sidebar({
         {/* Footer / Toggle */}
         <div className="mt-auto border-t border-neutral-200 p-2 dark:border-neutral-200">
           <div className="flex flex-col gap-1">
-            {/* Theme Toggle */}
-            {collapsed ? (
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="mt-2 flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 transition-all hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
-                aria-label="Toggle theme"
-              >
-                {theme === "dark" ? (
-                  <Moon className="h-5 w-5 text-neutral-400" />
-                ) : (
-                  <Sun className="h-5 w-5 text-neutral-500" />
-                )}
-              </button>
+            {footer ? (
+              <div className="mt-2">{footer}</div>
             ) : (
-              <div className="mt-2 flex h-12 w-full items-center justify-center gap-3 rounded-lg px-2">
-                <span
-                  className={cn(
-                    "text-[15px] font-bold transition-colors",
-                    theme === "light" ? "text-neutral-800" : "text-neutral-600"
-                  )}
-                >
-                  Claro
-                </span>
-
-                <button
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className={cn(
-                    "relative flex h-[32px] w-[64px] shrink-0 items-center rounded-full transition-colors duration-500 focus:outline-none",
-                    theme === "dark" ? "bg-neutral-950" : "bg-primary-400"
-                  )}
-                  aria-label="Toggle theme"
-                >
-                  {/* Dark Mode Stars */}
-                  <div
-                    className={cn(
-                      "absolute inset-0 flex items-center justify-start pl-2 transition-opacity duration-500",
-                      theme === "dark" ? "opacity-100" : "opacity-0"
-                    )}
+              <>
+                {/* Theme Toggle */}
+                {collapsed ? (
+                  <button
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className="mt-2 flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 transition-all hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+                    aria-label="Toggle theme"
                   >
-                    {theme === "dark" && (
-                      <div className="relative h-full w-1/2">
-                        <svg className="absolute left-[3px] top-[7px] h-[7px] w-[7px] text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                        </svg>
-                        <svg className="absolute left-[2px] top-[16px] h-[4px] w-[4px] text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                        </svg>
-                        <svg className="absolute left-[13px] top-[10px] h-[3px] w-[3px] text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                        </svg>
-                        <svg className="absolute left-[11px] top-[18px] h-[5px] w-[5px] text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                        </svg>
-                      </div>
+                    {theme === "dark" ? (
+                      <Moon className="h-5 w-5 text-neutral-400" />
+                    ) : (
+                      <Sun className="h-5 w-5 text-neutral-500" />
                     )}
-                  </div>
+                  </button>
+                ) : (
+                  <div className="mt-2 flex h-12 w-full items-center justify-center gap-3 rounded-lg px-2">
+                    <span
+                      className={cn(
+                        "text-[15px] font-bold transition-colors",
+                        theme === "light" ? "text-neutral-800" : "text-neutral-600"
+                      )}
+                    >
+                      Claro
+                    </span>
 
-                  {/* Light Mode Clouds/Dots */}
-                  <div
-                    className={cn(
-                      "absolute inset-0 flex items-center justify-end pr-2 transition-opacity duration-500",
-                      theme === "light" ? "opacity-100" : "opacity-0"
-                    )}
-                  >
-                    {theme === "light" && (
-                      <div className="relative h-full w-1/2">
-                        <div className="absolute right-[4px] top-[8px] h-[5px] w-[5px] rounded-full bg-white" />
-                        <div className="absolute right-[14px] top-[14px] h-[3px] w-[3px] rounded-full bg-white" />
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Knob */}
-                  <div
-                    className={cn(
-                      "absolute left-1 top-1 flex h-[24px] w-[24px] items-center justify-center rounded-full transition-transform duration-500",
-                      theme === "dark" ? "translate-x-[32px] bg-transparent" : "translate-x-0 bg-white"
-                    )}
-                  >
-                    {theme === "dark" && (
-                      <svg
-                        className="h-[20px] w-[20px] text-white"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        stroke="none"
+                    <button
+                      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                      className={cn(
+                        "relative flex h-[32px] w-[64px] shrink-0 items-center rounded-full transition-colors duration-500 focus:outline-none",
+                        theme === "dark" ? "bg-neutral-950" : "bg-primary-400"
+                      )}
+                      aria-label="Toggle theme"
+                    >
+                      {/* Dark Mode Stars */}
+                      <div
+                        className={cn(
+                          "absolute inset-0 flex items-center justify-start pl-2 transition-opacity duration-500",
+                          theme === "dark" ? "opacity-100" : "opacity-0"
+                        )}
                       >
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                      </svg>
-                    )}
-                  </div>
-                </button>
+                        {theme === "dark" && (
+                          <div className="relative h-full w-1/2">
+                            <svg className="absolute left-[3px] top-[7px] h-[7px] w-[7px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                            </svg>
+                            <svg className="absolute left-[2px] top-[16px] h-[4px] w-[4px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                            </svg>
+                            <svg className="absolute left-[13px] top-[10px] h-[3px] w-[3px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                            </svg>
+                            <svg className="absolute left-[11px] top-[18px] h-[5px] w-[5px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                            </svg>
+                          </div>
+                        )}
+                      </div>
 
-                <span
-                  className={cn(
-                    "text-[15px] font-bold transition-colors",
-                    theme === "dark" ? "text-white" : "text-neutral-300"
-                  )}
-                >
-                  Oscuro
-                </span>
-              </div>
+                      {/* Light Mode Clouds/Dots */}
+                      <div
+                        className={cn(
+                          "absolute inset-0 flex items-center justify-end pr-2 transition-opacity duration-500",
+                          theme === "light" ? "opacity-100" : "opacity-0"
+                        )}
+                      >
+                        {theme === "light" && (
+                          <div className="relative h-full w-1/2">
+                            <div className="absolute right-[4px] top-[8px] h-[5px] w-[5px] rounded-full bg-white" />
+                            <div className="absolute right-[14px] top-[14px] h-[3px] w-[3px] rounded-full bg-white" />
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Knob */}
+                      <div
+                        className={cn(
+                          "absolute left-1 top-1 flex h-[24px] w-[24px] items-center justify-center rounded-full transition-transform duration-500",
+                          theme === "dark" ? "translate-x-[32px] bg-transparent" : "translate-x-0 bg-white"
+                        )}
+                      >
+                        {theme === "dark" && (
+                          <svg
+                            className="h-[20px] w-[20px] text-white"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            stroke="none"
+                          >
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                          </svg>
+                        )}
+                      </div>
+                    </button>
+
+                    <span
+                      className={cn(
+                        "text-[15px] font-bold transition-colors",
+                        theme === "dark" ? "text-white" : "text-neutral-300"
+                      )}
+                    >
+                      Oscuro
+                    </span>
+                  </div>
+                )}
+              </>
             )}
 
             {/* Toggle Button */}

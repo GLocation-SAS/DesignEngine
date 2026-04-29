@@ -9,4 +9,4 @@
  *   - services/    → API consumption (optional)
  */
 
-export { ProjectsPage } from "./pages/DashboardPage";
+export { DashboardPage } from "./pages/DashboardPage";

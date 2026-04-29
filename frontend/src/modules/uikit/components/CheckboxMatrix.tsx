@@ -18,7 +18,7 @@ const COMPOSITIONS = [
 ] as const;
 
 const STATES = [
-  { key: "default", label: "Default" },
+  { key: "default", label: "Default", props: {} },
   { key: "selected", label: "Selected", props: { checked: true } },
   { key: "error", label: "Error", props: { error: true, checked: true } },
   { key: "disabled", label: "Disabled", props: { disabled: true, checked: true } },
