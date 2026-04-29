@@ -258,4 +258,86 @@ Este componente debe corresponder exactamente con su equivalente en Figma, inclu
 
 ---
 
+## 9. TAMAÑOS Y PROPORCIONES DE COMPONENTES
+
+Define dimensiones explícitas para garantizar consistencia visual y evitar variaciones arbitrarias.
+
+> **Regla General Obligatoria:** Todos los componentes de interfaz deben utilizar el tamaño `md` (Medium) por defecto. Solo se aplicarán otros tamaños (`xs`, `sm`, `lg`) cuando el usuario lo solicite explícitamente o el contexto del diseño lo requiera de forma ineludible.
+
+---
+
+### 🔘 Button
+
+#### Tamaños
+
+| Tamaño | Altura | Padding horizontal | Padding vertical | Font size | Gap (icono–texto) |
+|--------|--------|-------------------|-----------------|-----------|-------------------|
+| `xs`   | 36px   | 16px (`px-4`)     | 8px (`py-2`)    | `text-sm` (14px) | 8px (`gap-2`) |
+| `sm`   | 40px   | 20px (`px-5`)     | 10px (`py-2.5`) | `text-sm` (14px) | 8px (`gap-2`) |
+| `md`   | 44px   | 20px (`px-5`)     | 10px (`py-2.5`) | `text-base` (16px) | 8px (`gap-2`) |
+| `lg`   | 56px   | 24px (`px-6`)     | 12px (`py-3`)   | `text-lg` (18px)   | 8px (`gap-2`) |
+| `icon` | 40px   | — (cuadrado)      | —               | —         | — |
+
+> El tamaño `icon` produce un botón cuadrado de **40×40px** (`h-10 w-10`), pensado exclusivamente para botones de un solo icono sin texto.
+
+#### Reglas
+
+- La **altura es fija** (`h-[Xpx]`) y no depende del contenido. Nunca usar `auto` ni dejar que el contenido defina la altura.
+- Los **iconos** deben tener un tamaño coherente con el texto del botón:
+  - `xs` / `sm` → icono de **16px** (`size-4`)
+  - `md` → icono de **18px** (`size-[18px]`) o **20px** (`size-5`)
+  - `lg` → icono de **20px** (`size-5`) o **24px** (`size-6`)
+- El **espaciado entre icono y texto** es siempre `gap-2` (**8px**), controlado por el CVA en todos los tamaños con texto.
+- El botón ocupa el **100% del ancho** de su contenedor por defecto (`w-full`). Para ancho automático, usar la prop `fullWidth={false}` o sobreescribir con `w-auto` vía `className`.
+
+---
+
+### ⌨️ Input
+
+#### Tamaños
+
+| Tamaño | Altura | Font size |
+|--------|--------|-----------|
+| `xs`   | 36px   | `text-xs` (12px) |
+| `sm`   | 40px   | `text-sm` (14px) |
+| `md`   | 44px   | `text-sm` (14px) |
+| `lg`   | 56px   | `text-base` (16px) |
+
+#### Reglas
+
+- La **altura es fija** (`h-[Xpx]`) e incluye el borde de 2.5px.
+- El **padding horizontal** del contenedor es fijo a **24px** (`px-6`).
+- El **espaciado interno** (gap) entre el texto, iconos y elementos de feedback es de **16px** (`gap-4`).
+- El componente se adapta al ancho de su contenido o contenedor con `w-fit` de base, pero sus elementos internos usan `flex-1` para ocupar el espacio disponible.
+
+---
+
+### 🔽 Dropdown
+
+#### Tamaños (Contenedor principal)
+
+| Tamaño | Altura | Font size |
+|--------|--------|-----------|
+| `xs`   | 36px   | `text-xs` (12px) |
+| `sm`   | 40px   | `text-sm` (14px) |
+| `md`   | 44px   | `text-sm` (14px) |
+| `lg`   | 56px   | `text-base` (16px) |
+
+#### Reglas del selector
+
+- La **altura es fija** e incluye un borde de **2.5px**.
+- El **padding horizontal** es de **24px** (`px-6`).
+- El **espaciado general interno** es de **16px** (`gap-4`), mientras que el grupo de iconos de la derecha (limpiar selección, error, flecha) mantiene un espaciado de **5px** (`gap-[5px]`).
+- Los separadores de los iconos en el bloque derecho tienen un tamaño de **1.5px × 14px**.
+
+#### Menú desplegable (Lista de opciones)
+
+- **Separación** con el selector principal: **8px** (top: `calc(100% + 8px)`).
+- **Border-radius**: **8px** (`rounded-[8px]`).
+- **Grosor del borde**: **2.5px**.
+- **Altura máxima del menú**: **240px** (`max-h-[240px]`) con scroll interno.
+- **Opciones de la lista**: Padding de **16px horizontal** y **12px vertical** (`px-[16px] py-[12px]`) con fuente tamaño 14px (`text-[14px]`).
+
+---
+
 *Si no está en DESIGN.md, no existe en el diseño.*
