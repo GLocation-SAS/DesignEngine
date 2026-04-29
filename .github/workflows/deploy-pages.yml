@@ -29,8 +29,8 @@ jobs:
       - name: Install and build
         working-directory: frontend
         env:
-          # Cambia DesignEngine por el nombre real de tu repo en GitHub
-          NEXT_PUBLIC_BASE_PATH: /DesignEngine
+          # Debe coincidir con el nombre del repo (/usuario.github.io/NOMBRE_REPO/)
+          NEXT_PUBLIC_BASE_PATH: /designengine
         run: |
           npm ci
           npm run build
