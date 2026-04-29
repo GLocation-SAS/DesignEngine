@@ -29,8 +29,8 @@ jobs:
       - name: Install and build
         working-directory: frontend
         env:
-          # Debe coincidir con el nombre del repo (/usuario.github.io/NOMBRE_REPO/)
-          NEXT_PUBLIC_BASE_PATH: /designengine
+          # Repo: GLocation_SAS/DesignEngine → https://glocation_sas.github.io/DesignEngine/
+          NEXT_PUBLIC_BASE_PATH: /DesignEngine
         run: |
           npm ci
           npm run build
