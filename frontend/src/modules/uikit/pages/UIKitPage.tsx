@@ -68,40 +68,6 @@ export default function UIKitPage() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // Final grouped structure for the Sidebar
-  const sidebarGroups = [
-    {
-      label: "Core Tokens",
-      icon: Palette,
-      items: NAV_GROUPS[0].items.map(item => ({
-        id: item.id,
-        label: item.label,
-        href: `#${item.id}`,
-        icon: item.icon
-      }))
-    },
-    {
-      label: "Components",
-      icon: Box,
-      items: NAV_GROUPS[1].items.map(item => ({
-        id: item.id,
-        label: item.label,
-        href: `#${item.id}`,
-        icon: item.icon
-      }))
-    },
-    {
-      label: "Assets",
-      icon: ShoppingBag,
-      items: NAV_GROUPS[2].items.map(item => ({
-        id: item.id,
-        label: item.label,
-        href: `#${item.id}`,
-        icon: item.icon
-      }))
-    }
-  ];
-
   useEffect(() => {
     setMounted(true);
 
@@ -132,7 +98,6 @@ export default function UIKitPage() {
       {/* Sidebar Navigation */}
       <div className="fixed left-0 top-0 bottom-0 z-30 hidden lg:block">
         <Sidebar
-          groups={sidebarGroups}
           activeId={activeSection}
           collapsed={isSidebarCollapsed}
           onToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}

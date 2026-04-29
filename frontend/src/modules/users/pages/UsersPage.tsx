@@ -8,6 +8,7 @@ import { Table } from '@/components/ui/Table';
 import { Dropdown } from '@/components/ui/Dropdown';
 import { DialogModal } from '@/components/ui/DialogModal';
 import { Modal } from '@/components/ui/Modal';
+import { Sidebar } from '@/components/layout/Sidebar';
 import {
   Pagination,
   PaginationContent,
@@ -59,6 +60,7 @@ export const UsersPage = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [userToDelete, setUserToDelete] = useState<number | null>(null);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const { show: showToast } = useToast();
 
@@ -251,246 +253,254 @@ export const UsersPage = () => {
   const qaCount = usersList.filter(u => u.role === "QA").length;
 
   return (
-    <div className="flex flex-col gap-8 p-8 bg-neutral-50 min-h-screen text-neutral-900">
-      {/* Header */}
-      <header className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold tracking-tight">Gestión de usuarios</h1>
-        <p className="text-neutral-600 font-medium">Administra los accesos y roles de los usuarios del sistema.</p>
-      </header>
-
-      {/* Stats Section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card
-          title="Total Usuarios"
-          description="Usuarios en el sistema"
-          icon={<Database className="w-8 h-8 text-primary-500" />}
-          className="max-w-none"
-        >
-          <div className="text-4xl font-bold mt-2 text-primary-500">{totalCount}</div>
-        </Card>
-        <Card
-          title="Usuarios Activos"
-          description="Sesiones habilitadas"
-          icon={<UserCheck className="w-8 h-8 text-success-500" />}
-          className="max-w-none"
-        >
-          <div className="text-4xl font-bold mt-2 text-success-500">{activeCount}</div>
-        </Card>
-        <Card
-          title="Usuarios Admin"
-          description="Total de administradores"
-          icon={<ShieldCheck className="w-8 h-8 text-error-500" />}
-          className="max-w-none"
-        >
-          <div className="text-4xl font-bold mt-2 text-error-500">{adminCount}</div>
-        </Card>
-        <Card
-          title="Usuarios QA"
-          description="Total de analistas QA"
-          icon={<Users className="w-8 h-8 text-info-500" />}
-          className="max-w-none"
-        >
-          <div className="text-4xl font-bold mt-2 text-info-500">{qaCount}</div>
-        </Card>
-      </section>
-
-      {/* Actions Section */}
-      <section className="flex flex-col md:flex-row justify-between items-end gap-4 p-6">
-        <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto flex-1">
-          <div className="w-full md:w-96">
-            <Input
-              placeholder="Buscar usuarios..."
-              iconLeft={<Search className="w-5 h-5" />}
-              sizeVariant="M"
-              className="w-full"
-              label="Filtrar por nombre o email"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
-          <div className="w-full md:w-64">
-            <Dropdown
-              label="Filtrar por rol"
-              sizeVariant="M"
-              iconLeft={<Filter className="w-5 h-5" />}
-              options={[
-                { label: "Todos", value: "all" },
-                { label: "Admin", value: "Admin" },
-                { label: "QA", value: "QA" },
-              ]}
-              value={roleFilter}
-              onChange={(value) => setRoleFilter(value)}
-            />
-          </div>
-        </div>
-        <Button
-          className="w-auto h-[54px]"
-          variant="primary"
-          onClick={handleOpenCreate}
-        >
-          <Plus className="w-5 h-5 mr-2" />
-          Crear usuario
-        </Button>
-      </section>
-
-      {/* Table Section */}
-      <section className="flex-1">
-        <Table
-          columns={[
-            { key: 'name', label: 'Nombre' },
-            { key: 'email', label: 'Email' },
-            { key: 'role', label: 'Rol' },
-            { key: 'state', label: 'Estado' },
-            { key: 'lastAccess', label: 'Último acceso' },
-            { key: 'actions', label: 'Acciones' },
-          ]}
-          data={tableData}
-        />
-      </section>
-
-      {/* Pagination Section */}
-      <section className="flex justify-center py-4">
-        <Pagination className="mt-6">
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (currentPage > 1) setCurrentPage(currentPage - 1);
-                }}
-              />
-            </PaginationItem>
-
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <PaginationItem key={page}>
-                <PaginationLink
-                  href="#"
-                  isActive={currentPage === page}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setCurrentPage(page);
-                  }}
-                >
-                  {page}
-                </PaginationLink>
-              </PaginationItem>
-            ))}
-
-            <PaginationItem>
-              <PaginationNext
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-                }}
-              />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-      </section>
-
-      {/* Modal de Usuario */}
-      <DialogModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        title={editingUser ? "Editar usuario" : "Crear nuevo usuario"}
-        sizeVariant="M"
-        footer={
-          <>
-            <Button variant="neutral" size="lg" onClick={() => setIsModalOpen(false)}>
-              Cancelar
-            </Button>
-            <Button variant="primary" size="lg" onClick={handleSave}>
-              Guardar
-            </Button>
-          </>
-        }
-      >
-        <div className="flex flex-col gap-6">
-          <Input
-            label="Nombre completo"
-            placeholder="Ej: Juan Pérez"
-            value={formData.name}
-            className="w-full"
-            sizeVariant="M"
-            error={errors.name}
-            onChange={(e) => {
-              setFormData({ ...formData, name: e.target.value });
-              if (errors.name) setErrors({ ...errors, name: "" });
-            }}
-          />
-          <Input
-            label="Correo electrónico"
-            placeholder="correo@ejemplo.com"
-            type="email"
-            value={formData.email}
-            className="w-full"
-            sizeVariant="M"
-            error={errors.email}
-            onChange={(e) => {
-              setFormData({ ...formData, email: e.target.value });
-              if (errors.email) setErrors({ ...errors, email: "" });
-            }}
-          />
-          <Input
-            label="Contraseña"
-            placeholder="••••••••"
-            type={showPassword ? "text" : "password"}
-            value={formData.password}
-            className="w-full"
-            sizeVariant="M"
-            error={errors.password}
-            iconRight={
-              <Button
-                variant="ghost"
-                size="icon"
-                className="hover:bg-transparent"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-              </Button>
-            }
-            onChange={(e) => {
-              setFormData({ ...formData, password: e.target.value });
-              if (errors.password) setErrors({ ...errors, password: "" });
-            }}
-          />
-          <Dropdown
-            label="Rol"
-            value={formData.role}
-            options={[
-              { label: "Admin", value: "Admin" },
-              { label: "QA", value: "QA" },
-            ]}
-            sizeVariant="M"
-            onChange={(value) => setFormData({ ...formData, role: value as "Admin" | "QA" })}
-          />
-        </div>
-      </DialogModal>
-
-      {/* Modal de Confirmación de Eliminación */}
-      <Modal
-        isOpen={isDeleteModalOpen}
-        onClose={() => setIsDeleteModalOpen(false)}
-        title="¿Eliminar usuario?"
-        description="Esta acción no se puede deshacer. El usuario perderá el acceso al sistema de forma inmediata."
-        state="Warning"
-        primaryActionLabel="Eliminar"
-        secondaryActionLabel="Cancelar"
-        onPrimaryAction={confirmDelete}
-        onSecondaryAction={() => setIsDeleteModalOpen(false)}
+    <div className="flex h-screen overflow-hidden">
+      <Sidebar
+        collapsed={sidebarCollapsed}
+        onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
       />
+      <main className="flex-1 overflow-y-auto bg-neutral-50 text-neutral-900">
+        <div className="flex flex-col gap-6 p-8 min-h-screen max-w-[1700px] mx-auto">
+          {/* Header */}
+          <header className="flex flex-col gap-2">
+            <h1 className="text-3xl font-bold tracking-tight">Gestión de usuarios</h1>
+            <p className="text-neutral-600 font-medium">Administra los accesos y roles de los usuarios del sistema.</p>
+          </header>
 
-      {/* Overlay de Carga */}
-      {isDeleting && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="flex flex-col items-center gap-4">
-            <img src="/automation.gif" alt="Cargando..." className="w-48 h-48 rounded-2xl shadow-2xl" />
-            <p className="text-white font-bold text-xl tracking-wider">Procesando...</p>
-          </div>
+          {/* Stats Section */}
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card
+              title="Total Usuarios"
+              description="Usuarios en el sistema"
+              icon={<Database className="w-8 h-8 text-primary-500" />}
+              className="max-w-none"
+            >
+              <div className="text-4xl font-bold mt-2 text-primary-500">{totalCount}</div>
+            </Card>
+            <Card
+              title="Usuarios Activos"
+              description="Sesiones habilitadas"
+              icon={<UserCheck className="w-8 h-8 text-success-500" />}
+              className="max-w-none"
+            >
+              <div className="text-4xl font-bold mt-2 text-success-500">{activeCount}</div>
+            </Card>
+            <Card
+              title="Usuarios Admin"
+              description="Total de administradores"
+              icon={<ShieldCheck className="w-8 h-8 text-error-500" />}
+              className="max-w-none"
+            >
+              <div className="text-4xl font-bold mt-2 text-error-500">{adminCount}</div>
+            </Card>
+            <Card
+              title="Usuarios QA"
+              description="Total de analistas QA"
+              icon={<Users className="w-8 h-8 text-info-500" />}
+              className="max-w-none"
+            >
+              <div className="text-4xl font-bold mt-2 text-info-500">{qaCount}</div>
+            </Card>
+          </section>
+
+          {/* Actions Section */}
+          <section className="flex flex-col md:flex-row justify-between items-end gap-4 p-6">
+            <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto flex-1">
+              <div className="w-full md:w-96">
+                <Input
+                  placeholder="Buscar usuarios..."
+                  iconLeft={<Search className="w-5 h-5" />}
+                  sizeVariant="M"
+                  className="w-full"
+                  label="Filtrar por nombre o email"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
+              <div className="w-full md:w-64">
+                <Dropdown
+                  label="Filtrar por rol"
+                  sizeVariant="M"
+                  iconLeft={<Filter className="w-5 h-5" />}
+                  options={[
+                    { label: "Todos", value: "all" },
+                    { label: "Admin", value: "Admin" },
+                    { label: "QA", value: "QA" },
+                  ]}
+                  value={roleFilter}
+                  onChange={(value) => setRoleFilter(value)}
+                />
+              </div>
+            </div>
+            <Button
+              className="w-auto h-[54px]"
+              variant="primary"
+              onClick={handleOpenCreate}
+            >
+              <Plus className="w-5 h-5 mr-2" />
+              Crear usuario
+            </Button>
+          </section>
+
+          {/* Table Section */}
+          <section className="flex-1">
+            <Table
+              columns={[
+                { key: 'name', label: 'Nombre' },
+                { key: 'email', label: 'Email' },
+                { key: 'role', label: 'Rol' },
+                { key: 'state', label: 'Estado' },
+                { key: 'lastAccess', label: 'Último acceso' },
+                { key: 'actions', label: 'Acciones' },
+              ]}
+              data={tableData}
+            />
+          </section>
+
+          {/* Pagination Section */}
+          <section className="flex justify-center py-4">
+            <Pagination className="mt-6">
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (currentPage > 1) setCurrentPage(currentPage - 1);
+                    }}
+                  />
+                </PaginationItem>
+
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <PaginationItem key={page}>
+                    <PaginationLink
+                      href="#"
+                      isActive={currentPage === page}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setCurrentPage(page);
+                      }}
+                    >
+                      {page}
+                    </PaginationLink>
+                  </PaginationItem>
+                ))}
+
+                <PaginationItem>
+                  <PaginationNext
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+                    }}
+                  />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          </section>
+
+          {/* Modal de Usuario */}
+          <DialogModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            title={editingUser ? "Editar usuario" : "Crear nuevo usuario"}
+            sizeVariant="M"
+            footer={
+              <>
+                <Button variant="neutral" size="lg" onClick={() => setIsModalOpen(false)}>
+                  Cancelar
+                </Button>
+                <Button variant="primary" size="lg" onClick={handleSave}>
+                  Guardar
+                </Button>
+              </>
+            }
+          >
+            <div className="flex flex-col gap-6">
+              <Input
+                label="Nombre completo"
+                placeholder="Ej: Juan Pérez"
+                value={formData.name}
+                className="w-full"
+                sizeVariant="M"
+                error={errors.name}
+                onChange={(e) => {
+                  setFormData({ ...formData, name: e.target.value });
+                  if (errors.name) setErrors({ ...errors, name: "" });
+                }}
+              />
+              <Input
+                label="Correo electrónico"
+                placeholder="correo@ejemplo.com"
+                type="email"
+                value={formData.email}
+                className="w-full"
+                sizeVariant="M"
+                error={errors.email}
+                onChange={(e) => {
+                  setFormData({ ...formData, email: e.target.value });
+                  if (errors.email) setErrors({ ...errors, email: "" });
+                }}
+              />
+              <Input
+                label="Contraseña"
+                placeholder="••••••••"
+                type={showPassword ? "text" : "password"}
+                value={formData.password}
+                className="w-full"
+                sizeVariant="M"
+                error={errors.password}
+                iconRight={
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="hover:bg-transparent"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  </Button>
+                }
+                onChange={(e) => {
+                  setFormData({ ...formData, password: e.target.value });
+                  if (errors.password) setErrors({ ...errors, password: "" });
+                }}
+              />
+              <Dropdown
+                label="Rol"
+                value={formData.role}
+                options={[
+                  { label: "Admin", value: "Admin" },
+                  { label: "QA", value: "QA" },
+                ]}
+                sizeVariant="M"
+                onChange={(value) => setFormData({ ...formData, role: value as "Admin" | "QA" })}
+              />
+            </div>
+          </DialogModal>
+
+          {/* Modal de Confirmación de Eliminación */}
+          <Modal
+            isOpen={isDeleteModalOpen}
+            onClose={() => setIsDeleteModalOpen(false)}
+            title="¿Eliminar usuario?"
+            description="Esta acción no se puede deshacer. El usuario perderá el acceso al sistema de forma inmediata."
+            state="Warning"
+            primaryActionLabel="Eliminar"
+            secondaryActionLabel="Cancelar"
+            onPrimaryAction={confirmDelete}
+            onSecondaryAction={() => setIsDeleteModalOpen(false)}
+          />
+
+          {/* Overlay de Carga */}
+          {isDeleting && (
+            <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+              <div className="flex flex-col items-center gap-4">
+                <img src="/automation.gif" alt="Cargando..." className="w-48 h-48 rounded-2xl shadow-2xl" />
+                <p className="text-white font-bold text-xl tracking-wider">Procesando...</p>
+              </div>
+            </div>
+          )}
         </div>
-      )}
+      </main>
     </div>
   );
 };

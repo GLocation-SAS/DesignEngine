@@ -234,228 +234,228 @@ export function Sidebar({
           )}
         </div>
 
-      {/* Navigation */}
-      <nav className="flex-1 overflow-y-auto px-2 py-4 scrollbar-thin scrollbar-thumb-neutral-200 dark:scrollbar-thumb-neutral-800">
-        <div className="space-y-4">
-          {groups.map((group) => {
-            const isOpen = openGroups[group.label];
-            const GroupIcon = group.icon || LayoutGrid;
-            const isGroupActive = group.items.some(item =>
-              activeId ? activeId === item.id : pathname === item.href
-            );
+        {/* Navigation */}
+        <nav className="flex-1 overflow-y-auto px-2 py-4 scrollbar-thin scrollbar-thumb-neutral-200 dark:scrollbar-thumb-neutral-800">
+          <div className="space-y-4">
+            {groups.map((group) => {
+              const isOpen = openGroups[group.label];
+              const GroupIcon = group.icon || LayoutGrid;
+              const isGroupActive = group.items.some(item =>
+                activeId ? activeId === item.id : pathname === item.href
+              );
 
-            return (
-              <div key={group.label} className="space-y-1">
-                {/* Group Header */}
-                <button
-                  onClick={() => !collapsed && toggleGroup(group.label)}
-                  className={cn(
-                    "group flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
-                    isGroupActive && !isOpen && !collapsed
-                      ? "bg-primary-50 text-primary-700 dark:bg-primary-500/10 dark:text-primary-800"
-                      : "text-neutral-900 hover:text-neutral-700 hover:bg-primary-500/20",
-                    collapsed && "justify-center px-2"
+              return (
+                <div key={group.label} className="space-y-1">
+                  {/* Group Header */}
+                  <button
+                    onClick={() => !collapsed && toggleGroup(group.label)}
+                    className={cn(
+                      "group flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
+                      isGroupActive && !isOpen && !collapsed
+                        ? "bg-primary-50 text-primary-700 dark:bg-primary-500/10 dark:text-primary-800"
+                        : "text-neutral-900 hover:text-neutral-700 hover:bg-primary-500/20",
+                      collapsed && "justify-center px-2"
+                    )}
+                  >
+                    <GroupIcon className={cn(
+                      "h-4 w-4 shrink-0 transition-colors",
+                      isGroupActive ? "text-primary-600 dark:text-primary-400" : "text-neutral-700 group-hover:text-neutral-900 dark:group-hover:text-neutral-700"
+                    )} />
+                    {!collapsed && (
+                      <>
+                        <span className="flex-1 text-left truncate uppercase text-[11px] font-bold tracking-wider">
+                          {group.label}
+                        </span>
+                        <ChevronDown className={cn(
+                          "h-3.5 w-3.5 text-neutral-400 transition-transform duration-200",
+                          isOpen && "rotate-180"
+                        )} />
+                      </>
+                    )}
+                  </button>
+
+                  {/* Group Items */}
+                  {!collapsed && isOpen && (
+                    <div className="relative ml-5 space-y-0.5 border-l border-neutral-200 pl-4 py-1 dark:border-neutral-800 transition-all duration-300">
+                      {group.items.map((item) => {
+                        const isActive = activeId ? activeId === item.id : pathname === item.href;
+                        const ItemIcon = item.icon;
+
+                        return (
+                          <Link
+                            key={item.id || item.href}
+                            href={item.href}
+                            onClick={() => setOpen(false)}
+                            className={cn(
+                              "flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-all duration-200",
+                              isActive
+                                ? "bg-neutral-200 text-neutral-900 font-medium"
+                                : "text-neutral-800 hover:text-neutral-800 hover:bg-neutral-200"
+                            )}
+                          >
+                            {ItemIcon && <ItemIcon className="h-3.5 w-3.5" />}
+                            <span className="truncate">{item.label}</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
                   )}
-                >
-                  <GroupIcon className={cn(
-                    "h-4 w-4 shrink-0 transition-colors",
-                    isGroupActive ? "text-primary-600 dark:text-primary-400" : "text-neutral-700 group-hover:text-neutral-900 dark:group-hover:text-neutral-700"
-                  )} />
-                  {!collapsed && (
-                    <>
-                      <span className="flex-1 text-left truncate uppercase text-[11px] font-bold tracking-wider">
-                        {group.label}
-                      </span>
-                      <ChevronDown className={cn(
-                        "h-3.5 w-3.5 text-neutral-400 transition-transform duration-200",
-                        isOpen && "rotate-180"
-                      )} />
-                    </>
-                  )}
-                </button>
+                </div>
+              );
+            })}
+          </div>
+        </nav>
 
-                {/* Group Items */}
-                {!collapsed && isOpen && (
-                  <div className="relative ml-5 space-y-0.5 border-l border-neutral-200 pl-4 py-1 dark:border-neutral-800 transition-all duration-300">
-                    {group.items.map((item) => {
-                      const isActive = activeId ? activeId === item.id : pathname === item.href;
-                      const ItemIcon = item.icon;
-
-                      return (
-                        <Link
-                          key={item.id || item.href}
-                          href={item.href}
-                          onClick={() => setOpen(false)}
-                          className={cn(
-                            "flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-all duration-200",
-                            isActive
-                              ? "bg-neutral-200 text-neutral-900 font-medium"
-                              : "text-neutral-800 hover:text-neutral-800 hover:bg-neutral-200"
-                          )}
-                        >
-                          {ItemIcon && <ItemIcon className="h-3.5 w-3.5" />}
-                          <span className="truncate">{item.label}</span>
-                        </Link>
-                      );
-                    })}
-                  </div>
+        {/* Footer / Toggle */}
+        <div className="mt-auto border-t border-neutral-200 p-2 dark:border-neutral-200">
+          <div className="flex flex-col gap-1">
+            {/* User Profile */}
+            <button className={cn(
+              "flex items-center gap-3 rounded-lg p-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-200/50",
+              collapsed && "justify-center"
+            )}>
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-300">
+                {user.avatar ? (
+                  <img src={user.avatar} alt={user.name} className="h-full w-full rounded-full object-cover" />
+                ) : (
+                  <User className="h-4 w-4 text-neutral-500" />
                 )}
               </div>
-            );
-          })}
-        </div>
-      </nav>
-
-      {/* Footer / Toggle */}
-      <div className="mt-auto border-t border-neutral-200 p-2 dark:border-neutral-200">
-        <div className="flex flex-col gap-1">
-          {/* User Profile */}
-          <button className={cn(
-            "flex items-center gap-3 rounded-lg p-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-200/50",
-            collapsed && "justify-center"
-          )}>
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-300">
-              {user.avatar ? (
-                <img src={user.avatar} alt={user.name} className="h-full w-full rounded-full object-cover" />
-              ) : (
-                <User className="h-4 w-4 text-neutral-500" />
-              )}
-            </div>
-            {!collapsed && (
-              <div className="flex flex-1 items-center justify-between overflow-hidden">
-                <div className="flex flex-col overflow-hidden">
-                  <span className="truncate text-sm font-medium text-neutral-900 leading-tight">
-                    {user.name}
-                  </span>
-                  <span className="truncate text-[10px] text-neutral-500 leading-tight">
-                    {user.email}
-                  </span>
+              {!collapsed && (
+                <div className="flex flex-1 items-center justify-between overflow-hidden">
+                  <div className="flex flex-col overflow-hidden">
+                    <span className="truncate text-sm font-medium text-neutral-900 leading-tight">
+                      {user.name}
+                    </span>
+                    <span className="truncate text-[10px] text-neutral-500 leading-tight">
+                      {user.email}
+                    </span>
+                  </div>
+                  <ChevronsUpDown className="h-4 w-4 text-neutral-400" />
                 </div>
-                <ChevronsUpDown className="h-4 w-4 text-neutral-400" />
-              </div>
-            )}
-          </button>
-
-          {/* Toggle Button */}
-          <button
-            onClick={onToggle}
-            className="flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-all"
-            aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-          >
-            {collapsed ? (
-              <PanelLeftOpen className="h-4 w-4" />
-            ) : (
-              <div className="flex items-center gap-2 px-2 text-xs font-medium">
-                <PanelLeftClose className="h-4 w-4" />
-                <span>Colapsar menú</span>
-              </div>
-            )}
-          </button>
-          {/* Theme Toggle */}
-          {collapsed ? (
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="mt-2 flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 transition-all hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Moon className="h-5 w-5 text-neutral-400" />
-              ) : (
-                <Sun className="h-5 w-5 text-neutral-500" />
               )}
             </button>
-          ) : (
-            <div className="mt-2 flex h-12 w-full items-center justify-center gap-3 rounded-lg px-2">
-              <span
-                className={cn(
-                  "text-[15px] font-bold transition-colors",
-                  theme === "light" ? "text-neutral-800" : "text-neutral-600"
-                )}
-              >
-                Light
-              </span>
 
+            {/* Toggle Button */}
+            <button
+              onClick={onToggle}
+              className="flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-all"
+              aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+            >
+              {collapsed ? (
+                <PanelLeftOpen className="h-4 w-4" />
+              ) : (
+                <div className="flex items-center gap-2 px-2 text-xs font-medium">
+                  <PanelLeftClose className="h-4 w-4" />
+                  <span>Colapsar menú</span>
+                </div>
+              )}
+            </button>
+            {/* Theme Toggle */}
+            {collapsed ? (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className={cn(
-                  "relative flex h-[32px] w-[64px] shrink-0 items-center rounded-full transition-colors duration-500 focus:outline-none",
-                  theme === "dark" ? "bg-neutral-950" : "bg-primary-400"
-                )}
+                className="mt-2 flex h-10 w-full items-center justify-center rounded-lg text-neutral-500 transition-all hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
                 aria-label="Toggle theme"
               >
-                {/* Dark Mode Stars */}
-                <div
-                  className={cn(
-                    "absolute inset-0 flex items-center justify-start pl-2 transition-opacity duration-500",
-                    theme === "dark" ? "opacity-100" : "opacity-0"
-                  )}
-                >
-                  {theme === "dark" && (
-                    <div className="relative h-full w-1/2">
-                      <svg className="absolute left-[3px] top-[7px] h-[7px] w-[7px] text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                      </svg>
-                      <svg className="absolute left-[2px] top-[16px] h-[4px] w-[4px] text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                      </svg>
-                      <svg className="absolute left-[13px] top-[10px] h-[3px] w-[3px] text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                      </svg>
-                      <svg className="absolute left-[11px] top-[18px] h-[5px] w-[5px] text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-
-                {/* Light Mode Clouds/Dots */}
-                <div
-                  className={cn(
-                    "absolute inset-0 flex items-center justify-end pr-2 transition-opacity duration-500",
-                    theme === "light" ? "opacity-100" : "opacity-0"
-                  )}
-                >
-                  {theme === "light" && (
-                    <div className="relative h-full w-1/2">
-                      <div className="absolute right-[4px] top-[8px] h-[5px] w-[5px] rounded-full bg-white" />
-                      <div className="absolute right-[14px] top-[14px] h-[3px] w-[3px] rounded-full bg-white" />
-                    </div>
-                  )}
-                </div>
-
-                {/* Knob */}
-                <div
-                  className={cn(
-                    "absolute left-1 top-1 flex h-[24px] w-[24px] items-center justify-center rounded-full transition-transform duration-500",
-                    theme === "dark" ? "translate-x-[32px] bg-transparent" : "translate-x-0 bg-white"
-                  )}
-                >
-                  {theme === "dark" && (
-                    <svg
-                      className="h-[20px] w-[20px] text-white"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      stroke="none"
-                    >
-                      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                    </svg>
-                  )}
-                </div>
-              </button>
-
-              <span
-                className={cn(
-                  "text-[15px] font-bold transition-colors",
-                  theme === "dark" ? "text-white" : "text-neutral-300"
+                {theme === "dark" ? (
+                  <Moon className="h-5 w-5 text-neutral-400" />
+                ) : (
+                  <Sun className="h-5 w-5 text-neutral-500" />
                 )}
-              >
-                Dark
-              </span>
-            </div>
-          )}
+              </button>
+            ) : (
+              <div className="mt-2 flex h-12 w-full items-center justify-center gap-3 rounded-lg px-2">
+                <span
+                  className={cn(
+                    "text-[15px] font-bold transition-colors",
+                    theme === "light" ? "text-neutral-800" : "text-neutral-600"
+                  )}
+                >
+                  Claro
+                </span>
+
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className={cn(
+                    "relative flex h-[32px] w-[64px] shrink-0 items-center rounded-full transition-colors duration-500 focus:outline-none",
+                    theme === "dark" ? "bg-neutral-950" : "bg-primary-400"
+                  )}
+                  aria-label="Toggle theme"
+                >
+                  {/* Dark Mode Stars */}
+                  <div
+                    className={cn(
+                      "absolute inset-0 flex items-center justify-start pl-2 transition-opacity duration-500",
+                      theme === "dark" ? "opacity-100" : "opacity-0"
+                    )}
+                  >
+                    {theme === "dark" && (
+                      <div className="relative h-full w-1/2">
+                        <svg className="absolute left-[3px] top-[7px] h-[7px] w-[7px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                        </svg>
+                        <svg className="absolute left-[2px] top-[16px] h-[4px] w-[4px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                        </svg>
+                        <svg className="absolute left-[13px] top-[10px] h-[3px] w-[3px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                        </svg>
+                        <svg className="absolute left-[11px] top-[18px] h-[5px] w-[5px] text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Light Mode Clouds/Dots */}
+                  <div
+                    className={cn(
+                      "absolute inset-0 flex items-center justify-end pr-2 transition-opacity duration-500",
+                      theme === "light" ? "opacity-100" : "opacity-0"
+                    )}
+                  >
+                    {theme === "light" && (
+                      <div className="relative h-full w-1/2">
+                        <div className="absolute right-[4px] top-[8px] h-[5px] w-[5px] rounded-full bg-white" />
+                        <div className="absolute right-[14px] top-[14px] h-[3px] w-[3px] rounded-full bg-white" />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Knob */}
+                  <div
+                    className={cn(
+                      "absolute left-1 top-1 flex h-[24px] w-[24px] items-center justify-center rounded-full transition-transform duration-500",
+                      theme === "dark" ? "translate-x-[32px] bg-transparent" : "translate-x-0 bg-white"
+                    )}
+                  >
+                    {theme === "dark" && (
+                      <svg
+                        className="h-[20px] w-[20px] text-white"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        stroke="none"
+                      >
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                      </svg>
+                    )}
+                  </div>
+                </button>
+
+                <span
+                  className={cn(
+                    "text-[15px] font-bold transition-colors",
+                    theme === "dark" ? "text-white" : "text-neutral-300"
+                  )}
+                >
+                  Oscuro
+                </span>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </aside>
+      </aside>
     </>
   );
 }
