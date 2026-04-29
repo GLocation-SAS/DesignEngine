@@ -48,7 +48,6 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           aligned === "right" ? "flex-row-reverse justify-end text-right" : "flex-row justify-start text-left",
           className
         )}
-        onClick={handleToggle}
       >
         {/* Hidden Input for Accessibility */}
         <input
@@ -63,8 +62,10 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
 
         {/* Visual Checkbox */}
         <div
+          onClick={handleToggle}
           className={cn(
             "shrink-0 rounded-[4px] border border-solid flex items-center justify-center transition-all duration-200",
+            !disabled && "cursor-pointer",
             currentSize.box,
             getBoxStyles()
           )}

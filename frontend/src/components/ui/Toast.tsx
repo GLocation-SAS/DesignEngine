@@ -27,6 +27,7 @@ export const Toast = ({
       icon: <InfoIcon size={16} className="text-white" />,
       titleColor: "text-primary-900",
       descColor: "text-primary-700",
+      closeHover: "hover:bg-primary-500 text-primary-500 hover:text-white",
     },
     success: {
       bg: "bg-success-50",
@@ -35,6 +36,7 @@ export const Toast = ({
       icon: <CheckCircle2 size={16} className="text-white" />,
       titleColor: "text-success-900",
       descColor: "text-success-700",
+      closeHover: "hover:bg-success-500 text-success-500 hover:text-white",
     },
     error: {
       bg: "bg-error-50",
@@ -43,6 +45,7 @@ export const Toast = ({
       icon: <AlertCircle size={16} className="text-white" />,
       titleColor: "text-error-900",
       descColor: "text-error-700",
+      closeHover: "hover:bg-error-500 text-error-500 hover:text-white",
     },
     warning: {
       bg: "bg-warning-50",
@@ -51,6 +54,7 @@ export const Toast = ({
       icon: <AlertTriangle size={16} className="text-white" />,
       titleColor: "text-warning-900",
       descColor: "text-warning-700",
+      closeHover: "hover:bg-warning-500 text-warning-500 hover:text-white",
     },
   };
 
@@ -89,7 +93,7 @@ export const Toast = ({
       {/* Close Button */}
       <button
         onClick={onClose}
-        className="shrink-0 p-1 rounded-full hover:bg-black/5 transition-colors text-neutral-500"
+        className={cn("shrink-0 p-1 rounded-full transition-colors", config.closeHover)}
       >
         <X size={18} />
       </button>

@@ -100,7 +100,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             type={type}
             className={cn(
-              "flex-1 bg-transparent outline-none h-full w-full py-2 placeholder:text-neutral-600 text-neutral-600 font-medium",
+              "flex-1 bg-transparent outline-none h-full w-full py-2 placeholder:text-neutral-600 text-neutral-600 font-medium [&:-webkit-autofill]:shadow-[inset_0_0_0_1000px_white] dark:[&:-webkit-autofill]:shadow-[inset_0_0_0_1000px_#0a0a0a] [&:-webkit-autofill]:[-webkit-text-fill-color:theme(colors.neutral.600)]",
               currentState === "Disabled" && "placeholder:text-neutral-600 text-neutral-600"
             )}
             ref={ref}

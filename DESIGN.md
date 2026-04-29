@@ -78,7 +78,32 @@ Utilizada para fondos, bordes, divisiones, y textos de menor jerarquía.
 
 ## 2. TIPOGRAFÍA
 
-*(Actualmente no definida en los archivos de tokens importados. Se mantendrá la configuración de la fuente base del sistema hasta que se integren los tokens tipográficos desde Figma).*
+### Fuentes
+
+| Rol | Fuente | Uso |
+|-----|--------|-----|
+| Primaria | **Montserrat** | Encabezados (`h1`–`h6`), elementos UI, etiquetas, títulos |
+| Secundaria | **Nunito** | Cuerpo de texto, párrafos, descripciones |
+
+### Pesos disponibles
+
+| Fuente | Pesos |
+|--------|-------|
+| Montserrat | 400 (Regular), 500 (Medium), 600 (SemiBold), 700 (Bold) |
+| Nunito | 400 (Regular), 600 (SemiBold), 700 (Bold) |
+
+### Variables CSS
+
+| Variable | Valor |
+|----------|-------|
+| `--font-montserrat` | Fuente primaria (headings/UI) |
+| `--font-nunito` | Fuente secundaria (body text) |
+
+### Reglas de uso
+
+- Usar `font-family: var(--font-montserrat)` para toda jerarquía de encabezados y etiquetas de componentes.
+- Usar `font-family: var(--font-nunito)` para párrafos, descripciones y cuerpo de texto.
+- No usar fuentes externas al sistema sin validación en Figma.
 
 ---
 
