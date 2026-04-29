@@ -103,7 +103,7 @@ export function LoginForm() {
               }}
               error={errors.email}
               success={!errors.email && hasHadError.email && email !== ""}
-              sizeVariant="M"
+              sizeVariant="md"
             />
           </div>
 
@@ -132,7 +132,7 @@ export function LoginForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               error={errors.password}
-              sizeVariant="M"
+              sizeVariant="md"
             />
           </div>
         </div>
@@ -147,7 +147,7 @@ export function LoginForm() {
           </Link>
         </div>
 
-        <Button variant="primary" size="default" type="submit">
+        <Button variant="primary" size="md" type="submit">
           Iniciar sesión
         </Button>
 
@@ -159,7 +159,7 @@ export function LoginForm() {
         </div>
 
         {/* Social Login */}
-        <Button variant="neutral" size="default">
+        <Button variant="neutral" size="md">
           <svg className="h-5 w-5" viewBox="0 0 24 24">
             <path
               fill="#4285F4"

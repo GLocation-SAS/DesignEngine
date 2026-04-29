@@ -127,7 +127,7 @@ export function RegisterForm() {
               value={formData.name}
               onChange={handleChange}
               error={errors.name}
-              sizeVariant="M"
+              sizeVariant="md"
             />
           </div>
 
@@ -145,7 +145,7 @@ export function RegisterForm() {
               onChange={handleChange}
               error={errors.email}
               success={!errors.email && hasHadError.email && formData.email !== ""}
-              sizeVariant="M"
+              sizeVariant="md"
             />
           </div>
 
@@ -175,7 +175,7 @@ export function RegisterForm() {
               value={formData.password}
               onChange={handleChange}
               error={errors.password}
-              sizeVariant="M"
+              sizeVariant="md"
             />
           </div>
 
@@ -205,12 +205,12 @@ export function RegisterForm() {
               value={formData.confirmPassword}
               onChange={handleChange}
               error={errors.confirmPassword}
-              sizeVariant="M"
+              sizeVariant="md"
             />
           </div>
         </div>
 
-        <Button variant="primary" size="default" type="submit">
+        <Button variant="primary" size="md" type="submit">
           Registrarse
         </Button>
 

@@ -6,10 +6,10 @@ import { Badge } from "@/components/ui/Badge";
 import { Globe, Mail, User } from "lucide-react";
 
 const SIZES = [
-  { key: "L", label: "Large (65px)" },
-  { key: "M", label: "Medium (54px)" },
-  { key: "S", label: "Small (44px)" },
-  { key: "XS", label: "Extra Small (40px)" },
+  { key: "lg", label: "Large (56px)" },
+  { key: "md", label: "Medium (44px)" },
+  { key: "sm", label: "Small (40px)" },
+  { key: "xs", label: "Extra Small (36px)" },
 ] as const;
 
 const COMBINATIONS = [

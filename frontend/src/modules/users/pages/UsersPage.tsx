@@ -327,7 +327,7 @@ export const UsersPage = () => {
                 <Input
                   placeholder="Buscar usuarios..."
                   iconLeft={<Search className="w-5 h-5" />}
-                  sizeVariant="M"
+                  sizeVariant="md"
                   className="w-full"
                   label="Filtrar por nombre o email"
                   value={search}
@@ -338,7 +338,7 @@ export const UsersPage = () => {
                 <Dropdown
                   className="w-full"
                   label="Filtrar por rol"
-                  sizeVariant="M"
+                  sizeVariant="md"
                   iconLeft={<Filter className="w-5 h-5" />}
                   options={[
                     { label: "Todos", value: "all" },
@@ -352,7 +352,7 @@ export const UsersPage = () => {
             </div>
             <Button
               className="w-auto"
-              size="default"
+              size="md"
               variant="primary"
               onClick={handleOpenCreate}
             >
@@ -426,10 +426,10 @@ export const UsersPage = () => {
             sizeVariant="M"
             footer={
               <>
-                <Button variant="neutral" size="default" onClick={() => setIsModalOpen(false)}>
+                <Button variant="neutral" size="md" onClick={() => setIsModalOpen(false)}>
                   Cancelar
                 </Button>
-                <Button variant="primary" size="default" onClick={handleSave}>
+                <Button variant="primary" size="md" onClick={handleSave}>
                   {editingUser ? "Guardar cambios" : "Crear usuario"}
                 </Button>
               </>
@@ -441,7 +441,7 @@ export const UsersPage = () => {
                 placeholder="Ej: Juan Pérez"
                 value={formData.name}
                 className="w-full"
-                sizeVariant="M"
+                sizeVariant="md"
                 error={errors.name}
                 success={!errors.name && hasHadError.name && formData.name !== ""}
                 onChange={(e) => {
@@ -458,7 +458,7 @@ export const UsersPage = () => {
                 type="email"
                 value={formData.email}
                 className="w-full"
-                sizeVariant="M"
+                sizeVariant="md"
                 error={errors.email}
                 success={!errors.email && hasHadError.email && formData.email !== ""}
                 onChange={(e) => {
@@ -475,7 +475,7 @@ export const UsersPage = () => {
                 type={showPassword ? "text" : "password"}
                 value={formData.password}
                 className="w-full"
-                sizeVariant="M"
+                sizeVariant="md"
                 error={errors.password}
                 iconRight={
                   <Button
@@ -500,7 +500,7 @@ export const UsersPage = () => {
                   { label: "Admin", value: "Admin" },
                   { label: "QA", value: "QA" },
                 ]}
-                sizeVariant="M"
+                sizeVariant="md"
                 onChange={(value) => setFormData({ ...formData, role: value as "Admin" | "QA" })}
               />
             </div>

@@ -10,7 +10,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   iconRight?: React.ReactNode;
   error?: boolean | string;
   success?: boolean;
-  sizeVariant?: "L" | "M" | "S" | "XS";
+  sizeVariant?: "lg" | "md" | "sm" | "xs";
   state?: "Default" | "Hover" | "Focused" | "Filled" | "Disabled" | "Error" | "Success";
 }
 
@@ -25,7 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       iconRight,
       error,
       success,
-      sizeVariant = "L",
+      sizeVariant = "md",
       state: controlledState,
       disabled,
       ...props
@@ -45,10 +45,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     );
 
     const sizeConfigs = {
-      L: "h-[65px] text-base",
-      M: "h-[54px] text-sm",
-      S: "h-[44px] text-sm",
-      XS: "h-[40px] text-xs",
+      md: "h-[44px] text-sm",
+      xs: "h-[36px] text-xs",
+      sm: "h-[40px] text-sm",
+      lg: "h-[56px] text-base",
     };
 
     const stateStyles = {

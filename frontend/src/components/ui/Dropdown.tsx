@@ -15,7 +15,7 @@ export interface DropdownProps extends Omit<React.HTMLAttributes<HTMLDivElement>
   options?: DropdownOption[];
   value?: string;
   placeholder?: string;
-  sizeVariant?: "L" | "M" | "S" | "XS";
+  sizeVariant?: "lg" | "md" | "sm" | "xs";
   currentState?: "Default" | "Hover" | "Active" | "Active Hover" | "Active Selected" | "Collapsed" | "Disabled" | "Error Filled" | "Error Filled Hover" | "Success";
   hoveredOptionValue?: string;
   onChange?: (value: string) => void;
@@ -39,7 +39,7 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
       ],
       value,
       placeholder = "Seleccionar...",
-      sizeVariant = "L",
+      sizeVariant = "md",
       currentState = "Default",
       hoveredOptionValue,
       onChange,
@@ -108,10 +108,10 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
     }, [selectedValue, value, options, placeholder]);
 
     const sizeConfigs = {
-      L: "h-[65px] text-base",
-      M: "h-[54px] text-sm",
-      S: "h-[44px] text-sm",
-      XS: "h-[40px] text-xs",
+      md: "h-[44px] text-sm",
+      xs: "h-[36px] text-xs",
+      sm: "h-[40px] text-sm",
+      lg: "h-[56px] text-base",
     };
 
     const stateStyles = {

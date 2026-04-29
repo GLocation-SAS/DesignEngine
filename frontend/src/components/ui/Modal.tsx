@@ -108,7 +108,7 @@ export const Modal = ({
               {title}
             </h3>
           )}
-          
+
           {children ? (
             <div className="w-full">
               {children}
@@ -135,7 +135,7 @@ export const Modal = ({
             {secondaryActionLabel && (
               <Button
                 variant="neutral"
-                size="lg"
+                size="md"
                 className={cn(
                   sizeVariant === "S" ? "w-full order-2" : "flex-1"
                 )}
@@ -147,7 +147,7 @@ export const Modal = ({
             {primaryActionLabel && (
               <Button
                 variant={config?.buttonVariant || "primary"}
-                size="lg"
+                size="md"
                 className={cn(
                   sizeVariant === "S" ? "w-full order-1" : "flex-1"
                 )}

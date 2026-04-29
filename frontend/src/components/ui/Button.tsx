@@ -19,10 +19,10 @@ const buttonVariants = cva(
         glass: "glass bg-white/10 backdrop-blur-md border border-white/20 text-neutral-900 hover:bg-white/20 shadow-glow",
       },
       size: {
-        default: "h-[44px] px-5 py-2.5 gap-2 text-base",
+        md: "h-[44px] px-5 py-2.5 gap-2 text-base",
+        xs: "h-[36px] px-4 py-2 gap-2 text-sm",
         sm: "h-[40px] px-5 py-2.5 gap-2 text-sm",
         lg: "h-[56px] px-6 py-3 gap-2 text-lg",
-        xs: "h-[36px] px-4 py-2 gap-2 text-sm",
         icon: "h-10 w-10",
       },
       state: {
@@ -59,7 +59,7 @@ const buttonVariants = cva(
     ],
     defaultVariants: {
       variant: "primary",
-      size: "default",
+      size: "md",
       state: "default",
     },
   }

@@ -91,12 +91,12 @@ export function ForgotPasswordForm() {
               }}
               error={errors.email}
               success={!errors.email && hasHadError.email && email !== ""}
-              sizeVariant="M"
+              sizeVariant="md"
             />
           </div>
         </div>
 
-        <Button variant="primary" size="default" type="submit">
+        <Button variant="primary" size="md" type="submit">
           Recuperar contraseña
         </Button>
 

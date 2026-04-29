@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const SIZES = [
   { key: "lg", label: "Large (56px)" },
-  { key: "default", label: "Medium (44px)" },
+  { key: "md", label: "Medium (44px)" },
   { key: "sm", label: "Small (40px)" },
   { key: "xs", label: "Extra Small (36px)" },
 ] as const;
