@@ -66,7 +66,7 @@ export function TypographySection() {
           Tipografía
         </h2>
         <p className="text-neutral-900 max-w-2xl text-lg">
-          Sistema de tipografía diseñado para máxima legibilidad en todas las plataformas, usando <b>Geist Sans</b> como nuestra tipografía principal.
+          Sistema de tipografía diseñado para máxima legibilidad en todas las plataformas, usando <b>Montserrat</b> para encabezados y elementos UI, y <b>Nunito</b> para cuerpo de texto y párrafos.
         </p>
       </div>
 

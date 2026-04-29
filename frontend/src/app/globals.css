@@ -173,6 +173,10 @@
   --color-semantic-icon-on-color: var(--semantic-icon-on-color);
   --color-semantic-icon-on-light: var(--semantic-icon-on-light);
 
+  /* Font Families */
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
   /* Typography Sizes */
   --font-size-display-2xl: 72px;
   --font-size-display-xl: 60px;
@@ -626,7 +630,11 @@
 
   body {
     @apply bg-neutral-50 text-neutral-900 antialiased;
-    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
   }
 
   html {
