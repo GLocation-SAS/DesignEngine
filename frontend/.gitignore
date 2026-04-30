@@ -15,7 +15,9 @@
 
 # next.js
 /.next/
+# Static export output (default: out/). docs/ if configured for GitHub Pages.
 /out/
+/docs/
 
 # production
 /build
