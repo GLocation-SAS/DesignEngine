@@ -633,13 +633,27 @@
     font-family: var(--font-sans);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 
   html {
     scroll-behavior: smooth;
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #0a0a0a00 inset !important;
+  -webkit-text-fill-color: var(--color-neutral-600) !important;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 @layer utilities {
