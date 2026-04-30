@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[67141,["/_next/static/chunks/0_xnoxzms.hr3.js","/_next/static/chunks/0cih2jcj2xco7.js","/_next/static/chunks/0bp9iax7h-fsd.js","/_next/static/chunks/0-qz6ofpza7kr.js","/_next/static/chunks/057t.axinlat..js"],"Navbar"]
-3:I[41515,["/_next/static/chunks/0_xnoxzms.hr3.js","/_next/static/chunks/0cih2jcj2xco7.js","/_next/static/chunks/0bp9iax7h-fsd.js"],"default"]
-4:I[52198,["/_next/static/chunks/0_xnoxzms.hr3.js","/_next/static/chunks/0cih2jcj2xco7.js","/_next/static/chunks/0bp9iax7h-fsd.js"],"default"]
-0:{"rsc":["$","$1","c",{"children":[[["$","script","script-0",{"src":"/_next/static/chunks/0-qz6ofpza7kr.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/057t.axinlat..js","async":true}]],[["$","$L2",null,{}],["$","div",null,{"className":"flex flex-1 flex-col","children":["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}]}]}]]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"uc3eOdaM7_o2AVsGZAxB5"}
