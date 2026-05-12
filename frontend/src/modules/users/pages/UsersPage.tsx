@@ -10,6 +10,7 @@ import { Dropdown } from '@/components/ui/Dropdown';
 import { DialogModal } from '@/components/ui/DialogModal';
 import { Modal } from '@/components/ui/Modal';
 import { Sidebar } from '@/components/layout/Sidebar';
+import { useSidebar } from '@/context/SidebarContext';
 import {
   Pagination,
   PaginationContent,
@@ -23,6 +24,7 @@ import { Tooltip } from '@/components/ui/Tooltip';
 import { Users, ShieldCheck, Search, Plus, Edit, Trash2, Filter, Eye, EyeOff, UserCheck, Database, User as UserIcon, CheckCircle2, XCircle } from 'lucide-react';
 import { useToast } from '@/context/ToastContext';
 import { publicUrl } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
 interface User {
   id: number;
@@ -34,6 +36,9 @@ interface User {
 }
 
 export const UsersPage = () => {
+  // Global sidebar state
+  const { isCollapsed: sidebarCollapsed, toggleSidebar } = useSidebar();
+
   // Estado para la lista de usuarios
   const [usersList, setUsersList] = useState<User[]>([
     { id: 1, name: "Admin User", email: "admin@designengine.com", role: "Admin", status: "Activo", lastAccess: "Hoy, 10:30 AM" },
@@ -42,7 +47,7 @@ export const UsersPage = () => {
     { id: 4, name: "Ana Belén", email: "ana@mail.com", role: "QA", status: "Activo", lastAccess: "Hoy, 09:00 AM" },
     { id: 5, name: "Roberto Gómez", email: "roberto@mail.com", role: "QA", status: "Activo", lastAccess: "Hace 1 hora" },
     { id: 6, name: "Juan Silva", email: "juan@mail.com", role: "Admin", status: "Inactivo", lastAccess: "Hace 3 días" },
-    { id: 7, name: "Diana Torres", email: "diana@mail.com", role: "QA", status: "Activo", lastAccess: "Ayer" },
+    { id: 7, name: "Diana Torres", email: "diana@mail.com", role: "QA", status: "Ayer" },
     { id: 8, name: "Luis Méndez", email: "luis@mail.com", role: "Admin", status: "Inactivo", lastAccess: "Nunca" },
     { id: 9, name: "Laura Rodríguez", email: "laura@mail.com", role: "Admin", status: "Inactivo", lastAccess: "Nunca" },
     { id: 10, name: "Pedro Sánchez", email: "pedro@mail.com", role: "Admin", status: "Inactivo", lastAccess: "Nunca" },
@@ -63,7 +68,6 @@ export const UsersPage = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [userToDelete, setUserToDelete] = useState<number | null>(null);
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const { show: showToast } = useToast();
 
@@ -173,8 +177,15 @@ export const UsersPage = () => {
     return isValid;
   };
 
+  const isFormValid = useMemo(() => {
+    const nameValid = formData.name.trim().length > 0 && !/\d/.test(formData.name);
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
+    const passwordValid = editingUser ? true : formData.password.length > 0;
+    return nameValid && emailValid && passwordValid;
+  }, [formData, editingUser]);
+
   const handleSave = () => {
-    if (!validateForm()) return;
+    if (!isFormValid) return;
     setIsConfirmSaveModalOpen(true);
   };
 
@@ -280,12 +291,15 @@ export const UsersPage = () => {
   const qaCount = usersList.filter(u => u.role === "QA").length;
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex min-h-screen bg-neutral-50 text-neutral-900 transition-colors duration-300">
       <Sidebar
         collapsed={sidebarCollapsed}
-        onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
+        onToggle={toggleSidebar}
       />
-      <main className="flex-1 overflow-y-auto bg-neutral-50 text-neutral-900">
+      <main className={cn(
+        "flex-1 bg-neutral-50 text-neutral-900 transition-all duration-300 pt-14 lg:pt-0",
+        sidebarCollapsed ? "lg:ml-[96px]" : "lg:ml-[264px]"
+      )}>
         <div className="flex flex-col gap-6 p-8 min-h-screen max-w-[1700px] mx-auto">
           {/* Header */}
           <header className="flex flex-col gap-2">
@@ -298,34 +312,34 @@ export const UsersPage = () => {
             <Card
               title="Total Usuarios"
               description="Usuarios en el sistema"
-              icon={<Database className="w-8 h-8 text-primary-500" />}
+              icon={<Database className="w-8 h-8 text-primary-500 dark:text-primary-800" />}
               className="max-w-none"
             >
-              <div className="text-4xl font-bold mt-2 text-primary-500">{totalCount}</div>
+              <div className="text-4xl font-bold mt-2 text-primary-500 dark:text-primary-800">{totalCount}</div>
             </Card>
             <Card
               title="Usuarios Activos"
               description="Sesiones habilitadas"
-              icon={<UserCheck className="w-8 h-8 text-success-500" />}
+              icon={<UserCheck className="w-8 h-8 text-success-500 dark:text-success-800" />}
               className="max-w-none"
             >
-              <div className="text-4xl font-bold mt-2 text-success-500">{activeCount}</div>
+              <div className="text-4xl font-bold mt-2 text-success-500 dark:text-success-800">{activeCount}</div>
             </Card>
             <Card
               title="Usuarios Admin"
               description="Total de administradores"
-              icon={<ShieldCheck className="w-8 h-8 text-error-500" />}
+              icon={<ShieldCheck className="w-8 h-8 text-error-500 dark:text-error-800" />}
               className="max-w-none"
             >
-              <div className="text-4xl font-bold mt-2 text-error-500">{adminCount}</div>
+              <div className="text-4xl font-bold mt-2 text-error-500 dark:text-error-800">{adminCount}</div>
             </Card>
             <Card
               title="Usuarios QA"
               description="Total de analistas QA"
-              icon={<Users className="w-8 h-8 text-info-500" />}
+              icon={<Users className="w-8 h-8 text-info-500 dark:text-info-800" />}
               className="max-w-none"
             >
-              <div className="text-4xl font-bold mt-2 text-info-500">{qaCount}</div>
+              <div className="text-4xl font-bold mt-2 text-info-500 dark:text-info-800">{qaCount}</div>
             </Card>
           </section>
 
@@ -488,7 +502,7 @@ export const UsersPage = () => {
                 <Button variant="neutral" size="md" onClick={() => setIsModalOpen(false)}>
                   Cancelar
                 </Button>
-                <Button variant="primary" size="md" onClick={handleSave}>
+                <Button variant="primary" size="md" onClick={handleSave} disabled={!isFormValid}>
                   {editingUser ? "Guardar cambios" : "Crear usuario"}
                 </Button>
               </>
@@ -605,4 +619,3 @@ export const UsersPage = () => {
     </div>
   );
 };
-

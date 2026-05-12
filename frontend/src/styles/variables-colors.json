@@ -3,7 +3,7 @@
     "color": {
       "primary": {
         "50": {
-          "value": "#F5F0FFFF",
+          "value": "#F7F3FC",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -15,7 +15,7 @@
           }
         },
         "100": {
-          "value": "#E9DDFFFF",
+          "value": "#EEE6F8",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -27,7 +27,7 @@
           }
         },
         "200": {
-          "value": "#D7C0FFFF",
+          "value": "#DCCBF1",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -39,7 +39,7 @@
           }
         },
         "300": {
-          "value": "#BE93FFFF",
+          "value": "#B091DB",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -51,7 +51,7 @@
           }
         },
         "400": {
-          "value": "#9B5EF5FF",
+          "value": "#8565B7",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -63,7 +63,7 @@
           }
         },
         "500": {
-          "value": "#7A35D8FF",
+          "value": "#5A3988",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -75,7 +75,7 @@
           }
         },
         "600": {
-          "value": "#5F24ADFF",
+          "value": "#4E3278",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -87,7 +87,7 @@
           }
         },
         "700": {
-          "value": "#481B83FF",
+          "value": "#432B67",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -99,7 +99,7 @@
           }
         },
         "800": {
-          "value": "#32135EFF",
+          "value": "#372456",
           "type": "color",
           "scope": [
             "ALL_SCOPES"
@@ -111,7 +111,7 @@
           }
         },
         "900": {
-          "value": "#210C3FFF",
+          "value": "#2C1D45",
           "type": "color",
           "scope": [
             "ALL_SCOPES"

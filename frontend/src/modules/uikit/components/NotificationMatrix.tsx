@@ -35,7 +35,7 @@ export function NotificationMatrix() {
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-primary-600 text-white uppercase tracking-widest text-[10px]">Feedback System</Badge>
         </div>
-        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Notificaciones</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">Notificaciones</h2>
         <p className="text-neutral-900 max-w-2xl text-lg">
           Sistema de notificaciones para retroalimentación inmediata del sistema. Soportan múltiples estados semánticos y acciones integradas.
         </p>

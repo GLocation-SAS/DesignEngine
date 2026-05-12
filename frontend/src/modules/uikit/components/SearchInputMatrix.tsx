@@ -60,7 +60,7 @@ export function SearchInputMatrix() {
         <div className="flex items-center gap-3">
           <Badge className="bg-primary-300 text-primary-500 border-none font-black px-3 py-1 rounded-full uppercase tracking-widest text-[10px]">Form System</Badge>
         </div>
-        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Buscador</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">Buscador</h2>
         <p className="text-neutral-900 max-w-2xl text-lg">
           Componente de búsqueda especializado con acciones compuestas (limpiar selección) y estados dinámicos.
         </p>

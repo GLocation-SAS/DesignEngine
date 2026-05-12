@@ -28,7 +28,7 @@ export function ModalMatrix() {
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-black text-white dark:bg-white dark:text-black uppercase tracking-widest text-[10px]">Feedback System</Badge>
         </div>
-        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Modales</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">Modales</h2>
         <p className="text-neutral-900 dark:text-primary-700 max-w-2xl text-lg">
           Modales de retroalimentación y confirmación. Soportan múltiples estados semánticos y tamaños adaptables.
         </p>

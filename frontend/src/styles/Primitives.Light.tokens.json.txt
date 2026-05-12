@@ -4,43 +4,43 @@ Primitives.Light.tokens.json
     "primary": {
       "50": {
         "$type": "color",
-        "$value": "#f5f0ff"
+        "$value": "#F7F3FC"
       },
       "100": {
         "$type": "color",
-        "$value": "#e9ddff"
+        "$value": "#EEE6F8"
       },
       "200": {
         "$type": "color",
-        "$value": "#d7c0ff"
+        "$value": "#DCCBF1"
       },
       "300": {
         "$type": "color",
-        "$value": "#be93ff"
+        "$value": "#B091DB"
       },
       "400": {
         "$type": "color",
-        "$value": "#9b5ef5"
+        "$value": "#8565B7"
       },
       "500": {
         "$type": "color",
-        "$value": "#7a35d8"
+        "$value": "#5A3988"
       },
       "600": {
         "$type": "color",
-        "$value": "#5f24ad"
+        "$value": "#4E3278"
       },
       "700": {
         "$type": "color",
-        "$value": "#481b83"
+        "$value": "#432B67"
       },
       "800": {
         "$type": "color",
-        "$value": "#32135e"
+        "$value": "#372456"
       },
       "900": {
         "$type": "color",
-        "$value": "#210c3f"
+        "$value": "#2C1D45"
       }
     },
     "secondary": {

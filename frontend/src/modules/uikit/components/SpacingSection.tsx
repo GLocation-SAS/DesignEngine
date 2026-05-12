@@ -19,7 +19,7 @@ export function SpacingSection() {
   return (
     <section id="spacing" className="space-y-8">
       <div>
-        <h2 className="text-5xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Espaciado</h2>
+        <h2 className="text-5xl font-black tracking-tighter text-neutral-900 uppercase">Espaciado</h2>
         <p className="text-neutral-900 max-w-2xl text-lg">
           Escala de espaciado consistente utilizada para márgenes, rellenos y brechas de diseño.
         </p>

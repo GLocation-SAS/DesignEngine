@@ -28,7 +28,7 @@ export function WarningButtonMatrix() {
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-warning-600 text-white uppercase tracking-widest text-[10px]">Button System</Badge>
         </div>
-        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Botones de advertencia</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">Botones de advertencia</h2>
         <p className="text-neutral-900 max-w-2xl text-lg">
           Variante para acciones que requieren precaución o indican una advertencia.
         </p>

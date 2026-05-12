@@ -115,16 +115,16 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
     };
 
     const stateStyles = {
-      "Default": "bg-surface-primary-default border-semantic-border-neutral-default border-[2.5px] text-neutral-600",
-      "Hover": "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] text-neutral-600",
-      "Active": "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
-      "Active Hover": "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
-      "Active Selected": "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
-      "Collapsed": "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] text-neutral-600",
-      "Disabled": "bg-neutral-200 border-transparent border-[2.5px] text-neutral-400 cursor-not-allowed opacity-100",
-      "Error Filled": " border-error-500 border-2 text-neutral-600",
-      "Error Filled Hover": "border-error-500 border-2 text-neutral-600",
-      "Success": "border-success-500 border-[2.5px] text-neutral-600",
+      "Default": "bg-surface-primary-default border-semantic-border-neutral-default border text-neutral-600",
+      "Hover": "bg-surface-primary-default border-semantic-border-primary-default border text-neutral-600",
+      "Active": "bg-surface-primary-default border-semantic-border-primary-default border text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
+      "Active Hover": "bg-surface-primary-default border-semantic-border-primary-default border text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
+      "Active Selected": "bg-surface-primary-default border-semantic-border-primary-default border text-neutral-600 shadow-[inset_0_0_13.1px_0_#CBB8E8]",
+      "Collapsed": "bg-surface-primary-default border-semantic-border-primary-default border text-neutral-600",
+      "Disabled": "bg-neutral-200 border-transparent border text-neutral-400 cursor-not-allowed opacity-100",
+      "Error Filled": " border-error-500 border text-neutral-600",
+      "Error Filled Hover": "border-error-500 border text-neutral-600",
+      "Success": "border-success-500 border text-neutral-600",
     };
 
     const iconColorStyles = {
@@ -274,7 +274,7 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
         )}
 
         {isActive && (
-          <div className="absolute top-[calc(100%+8px)] left-0 w-full border-[2.5px] border-primary-500 rounded-[8px] z-[60] overflow-hidden p-0 shadow-2xl">
+          <div className="absolute top-[calc(100%+8px)] left-0 w-full border border-primary-500 rounded-[8px] z-[60] overflow-hidden p-0 shadow-2xl">
             <div className="flex flex-col max-h-[240px] overflow-y-auto">
               {filteredOptions.length > 0 ? (
                 filteredOptions.map((opt) => {

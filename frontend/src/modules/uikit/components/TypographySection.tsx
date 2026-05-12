@@ -62,7 +62,7 @@ export function TypographySection() {
     <section id="typography" className="space-y-24 mt-8 pb-8 max-w-7xl">
       {/* Header */}
       <div className="space-y-4">
-        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">
+        <h2 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">
           Tipografía
         </h2>
         <p className="text-neutral-900 max-w-2xl text-lg">

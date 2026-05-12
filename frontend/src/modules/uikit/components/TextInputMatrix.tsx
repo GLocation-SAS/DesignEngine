@@ -30,7 +30,7 @@ export function TextInputMatrix() {
         <div className="flex items-center gap-3">
           <Badge className="bg-primary-300 text-primary-500 border-none font-black px-3 py-1 rounded-full uppercase tracking-widest text-[10px]">Form System</Badge>
         </div>
-        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Campos de texto</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">Campos de texto</h2>
         <p className="text-neutral-900 max-w-2xl text-lg">
           Campos de entrada de texto fundamentales con soporte para múltiples tamaños, estados interactivos y composiciones con iconos.
         </p>

@@ -23,6 +23,7 @@ import { TagMatrix } from "./TagMatrix";
 import { CheckboxMatrix } from "./CheckboxMatrix";
 import { RadioButtonMatrix } from "./RadioButtonMatrix";
 import { ToggleMatrix } from "./ToggleMatrix";
+import { ThemeToggleMatrix } from "./ThemeToggleMatrix";
 import { BreadcrumbMatrix } from "./BreadcrumbMatrix";
 import { PaginationMatrix } from "./PaginationMatrix";
 import { TabsMatrix } from "./TabsMatrix";
@@ -38,7 +39,7 @@ export function ComponentsSection() {
     <section id="components" className="space-y-24">
       {/* Intro */}
       <div className="px-8 max-w-7xl">
-        <h2 className="text-4xl font-bold tracking-tighter text-primary-500 dark:text-primary-700 underline">Arquitectura de componentes</h2>
+        <h2 className="text-4xl font-bold tracking-tighter text-neutral-900 underline">Arquitectura de componentes</h2>
         <p className="text-neutral-900 mt-2">
           Componentes de UI construidos con tokens de diseño de alta fidelidad y lógica modular.
         </p>
@@ -110,6 +111,7 @@ export function ComponentsSection() {
       {/* Toggles */}
       <div id="toggles" className="scroll-mt-24">
         <ToggleMatrix />
+        <ThemeToggleMatrix />
       </div>
 
       {/* Breadcrumbs */}

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Button, Input, Checkbox } from "@/components/ui";
+import { Tooltip } from "@/components/ui/Tooltip";
 import { publicUrl } from "@/lib/utils";
 
 export function LoginForm() {
@@ -55,29 +56,29 @@ export function LoginForm() {
       {/* Logo */}
       <div className="flex justify-start">
         <Image
-          src={publicUrl("/logos/lt-h.png")}
+          src={publicUrl("/logos/Logotipo Horizontal.png")}
           alt="QA Automatization"
-          width={217}
-          height={48}
-          className="h-[48px] w-[217px] dark:hidden"
+          width={145}
+          height={32}
+          className="h-[32px] w-auto dark:hidden"
           priority
         />
         <Image
-          src={publicUrl("/logos/lt-h-white.png")}
+          src={publicUrl("/logos/Logotipo horizontal alternativo.png")}
           alt="QA Automatization"
-          width={217}
-          height={48}
-          className="h-[48px] w-[217px] hidden dark:block"
+          width={145}
+          height={32}
+          className="h-[32px] w-auto hidden dark:block"
           priority
         />
       </div>
 
       {/* Header */}
       <div className="space-y-2">
-        <h1 className="text-[40px] font-bold tracking-tight text-primary">
+        <h1 className="text-[36px] font-bold tracking-tight text-primary">
           Bienvenido
         </h1>
-        <p className="text-neutral-900">
+        <p className="text-sm font-light text-neutral-900">
           Ingresa tus credenciales para acceder a tu área de trabajo.
         </p>
       </div>
@@ -117,17 +118,19 @@ export function LoginForm() {
               placeholder="............"
               iconLeft={<Lock className="h-5 w-5" />}
               iconRight={
-                showPassword ? (
-                  <EyeOff
-                    className="h-5 w-5 cursor-pointer text-neutral-900 hover:text-neutral-300 transition-colors"
-                    onClick={() => setShowPassword(false)}
-                  />
-                ) : (
-                  <Eye
-                    className="h-5 w-5 cursor-pointer text-neutral-900 hover:text-neutral-300 transition-colors"
-                    onClick={() => setShowPassword(true)}
-                  />
-                )
+                <Tooltip content={showPassword ? "Ocultar" : "Mostrar"} position="top">
+                  {showPassword ? (
+                    <EyeOff
+                      className="h-5 w-5 cursor-pointer text-neutral-900 hover:text-neutral-300 transition-colors"
+                      onClick={() => setShowPassword(false)}
+                    />
+                  ) : (
+                    <Eye
+                      className="h-5 w-5 cursor-pointer text-neutral-900 hover:text-neutral-300 transition-colors"
+                      onClick={() => setShowPassword(true)}
+                    />
+                  )}
+                </Tooltip>
               }
               className="w-full"
               value={password}
@@ -154,9 +157,9 @@ export function LoginForm() {
 
         {/* Divider */}
         <div className="relative flex items-center gap-4 py-2">
-          <div className="h-px flex-1 bg-neutral-800"></div>
-          <span className="text-sm font-medium tracking-wider text-neutral-900">o continua con</span>
-          <div className="h-px flex-1 bg-neutral-800"></div>
+          <div className="h-px flex-1 bg-neutral-200 dark:bg-neutral-800"></div>
+          <span className="text-sm font-medium tracking-wider text-neutral-900 dark:text-neutral-400">o continua con</span>
+          <div className="h-px flex-1 bg-neutral-200 dark:bg-neutral-800"></div>
         </div>
 
         {/* Social Login */}
@@ -183,7 +186,7 @@ export function LoginForm() {
         </Button>
 
         {/* Footer */}
-        <p className="text-center text-md text-neutral-900 font-light">
+        <p className="text-center text-sm text-neutral-900 font-light">
           ¿No tienes una cuenta?{" "}
           <Link
             href="/register"

@@ -69,10 +69,10 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
         {/* Visual Radio Button */}
         <div
           className={cn(
-            "shrink-0 rounded-full border-2 border-solid flex items-center justify-center transition-all duration-200",
+            "shrink-0 rounded-full border border-solid flex items-center justify-center transition-all duration-200",
             currentSize.outer,
             getBorderStyles(),
-            isChecked ? "border-2" : "border"
+            isChecked ? "border" : "border"
           )}
         >
           {isChecked && (

@@ -32,7 +32,7 @@ export function RadioButtonMatrix() {
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-black text-white uppercase tracking-widest text-[10px]">Form Controls</Badge>
         </div>
-        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">RadioButton</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">RadioButton</h2>
         <p className="text-neutral-500 max-w-2xl text-lg">
           Sistema de selección única con organización vertical por tamaño y auditoría de composiciones flexibles.
         </p>

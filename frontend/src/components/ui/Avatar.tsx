@@ -7,7 +7,7 @@ import { publicUrl } from "@/lib/utils";
 interface AvatarProps {
   name: string;
   src?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
 }
 
 const getInitials = (name: string) => {
@@ -23,6 +23,7 @@ const Avatar: React.FC<AvatarProps> = ({ name, src, size = "md" }) => {
     sm: "w-8 h-8 text-[11px]",
     md: "w-10 h-10 text-[12px]",
     lg: "w-12 h-12 text-[14px]",
+    xl: "w-20 h-20 text-xl",
   };
 
   const initials = getInitials(name);

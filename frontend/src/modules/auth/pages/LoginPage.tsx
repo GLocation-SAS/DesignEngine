@@ -7,9 +7,9 @@ export default function LoginPage() {
   return (
     <div >
       <main className="flex min-h-screen w-full bg-neutral-white text-neutral-900">
-        <div className="grid w-full grid-cols-1 lg:grid-cols-2 max-w-[1700px] mx-auto">
+        <div className="grid w-full grid-cols-1 lg:grid-cols-[45%_55%] max-w-[1700px] mx-auto">
           {/* Left Section: Visual Sidebar */}
-          <section className="hidden p-6 lg:block h-screen sticky top-0">
+          <section className="hidden p-6 lg:p-8 lg:block h-screen sticky top-0">
             <AuthSidebar />
           </section>
 

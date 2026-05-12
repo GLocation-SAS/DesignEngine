@@ -29,7 +29,7 @@ export function TagMatrix() {
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-black text-white dark:bg-white dark:text-black uppercase tracking-widest text-[10px]">Pill System</Badge>
         </div>
-        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Tags & Badges</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">Tags & Badges</h2>
         <p className="text-neutral-500 max-w-2xl text-lg">
           Sistema de etiquetas interactivas con estados semánticos, soporte para iconos y gestión de eliminación.
         </p>

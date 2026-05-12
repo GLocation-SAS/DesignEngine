@@ -52,13 +52,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     };
 
     const stateStyles = {
-      Default: "bg-surface-primary-default border-semantic-border-neutral-default border-[2.5px]",
-      Hover: "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px]",
-      Focused: "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px] shadow-[inset_0_0_3.1px_0_#CBB8E8] dark:shadow-[inset_0_0_13px_0_rgba(203,184,232,0.5)]",
-      Filled: "bg-surface-primary-default border-semantic-border-primary-default border-[2.5px]",
-      Disabled: "bg-semantic-background-disabled-surface border-transparent border-[2.5px] text-semantic-text-disabled-default cursor-not-allowed opacity-100",
-      Error: "bg-surface-primary-default border-semantic-border-error-default border-[2.5px] shadow-[inset_0_0_13.1px_1px_#FFA3BF] dark:shadow-none",
-      Success: "bg-surface-primary-default border-semantic-border-success-default border-[2.5px] shadow-[inset_0_0_13.1px_1px_#9FD5CA] dark:shadow-none",
+      Default: "bg-surface-primary-default border-semantic-border-neutral-default border",
+      Hover: "bg-surface-primary-default border-semantic-border-primary-default border",
+      Focused: "bg-surface-primary-default border-semantic-border-primary-default border shadow-[inset_0_0_3.1px_0_#CBB8E8] dark:shadow-[inset_0_0_13px_0_rgba(203,184,232,0.5)]",
+      Filled: "bg-surface-primary-default border-semantic-border-primary-default border",
+      Disabled: "bg-semantic-background-disabled-surface border-transparent border text-semantic-text-disabled-default cursor-not-allowed opacity-100",
+      Error: "bg-surface-primary-default border-semantic-border-error-default border shadow-[inset_0_0_13.1px_1px_#FFA3BF] dark:shadow-none",
+      Success: "bg-surface-primary-default border-semantic-border-success-default border shadow-[inset_0_0_13.1px_1px_#9FD5CA] dark:shadow-none",
     };
 
     const iconColorStyles = {
@@ -83,7 +83,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
         <div
           className={cn(
-            "relative flex items-center transition-all duration-200 rounded-full overflow-hidden px-6 gap-4",
+            "relative flex items-center transition-all duration-200 rounded-full px-6 gap-4",
             sizeConfigs[sizeVariant],
             stateStyles[currentState as keyof typeof stateStyles],
             (currentState === "Hover" || currentState === "Focused") && "border-semantic-border-primary-default"

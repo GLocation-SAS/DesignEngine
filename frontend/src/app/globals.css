@@ -93,7 +93,7 @@
   --color-semantic-background-secondary-surface: var(--semantic-background-secondary-surface);
   --color-semantic-background-neutral-default: var(--semantic-background-neutral-default);
   --color-semantic-background-neutral-hover: var(--semantic-background-neutral-hover);
-  --color-semantic-background-neutral-Pressed: var(--semantic-background-neutral-Pressed);
+  --color-semantic-background-neutral-pressed: var(--semantic-background-neutral-pressed);
   --color-semantic-background-neutral-surface: var(--semantic-background-neutral-surface);
   --color-semantic-background-neutral-muted: var(--semantic-background-neutral-muted);
   --color-semantic-background-disabled-default: var(--semantic-background-disabled-default);
@@ -284,16 +284,16 @@
 @layer base {
   :root {
     /* Primitives Light - Colors */
-    --color-primary-50: #F5F0FFFF;
-    --color-primary-100: #E9DDFFFF;
-    --color-primary-200: #D7C0FFFF;
-    --color-primary-300: #BE93FFFF;
-    --color-primary-400: #9B5EF5FF;
-    --color-primary-500: #7A35D8FF;
-    --color-primary-600: #5F24ADFF;
-    --color-primary-700: #481B83FF;
-    --color-primary-800: #331461FF;
-    --color-primary-900: #230E44FF;
+    --color-primary-50: #F7F3FC;
+    --color-primary-100: #EEE6F8;
+    --color-primary-200: #DCCBF1;
+    --color-primary-300: #B091DB;
+    --color-primary-400: #8565B7;
+    --color-primary-500: #5A3988;
+    --color-primary-600: #4E3278;
+    --color-primary-700: #432B67;
+    --color-primary-800: #372456;
+    --color-primary-900: #2C1D45;
 
     --color-secondary-50: #F1F9FEFF;
     --color-secondary-100: #E2F2FCFF;
@@ -667,5 +667,38 @@ input:-webkit-autofill:active {
 
   .shadow-glow {
     box-shadow: 0 0 20px rgba(90, 57, 136, 0.2);
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-neutral-200 rounded-full;
+  }
+
+  .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300;
+  }
+
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-neutral-800;
+  }
+
+  .dark .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    @apply bg-neutral-700;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

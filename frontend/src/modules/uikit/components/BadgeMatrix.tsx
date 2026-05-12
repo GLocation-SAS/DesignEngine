@@ -79,7 +79,7 @@ export function BadgeMatrix() {
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-black text-white dark:bg-white dark:text-black uppercase tracking-widest text-[10px]">Indicators</Badge>
         </div>
-        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Badges</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">Badges</h2>
         <p className="text-neutral-900 max-w-2xl text-lg">
           Sistema de indicadores visuales integrados con el sistema de color semántico para estados y categorías.
         </p>

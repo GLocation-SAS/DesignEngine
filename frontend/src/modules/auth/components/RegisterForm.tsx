@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Mail, Lock, Eye, EyeOff, User, ChevronLeft } from "lucide-react";
 import { Button, Input, Modal } from "@/components/ui";
+import { Tooltip } from "@/components/ui/Tooltip";
 import { useToast } from "@/context/ToastContext";
 
 export function RegisterForm() {
@@ -103,10 +104,10 @@ export function RegisterForm() {
 
       {/* Header */}
       <div className="space-y-2">
-        <h1 className="text-[40px] font-bold tracking-tight text-primary">
+        <h1 className="text-[36px] font-bold tracking-tight text-primary">
           Registrarse
         </h1>
-        <p className="text-neutral-900 font-light">
+        <p className="text-sm text-neutral-900 font-light">
           Ingresa tus datos para registrarte en la plataforma.
         </p>
       </div>
@@ -159,17 +160,19 @@ export function RegisterForm() {
               placeholder="............"
               iconLeft={<Lock className="h-5 w-5" />}
               iconRight={
-                showPassword ? (
-                  <EyeOff
-                    className="h-5 w-5 cursor-pointer"
-                    onClick={() => setShowPassword(false)}
-                  />
-                ) : (
-                  <Eye
-                    className="h-5 w-5 cursor-pointer"
-                    onClick={() => setShowPassword(true)}
-                  />
-                )
+                <Tooltip content={showPassword ? "Ocultar" : "Mostrar"} position="top">
+                  {showPassword ? (
+                    <EyeOff
+                      className="h-5 w-5 cursor-pointer"
+                      onClick={() => setShowPassword(false)}
+                    />
+                  ) : (
+                    <Eye
+                      className="h-5 w-5 cursor-pointer"
+                      onClick={() => setShowPassword(true)}
+                    />
+                  )}
+                </Tooltip>
               }
               className="w-full"
               value={formData.password}
@@ -189,17 +192,19 @@ export function RegisterForm() {
               placeholder="............"
               iconLeft={<Lock className="h-5 w-5" />}
               iconRight={
-                showConfirmPassword ? (
-                  <EyeOff
-                    className="h-5 w-5 cursor-pointer"
-                    onClick={() => setShowConfirmPassword(false)}
-                  />
-                ) : (
-                  <Eye
-                    className="h-5 w-5 cursor-pointer"
-                    onClick={() => setShowConfirmPassword(true)}
-                  />
-                )
+                <Tooltip content={showConfirmPassword ? "Ocultar" : "Mostrar"} position="top">
+                  {showConfirmPassword ? (
+                    <EyeOff
+                      className="h-5 w-5 cursor-pointer"
+                      onClick={() => setShowConfirmPassword(false)}
+                    />
+                  ) : (
+                    <Eye
+                      className="h-5 w-5 cursor-pointer"
+                      onClick={() => setShowConfirmPassword(true)}
+                    />
+                  )}
+                </Tooltip>
               }
               className="w-full"
               value={formData.confirmPassword}
@@ -215,7 +220,7 @@ export function RegisterForm() {
         </Button>
 
         {/* Footer */}
-        <p className="text-center text-md text-neutral-900 font-light">
+        <p className="text-center text-sm text-neutral-900 font-light">
           ¿Ya tienes una cuenta?{" "}
           <Link
             href="/login"

@@ -12,7 +12,7 @@ Los valores expuestos provienen de los tokens base y semánticos, usando la estr
 
 | Token | Valor (500) | Uso |
 |------|------|-----|
-| primary | `#7A35D8FF` | Acciones principales, botones primarios, enlaces destacados |
+| primary | `#5A3988FF` | Acciones principales, botones primarios, enlaces destacados |
 | secondary | `#1D8DE3FF` | Elementos secundarios, acciones de soporte, componentes menos prominentes |
 | white | `#FFFFFFFF` | Fondo principal, color de texto invertido |
 | black | `#18181BFF` | Texto principal (neutral-900), fondos oscuros |

@@ -61,10 +61,10 @@ export function ForgotPasswordForm() {
 
       {/* Header */}
       <div className="">
-        <h1 className="text-[40px] font-bold tracking-tight text-primary">
+        <h1 className="text-[36px] font-bold tracking-tight text-primary">
           Recuperar contraseña
         </h1>
-        <p className="text-neutral-900">
+        <p className="text-sm font-light text-neutral-900">
           Ingresa tu correo electrónico y te enviaremos las instrucciones para restablecer tu contraseña.
         </p>
       </div>
@@ -101,7 +101,7 @@ export function ForgotPasswordForm() {
         </Button>
 
         {/* Footer */}
-        <p className="text-center text-md text-neutral-900 font-light">
+        <p className="text-center text-sm text-neutral-900 font-light">
           ¿No tienes una cuenta?{" "}
           <Link
             href="/register"

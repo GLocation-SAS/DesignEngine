@@ -10,7 +10,7 @@ export function CardMatrix() {
   return (
     <div id="cards" className="scroll-mt-24 space-y-12 px-8 max-w-7xl">
       <div className="space-y-4">
-        <h3 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">
+        <h3 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">
           Cards
         </h3>
         <p className="text-neutral-800 max-w-3xl">

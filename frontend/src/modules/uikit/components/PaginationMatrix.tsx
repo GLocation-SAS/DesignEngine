@@ -20,7 +20,7 @@ export function PaginationMatrix() {
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="bg-indigo-600 text-white uppercase tracking-widest text-[10px]">Navigation Controls</Badge>
         </div>
-        <h2 className="text-4xl font-black tracking-tighter text-primary-500 dark:text-primary-700 uppercase">Pagination</h2>
+        <h2 className="text-4xl font-black tracking-tighter text-neutral-900 uppercase">Pagination</h2>
         <p className="text-neutral-900 max-w-2xl text-lg">
           Sistema de navegación por páginas con estados circulares de alta precisión y controles direccionales.
         </p>
